@@ -13,5 +13,7 @@ $message = "Hi There! Let's start!";
 </head>
 <body>
     <h1><?= htmlspecialchars($message, ENT_QUOTES, 'UTF-8') ?></h1>
+
+    <h2>Created by Zachariasz Soja</h2>
 </body>
 </html>
