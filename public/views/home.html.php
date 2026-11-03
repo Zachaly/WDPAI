@@ -48,7 +48,7 @@
             <nav class="main-nav" aria-label="Primary">
                 <a class="is-active" href="#reviews">Gym<br>Reviews</a>
                 <a href="/gear">Gear<br>Inventory</a>
-                <a href="#forum">Community<br>Forum</a>
+                <a href="/forum">Community<br>Forum</a>
                 <a href="#leaderboard">Leaderboard</a>
                 <a href="#submit">Submit<br>Gym</a>
             </nav>
@@ -681,7 +681,7 @@
 
     <nav class="m-nav" aria-label="Mobile">
         <a href="#m-board"><svg class="icon"><use href="#i-trophy"></use></svg><span>BOARD</span></a>
-        <a href="#m-forum"><svg class="icon"><use href="#i-comment"></use></svg><span>FORUM</span></a>
+        <a href="/forum"><svg class="icon"><use href="#i-comment"></use></svg><span>FORUM</span></a>
         <a href="/gear"><svg class="icon"><use href="#i-dumbbell"></use></svg><span>GEAR</span></a>
         <a href="#m-submit"><svg class="icon"><use href="#i-plus"></use></svg><span>SUBMIT</span></a>
     </nav>
