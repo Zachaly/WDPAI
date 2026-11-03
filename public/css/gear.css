@@ -18,11 +18,6 @@
     color: var(--on-accent);
 }
 
-.gear-mobile-overview,
-.gear-mobile-search,
-.gear-mobile-categories,
-.gear-knurl,
-.gear-mobile-report,
 .gear-main {
     min-height: 100vh;
     padding: 18px 0 48px;
