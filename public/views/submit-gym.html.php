@@ -1,6 +1,65 @@
 <?php
 
 declare(strict_types=1);
+
+$iconPrefix = 'sg';
+$desktopHeaderComponent = [
+    'class' => 'site-header sg-desktop-header',
+    'navigationClass' => 'main-nav',
+    'activePage' => 'submit-gym',
+    'singleLineNavigation' => true,
+    'searchHref' => '#facility-identity',
+    'searchLabel' => 'Go to facility identity',
+];
+$mobileHeaderComponent = [
+    'headerClass' => 'sg-mobile-header page-mobile-header',
+    'brandClass' => 'sg-mobile-brand page-mobile-brand',
+    'liveClass' => 'sg-live page-live-badge',
+];
+$mobileNavComponent = [
+    'class' => 'sg-mobile-nav page-mobile-nav',
+    'activePage' => 'submit-gym',
+    'items' => [
+        ['href' => '/leaderboard', 'page' => 'leaderboard', 'icon' => 'trophy', 'label' => 'BOARD'],
+        ['href' => '/forum', 'page' => 'forum', 'icon' => 'forum', 'label' => 'FORUM'],
+        ['href' => '/gear', 'page' => 'gear', 'icon' => 'dumbbell', 'label' => 'GEAR'],
+        ['href' => '/submit-gym', 'page' => 'submit-gym', 'icon' => 'pin', 'label' => 'SUBMIT'],
+    ],
+];
+$footerComponent = [
+    'class' => 'sg-footer page-footer',
+    'gridClass' => 'sg-container sg-footer-grid page-footer-grid',
+    'brandClass' => 'sg-footer-brand page-footer-brand',
+    'logoClass' => 'sg-footer-logo',
+    'logoMarkClass' => '',
+    'logoTextClass' => '',
+    'description' => 'High-performance telemetry and facility intelligence for strength sports. Real-time rack occupancy, calibrated plate tracking, and authentic powerlifting and weightlifting community culture.',
+    'networkTag' => 'small',
+    'boldNetworkSeparator' => false,
+    'headingTag' => 'b',
+    'showSystemDot' => false,
+    'bottomClass' => 'sg-container sg-footer-bottom page-footer-bottom',
+    'columns' => [
+        ['heading' => 'DISCOVERY', 'links' => [
+            ['href' => '/', 'label' => 'Gym Directory'],
+            ['href' => '/gear', 'label' => 'Calibrated Gear'],
+            ['href' => '/leaderboard', 'label' => 'Facility Rankings'],
+            ['href' => '/submit-gym', 'label' => 'Submit Strength Hub'],
+        ]],
+        ['heading' => 'COMMUNITY HUB', 'links' => [
+            ['href' => '/forum', 'label' => 'Discussion Boards'],
+            ['href' => '/forum#discussion-meet-debrief', 'label' => 'Meet Preparation'],
+            ['href' => '/forum#discussion-gear-review', 'label' => 'Barbell Calibration Logs'],
+            ['href' => '/leaderboard#spotter-karma', 'label' => 'Coach Directory'],
+        ]],
+        ['heading' => 'TELEMETRY & LEGAL', 'links' => [
+            ['href' => '/submit-gym', 'label' => 'Terms of Service'],
+            ['href' => '/submit-gym', 'label' => 'Privacy Policy'],
+            ['href' => '/gear#hardware-index', 'label' => 'Hardware Specs & API'],
+            ['href' => '/leaderboard', 'label' => 'Live System Status'],
+        ]],
+    ],
+];
 ?>
 <!doctype html>
 <html lang="en">
@@ -39,32 +98,10 @@ declare(strict_types=1);
     <symbol id="sg-forum" viewBox="0 0 24 24"><path d="M21 11.5a7.5 7.5 0 0 1-7.5 7.5H8l-5 3 1.3-4.6A8.5 8.5 0 1 1 21 11.5Z"/></symbol>
 </svg>
 
-<header class="site-header sg-desktop-header">
-    <div class="container header-inner">
-        <a class="brand" href="/" aria-label="IronPulse home">
-            <span class="brand-mark"><svg class="icon"><use href="#sg-dumbbell"></use></svg></span>
-            <span class="brand-text"><strong>IRONPULSE</strong><small>TELEMETRY &amp; COMMUNITY</small></span>
-        </a>
-        <div class="header-status" aria-hidden="true"><svg class="icon"><use href="#sg-bars"></use></svg></div>
-        <nav class="main-nav" aria-label="Primary">
-            <a href="/#reviews">Gym Reviews</a>
-            <a href="/gear">Gear Inventory</a>
-            <a href="/forum">Community Forum</a>
-            <a href="/leaderboard">Leaderboard</a>
-            <a class="is-active" href="/submit-gym" aria-current="page">Submit Gym</a>
-        </nav>
-        <div class="header-actions">
-            <a class="icon-button" href="#facility-identity" aria-label="Go to facility identity"><svg class="icon"><use href="#sg-search"></use></svg></a>
-            <a class="avatar-button" href="/#profile" aria-label="Your profile"><svg class="icon"><use href="#sg-user"></use></svg></a>
-        </div>
-    </div>
-</header>
-
-<header class="sg-mobile-header page-mobile-header">
-    <a class="sg-mobile-brand page-mobile-brand" href="/" aria-label="IronPulse home"><svg class="icon"><use href="#sg-dumbbell"></use></svg><span>IRON<span>PULSE</span></span></a>
-    <span class="sg-live page-live-badge"><i></i> LIVE</span>
-    <a class="avatar-button" href="/#profile" aria-label="Your profile"><svg class="icon"><use href="#sg-user"></use></svg></a>
-</header>
+<?php
+require dirname(__DIR__, 2) . '/components/desktop-header.html.php';
+require dirname(__DIR__, 2) . '/components/mobile-header.html.php';
+?>
 
 <main class="sg-main">
     <div class="sg-container">
@@ -244,25 +281,15 @@ declare(strict_types=1);
     </div>
 </main>
 
-<footer class="sg-footer page-footer">
-    <div class="sg-container sg-footer-grid page-footer-grid">
-        <div class="sg-footer-brand page-footer-brand"><a href="/" class="sg-footer-logo"><span><svg class="icon"><use href="#sg-dumbbell"></use></svg></span>IRONPULSE</a><p>High-performance telemetry and facility intelligence for strength sports. Real-time rack occupancy, calibrated plate tracking, and authentic powerlifting and weightlifting community culture.</p><small><i></i> NETWORK: 142 GYMS ACTIVE &nbsp; &bull; &nbsp; TELEMETRY LATENCY: 18MS</small></div>
-        <div><b>DISCOVERY</b><a href="/">Gym Directory</a><a href="/gear">Calibrated Gear</a><a href="/leaderboard">Facility Rankings</a><a href="/submit-gym">Submit Strength Hub</a></div>
-        <div><b>COMMUNITY HUB</b><a href="/forum">Discussion Boards</a><a href="/forum#discussion-meet-debrief">Meet Preparation</a><a href="/forum#discussion-gear-review">Barbell Calibration Logs</a><a href="/leaderboard#spotter-karma">Coach Directory</a></div>
-        <div><b>TELEMETRY &amp; LEGAL</b><a href="/submit-gym">Terms of Service</a><a href="/submit-gym">Privacy Policy</a><a href="/gear#hardware-index">Hardware Specs &amp; API</a><a href="/leaderboard">Live System Status</a></div>
-    </div>
-    <div class="sg-container sg-footer-bottom page-footer-bottom"><span>&copy; 2025 IRONPULSE TELEMETRY CORP. &nbsp; &bull; &nbsp; ENGINEERED FOR STRENGTH</span><span>SYSTEM REVISION 2.4.9 &nbsp; &bull; &nbsp; ALL NODES OPERATIONAL</span></div>
-</footer>
-
+<?php
+require dirname(__DIR__, 2) . '/components/footer.html.php';
+?>
 <div class="sg-mobile-action-bar">
     <button class="sg-save-button" type="button" aria-describedby="sg-preview-note">▣ Draft</button>
     <button class="sg-submit-button" type="button" aria-describedby="sg-preview-note"><svg class="icon"><use href="#sg-check"></use></svg>Submit Sanctuary <small>+250</small></button>
 </div>
-<nav class="sg-mobile-nav page-mobile-nav" aria-label="Mobile">
-    <a href="/leaderboard"><svg class="icon"><use href="#sg-trophy"></use></svg><span>BOARD</span></a>
-    <a href="/forum"><svg class="icon"><use href="#sg-forum"></use></svg><span>FORUM</span></a>
-    <a href="/gear"><svg class="icon"><use href="#sg-dumbbell"></use></svg><span>GEAR</span></a>
-    <a class="is-active" href="/submit-gym" aria-current="page"><svg class="icon"><use href="#sg-pin"></use></svg><span>SUBMIT</span></a>
-</nav>
+<?php
+require dirname(__DIR__, 2) . '/components/mobile-nav.html.php';
+?>
 </body>
 </html>

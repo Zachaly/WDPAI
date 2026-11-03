@@ -1,6 +1,65 @@
 <?php
 
 declare(strict_types=1);
+
+$iconPrefix = 'lb';
+$desktopHeaderComponent = [
+    'class' => 'site-header leaderboard-desktop-header',
+    'navigationClass' => 'main-nav',
+    'activePage' => 'leaderboard',
+    'singleLineNavigation' => false,
+    'searchHref' => '#athlete-standings',
+    'searchLabel' => 'Browse athlete standings',
+];
+$mobileHeaderComponent = [
+    'headerClass' => 'leaderboard-mobile-header page-mobile-header',
+    'brandClass' => 'leaderboard-mobile-brand page-mobile-brand',
+    'liveClass' => 'leaderboard-live page-live-badge',
+];
+$mobileNavComponent = [
+    'class' => 'leaderboard-mobile-nav page-mobile-nav',
+    'activePage' => 'leaderboard',
+    'items' => [
+        ['href' => '/leaderboard', 'page' => 'leaderboard', 'icon' => 'trophy', 'label' => 'BOARD'],
+        ['href' => '/forum', 'page' => 'forum', 'icon' => 'forum', 'label' => 'FORUM'],
+        ['href' => '/gear', 'page' => 'gear', 'icon' => 'dumbbell', 'label' => 'GEAR'],
+        ['href' => '/submit-gym', 'page' => 'submit-gym', 'icon' => 'plus', 'label' => 'SUBMIT'],
+    ],
+];
+$footerComponent = [
+    'class' => 'leaderboard-footer page-footer',
+    'gridClass' => 'leaderboard-container leaderboard-footer-grid page-footer-grid',
+    'brandClass' => 'leaderboard-footer-brand page-footer-brand',
+    'logoClass' => 'brand',
+    'logoMarkClass' => 'brand-mark',
+    'logoTextClass' => 'brand-text',
+    'description' => 'High-performance telemetry and facility intelligence for strength sports. Real-time rack occupancy, calibrated plate tracking, and authentic powerlifting and weightlifting community culture.',
+    'networkTag' => 'span',
+    'boldNetworkSeparator' => false,
+    'headingTag' => 'strong',
+    'showSystemDot' => true,
+    'bottomClass' => 'leaderboard-container leaderboard-footer-bottom page-footer-bottom',
+    'columns' => [
+        ['heading' => 'DISCOVERY', 'links' => [
+            ['href' => '/', 'label' => 'Gym Directory'],
+            ['href' => '/gear', 'label' => 'Calibrated Gear'],
+            ['href' => '/leaderboard#top-sanctuaries', 'label' => 'Facility Rankings'],
+            ['href' => '/submit-gym', 'label' => 'Submit Strength Hub'],
+        ]],
+        ['heading' => 'COMMUNITY HUB', 'links' => [
+            ['href' => '/forum', 'label' => 'Discussion Boards'],
+            ['href' => '/leaderboard#athlete-standings', 'label' => 'Meet Preparation'],
+            ['href' => '/forum#discussion-gear-review', 'label' => 'Barbell Calibration Logs'],
+            ['href' => '/leaderboard#spotter-karma', 'label' => 'Coach Directory'],
+        ]],
+        ['heading' => 'TELEMETRY & LEGAL', 'links' => [
+            ['href' => '/leaderboard', 'label' => 'Terms of Service'],
+            ['href' => '/leaderboard', 'label' => 'Privacy Policy'],
+            ['href' => '/gear#hardware-index', 'label' => 'Hardware Specs & API'],
+            ['href' => '/leaderboard', 'label' => 'Live System Status'],
+        ]],
+    ],
+];
 ?>
 <!doctype html>
 <html lang="en">
@@ -43,32 +102,10 @@ declare(strict_types=1);
     <symbol id="lb-forum" viewBox="0 0 24 24"><path d="M21 11.5a7.5 7.5 0 0 1-7.5 7.5H8l-5 3 1.3-4.6A8.5 8.5 0 1 1 21 11.5Z"/></symbol>
 </svg>
 
-<header class="site-header leaderboard-desktop-header">
-    <div class="container header-inner">
-        <a class="brand" href="/" aria-label="IronPulse home">
-            <span class="brand-mark"><svg class="icon"><use href="#lb-dumbbell"></use></svg></span>
-            <span class="brand-text"><strong>IRONPULSE</strong><small>TELEMETRY &amp; COMMUNITY</small></span>
-        </a>
-        <div class="header-status" aria-hidden="true"><svg class="icon"><use href="#lb-bars"></use></svg></div>
-        <nav class="main-nav" aria-label="Primary">
-            <a href="/#reviews">Gym<br>Reviews</a>
-            <a href="/gear">Gear<br>Inventory</a>
-            <a href="/forum">Community<br>Forum</a>
-            <a class="is-active" href="/leaderboard" aria-current="page">Leaderboard</a>
-            <a href="/submit-gym">Submit<br>Gym</a>
-        </nav>
-        <div class="header-actions">
-            <a class="icon-button" href="#athlete-standings" aria-label="Browse athlete standings"><svg class="icon"><use href="#lb-search"></use></svg></a>
-            <a class="avatar-button" href="/#profile" aria-label="Your profile"><svg class="icon"><use href="#lb-user"></use></svg></a>
-        </div>
-    </div>
-</header>
-
-<header class="leaderboard-mobile-header page-mobile-header">
-    <a class="leaderboard-mobile-brand page-mobile-brand" href="/" aria-label="IronPulse home"><svg class="icon"><use href="#lb-dumbbell"></use></svg><span>IRON<span>PULSE</span></span></a>
-    <span class="leaderboard-live page-live-badge"><i></i> LIVE</span>
-    <a class="avatar-button" href="/#profile" aria-label="Your profile"><svg class="icon"><use href="#lb-user"></use></svg></a>
-</header>
+<?php
+require dirname(__DIR__, 2) . '/components/desktop-header.html.php';
+require dirname(__DIR__, 2) . '/components/mobile-header.html.php';
+?>
 
 <main class="leaderboard-main">
     <div class="leaderboard-container">
@@ -204,21 +241,9 @@ declare(strict_types=1);
     </div>
 </main>
 
-<footer class="leaderboard-footer page-footer">
-    <div class="leaderboard-container leaderboard-footer-grid page-footer-grid">
-        <div class="leaderboard-footer-brand page-footer-brand"><a class="brand" href="/"><span class="brand-mark"><svg class="icon"><use href="#lb-dumbbell"></use></svg></span><span class="brand-text"><strong>IRONPULSE</strong></span></a><p>High-performance telemetry and facility intelligence for strength sports. Real-time rack occupancy, calibrated plate tracking, and authentic powerlifting and weightlifting community culture.</p><span><i></i> NETWORK: 142 GYMS ACTIVE &nbsp; &bull; &nbsp; TELEMETRY LATENCY: 18MS</span></div>
-        <div><strong>DISCOVERY</strong><a href="/">Gym Directory</a><a href="/gear">Calibrated Gear</a><a href="/leaderboard#top-sanctuaries">Facility Rankings</a><a href="/submit-gym">Submit Strength Hub</a></div>
-        <div><strong>COMMUNITY HUB</strong><a href="/forum">Discussion Boards</a><a href="/leaderboard#athlete-standings">Meet Preparation</a><a href="/forum#discussion-gear-review">Barbell Calibration Logs</a><a href="/leaderboard#spotter-karma">Coach Directory</a></div>
-        <div><strong>TELEMETRY &amp; LEGAL</strong><a href="/leaderboard">Terms of Service</a><a href="/leaderboard">Privacy Policy</a><a href="/gear#hardware-index">Hardware Specs &amp; API</a><a href="/leaderboard">Live System Status</a></div>
-    </div>
-    <div class="leaderboard-container leaderboard-footer-bottom page-footer-bottom"><span>&copy; 2025 IRONPULSE TELEMETRY CORP. &nbsp; &bull; &nbsp; ENGINEERED FOR STRENGTH</span><span>SYSTEM REVISION 2.4.9 &nbsp; &bull; &nbsp; <i></i> ALL NODES OPERATIONAL</span></div>
-</footer>
-
-<nav class="leaderboard-mobile-nav page-mobile-nav" aria-label="Mobile">
-    <a class="is-active" href="/leaderboard" aria-current="page"><svg class="icon"><use href="#lb-trophy"></use></svg><span>BOARD</span></a>
-    <a href="/forum"><svg class="icon"><use href="#lb-forum"></use></svg><span>FORUM</span></a>
-    <a href="/gear"><svg class="icon"><use href="#lb-dumbbell"></use></svg><span>GEAR</span></a>
-    <a href="/submit-gym"><svg class="icon"><use href="#lb-plus"></use></svg><span>SUBMIT</span></a>
-</nav>
+<?php
+require dirname(__DIR__, 2) . '/components/footer.html.php';
+require dirname(__DIR__, 2) . '/components/mobile-nav.html.php';
+?>
 </body>
 </html>
