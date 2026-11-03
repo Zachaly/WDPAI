@@ -52,7 +52,7 @@ declare(strict_types=1);
             <a href="/#reviews">Gym<br>Reviews</a>
             <a href="/gear">Gear<br>Inventory</a>
             <a class="is-active" href="/forum" aria-current="page">Community<br>Forum</a>
-            <a href="/#leaderboard">Leaderboard</a>
+            <a href="/leaderboard">Leaderboard</a>
             <a href="/#submit">Submit<br>Gym</a>
         </nav>
         <div class="header-actions">
@@ -247,7 +247,7 @@ declare(strict_types=1);
                         <li><b>3</b><span><strong>@DaveLiftz</strong><small>KNURL LAB AUDITOR</small></span><strong>512 REP</strong></li>
                         <li><b>4</b><span><strong>@TaraRacks</strong><small>COACH &bull; SEATTLE</small></span><strong>420 REP</strong></li>
                     </ol>
-                    <a class="forum-side-link" href="/#leaderboard">VIEW GLOBAL KARMA BOARD <svg class="icon"><use href="#forum-send"></use></svg></a>
+                    <a class="forum-side-link" href="/leaderboard#spotter-karma">VIEW GLOBAL KARMA BOARD <svg class="icon"><use href="#forum-send"></use></svg></a>
                 </section>
 
                 <section class="forum-side-card poll-card">
@@ -311,7 +311,7 @@ declare(strict_types=1);
     <div class="forum-container forum-footer-content">
         <div class="forum-footer-brand"><a class="brand" href="/"><span class="brand-mark"><svg class="icon"><use href="#forum-dumbbell"></use></svg></span><span class="brand-text"><strong>IRONPULSE</strong></span></a><p>High-performance telemetry and facility intelligence for strength sports. Real-time rack occupancy, calibrated plate tracking, and authentic powerlifting and weightlifting community culture.</p><span><i></i> NETWORK: 142 GYMS ACTIVE &nbsp; <b>&bull;</b> &nbsp; TELEMETRY LATENCY: 18MS</span></div>
         <div><strong>DISCOVERY</strong><a href="/">Gym Directory</a><a href="/gear">Calibrated Gear</a><a href="/#reviews">Facility Rankings</a><a href="/#submit">Submit Strength Hub</a></div>
-        <div><strong>COMMUNITY HUB</strong><a href="/forum">Discussion Boards</a><a href="/forum#discussion-meet-debrief">Meet Preparation</a><a href="/forum#discussion-gear-review">Barbell Calibration Logs</a><a href="/#leaderboard">Coach Directory</a></div>
+        <div><strong>COMMUNITY HUB</strong><a href="/forum">Discussion Boards</a><a href="/forum#discussion-meet-debrief">Meet Preparation</a><a href="/forum#discussion-gear-review">Barbell Calibration Logs</a><a href="/leaderboard#spotter-karma">Coach Directory</a></div>
         <div><strong>TELEMETRY &amp; LEGAL</strong><a href="/forum">Terms of Service</a><a href="/forum">Privacy Policy</a><a href="/gear#hardware-index">Hardware Specs &amp; API</a><a href="/gear">Live System Status</a></div>
     </div>
     <div class="forum-container forum-footer-bottom"><span>&copy; 2025 IRONPULSE TELEMETRY CORP. &nbsp; &bull; &nbsp; ENGINEERED FOR STRENGTH</span><span>SYSTEM REVISION 2.4.9 &nbsp; &bull; &nbsp; <i></i> ALL NODES OPERATIONAL</span></div>
@@ -319,7 +319,7 @@ declare(strict_types=1);
 
 <a class="forum-mobile-compose" href="#mobile-discussion-feed" aria-label="Start a discussion"><svg class="icon"><use href="#forum-plus"></use></svg><span>Post</span></a>
 <nav class="forum-mobile-nav" aria-label="Mobile">
-    <a href="/#leaderboard"><svg class="icon"><use href="#forum-trophy"></use></svg><span>BOARD</span></a>
+    <a href="/leaderboard"><svg class="icon"><use href="#forum-trophy"></use></svg><span>BOARD</span></a>
     <a class="is-active" href="/forum" aria-current="page"><svg class="icon"><use href="#forum-chat"></use></svg><span>FORUM</span></a>
     <a href="/gear"><svg class="icon"><use href="#forum-dumbbell"></use></svg><span>GEAR</span></a>
     <a href="/gear#audit-entry"><svg class="icon"><use href="#forum-pin"></use></svg><span>SUBMIT</span></a>

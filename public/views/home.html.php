@@ -49,7 +49,7 @@
                 <a class="is-active" href="#reviews">Gym<br>Reviews</a>
                 <a href="/gear">Gear<br>Inventory</a>
                 <a href="/forum">Community<br>Forum</a>
-                <a href="#leaderboard">Leaderboard</a>
+                <a href="/leaderboard">Leaderboard</a>
                 <a href="#submit">Submit<br>Gym</a>
             </nav>
             <div class="header-actions">
@@ -485,7 +485,7 @@
                             <li><span class="rank text-orange">#3</span><span class="spotter-avatar">DL</span><span class="spotter-name"><strong>@DaveLiftz</strong><small class="text-orange">EQUIPMENT AUDITOR</small></span><span class="spotter-count">27 Updates</span></li>
                             <li><span class="rank muted">#4</span><span class="spotter-avatar">TR</span><span class="spotter-name"><strong>@TaraRacks</strong><small class="muted">VERIFIED LIFTER</small></span><span class="spotter-count">19 Updates</span></li>
                         </ol>
-                        <a class="text-link text-link-center" href="#leaderboard">VIEW GLOBAL KARMA BOARD <svg class="icon"><use href="#i-arrow-right"></use></svg></a>
+                        <a class="text-link text-link-center" href="/leaderboard#spotter-karma">VIEW GLOBAL KARMA BOARD <svg class="icon"><use href="#i-arrow-right"></use></svg></a>
                     </div>
 
                     <div class="submit-banner" id="submit">
@@ -537,7 +537,7 @@
                 <h4>COMMUNITY HUB</h4>
                 <a href="#forum">Technique &amp; Dial-in</a>
                 <a href="#forum">Equipment Sourcing</a>
-                <a href="#leaderboard">PR Hall of Fame</a>
+                <a href="/leaderboard#athlete-standings">PR Hall of Fame</a>
                 <a href="#forum">Meet Sanctions &amp; Dates</a>
                 <a href="#forum">Chalk &amp; Bar Care Guides</a>
             </nav>
@@ -619,7 +619,7 @@
         <section class="m-section" id="m-board">
             <div class="m-section-head">
                 <div class="m-title"><svg class="icon icon-blue"><use href="#i-trophy"></use></svg><h2>Today's Benchmark</h2></div>
-                <a class="text-link" href="#m-board">FULL BOARD (1,482) <svg class="icon"><use href="#i-arrow-right"></use></svg></a>
+                <a class="text-link" href="/leaderboard">FULL BOARD (1,482) <svg class="icon"><use href="#i-arrow-right"></use></svg></a>
             </div>
             <article class="record-card">
                 <div class="record-head">
@@ -680,7 +680,7 @@
     </main>
 
     <nav class="m-nav" aria-label="Mobile">
-        <a href="#m-board"><svg class="icon"><use href="#i-trophy"></use></svg><span>BOARD</span></a>
+        <a href="/leaderboard"><svg class="icon"><use href="#i-trophy"></use></svg><span>BOARD</span></a>
         <a href="/forum"><svg class="icon"><use href="#i-comment"></use></svg><span>FORUM</span></a>
         <a href="/gear"><svg class="icon"><use href="#i-dumbbell"></use></svg><span>GEAR</span></a>
         <a href="#m-submit"><svg class="icon"><use href="#i-plus"></use></svg><span>SUBMIT</span></a>

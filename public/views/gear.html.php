@@ -49,7 +49,7 @@ declare(strict_types=1);
             <a href="/#reviews">Gym<br>Reviews</a>
             <a class="is-active" href="/gear" aria-current="page">Gear<br>Inventory</a>
             <a href="/forum">Community<br>Forum</a>
-            <a href="/#leaderboard">Leaderboard</a>
+            <a href="/leaderboard">Leaderboard</a>
             <a href="/#submit">Submit<br>Gym</a>
         </nav>
         <div class="header-actions">
@@ -287,14 +287,14 @@ declare(strict_types=1);
     <div class="gear-container gear-footer-top">
         <div class="gear-footer-brand"><a class="brand" href="/"><span class="brand-mark"><svg class="icon"><use href="#gear-dumbbell"></use></svg></span><span class="brand-text"><strong>IRONPULSE</strong></span></a><p>High-performance telemetry and facility intelligence for strength sports. Real-time rack occupancy, calibrated plate tracking, and authentic powerlifting &amp; weightlifting community culture.</p><span><i></i> NETWORK: 142 GYMS ACTIVE &nbsp; &bull; &nbsp; TELEMETRY LATENCY: 18MS</span></div>
         <div><strong>DISCOVERY</strong><a href="/">Gym Directory</a><a href="#hardware-index">Calibrated Gear</a><a href="#featured-manifests">Facility Rankings</a><a href="#audit-entry">Submit Strength Hub</a></div>
-        <div><strong>COMMUNITY HUB</strong><a href="/forum">Discussion Boards</a><a href="/forum#discussion-meet-debrief">Meet Preparation</a><a href="/forum#discussion-gear-review">Barbell Calibration Logs</a><a href="/#leaderboard">Coach Directory</a></div>
+        <div><strong>COMMUNITY HUB</strong><a href="/forum">Discussion Boards</a><a href="/forum#discussion-meet-debrief">Meet Preparation</a><a href="/forum#discussion-gear-review">Barbell Calibration Logs</a><a href="/leaderboard#spotter-karma">Coach Directory</a></div>
         <div><strong>TELEMETRY &amp; LEGAL</strong><a href="#audit-entry">Terms of Service</a><a href="#audit-entry">Privacy Policy</a><a href="#hardware-index">Hardware Specs &amp; API</a><a href="#featured-manifests">Live System Status</a></div>
     </div>
     <div class="gear-container gear-footer-bottom"><span>&copy; 2025 IRONPULSE TELEMETRY CORP. &nbsp; &bull; &nbsp; ENGINEERED FOR STRENGTH</span><span>SYSTEM REVISION 2.4.9 &nbsp; &bull; &nbsp; ALL NODES OPERATIONAL</span></div>
 </footer>
 
 <nav class="gear-mobile-nav" aria-label="Mobile">
-    <a href="/#leaderboard"><svg class="icon"><use href="#gear-board"></use></svg><span>BOARD</span></a>
+    <a href="/leaderboard"><svg class="icon"><use href="#gear-board"></use></svg><span>BOARD</span></a>
     <a href="/forum"><svg class="icon"><use href="#gear-forum"></use></svg><span>FORUM</span></a>
     <a class="is-active" href="/gear" aria-current="page"><svg class="icon"><use href="#gear-dumbbell"></use></svg><span>GEAR</span></a>
     <a href="#audit-entry"><svg class="icon"><use href="#gear-pin"></use></svg><span>SUBMIT</span></a>
