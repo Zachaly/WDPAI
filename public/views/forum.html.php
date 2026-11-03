@@ -14,6 +14,7 @@ declare(strict_types=1);
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/page-components.css">
     <link rel="stylesheet" href="/css/forum.css">
 </head>
 <body class="forum-page">
@@ -62,9 +63,9 @@ declare(strict_types=1);
     </div>
 </header>
 
-<header class="forum-mobile-header">
-    <a class="forum-mobile-brand" href="/" aria-label="IronPulse home"><svg class="icon"><use href="#forum-dumbbell"></use></svg><span>IRON<span>PULSE</span></span></a>
-    <span class="forum-live"><i></i> LIVE</span>
+<header class="forum-mobile-header page-mobile-header">
+    <a class="forum-mobile-brand page-mobile-brand" href="/" aria-label="IronPulse home"><svg class="icon"><use href="#forum-dumbbell"></use></svg><span>IRON<span>PULSE</span></span></a>
+    <span class="forum-live page-live-badge"><i></i> LIVE</span>
     <a class="avatar-button" href="/#profile" aria-label="Your profile"><svg class="icon"><use href="#forum-user"></use></svg></a>
 </header>
 
@@ -307,18 +308,18 @@ declare(strict_types=1);
     </div>
 </main>
 
-<footer class="forum-footer">
-    <div class="forum-container forum-footer-content">
-        <div class="forum-footer-brand"><a class="brand" href="/"><span class="brand-mark"><svg class="icon"><use href="#forum-dumbbell"></use></svg></span><span class="brand-text"><strong>IRONPULSE</strong></span></a><p>High-performance telemetry and facility intelligence for strength sports. Real-time rack occupancy, calibrated plate tracking, and authentic powerlifting and weightlifting community culture.</p><span><i></i> NETWORK: 142 GYMS ACTIVE &nbsp; <b>&bull;</b> &nbsp; TELEMETRY LATENCY: 18MS</span></div>
+<footer class="forum-footer page-footer">
+    <div class="forum-container forum-footer-content page-footer-grid">
+        <div class="forum-footer-brand page-footer-brand"><a class="brand" href="/"><span class="brand-mark"><svg class="icon"><use href="#forum-dumbbell"></use></svg></span><span class="brand-text"><strong>IRONPULSE</strong></span></a><p>High-performance telemetry and facility intelligence for strength sports. Real-time rack occupancy, calibrated plate tracking, and authentic powerlifting and weightlifting community culture.</p><span><i></i> NETWORK: 142 GYMS ACTIVE &nbsp; <b>&bull;</b> &nbsp; TELEMETRY LATENCY: 18MS</span></div>
         <div><strong>DISCOVERY</strong><a href="/">Gym Directory</a><a href="/gear">Calibrated Gear</a><a href="/#reviews">Facility Rankings</a><a href="/submit-gym">Submit Strength Hub</a></div>
         <div><strong>COMMUNITY HUB</strong><a href="/forum">Discussion Boards</a><a href="/forum#discussion-meet-debrief">Meet Preparation</a><a href="/forum#discussion-gear-review">Barbell Calibration Logs</a><a href="/leaderboard#spotter-karma">Coach Directory</a></div>
         <div><strong>TELEMETRY &amp; LEGAL</strong><a href="/forum">Terms of Service</a><a href="/forum">Privacy Policy</a><a href="/gear#hardware-index">Hardware Specs &amp; API</a><a href="/gear">Live System Status</a></div>
     </div>
-    <div class="forum-container forum-footer-bottom"><span>&copy; 2025 IRONPULSE TELEMETRY CORP. &nbsp; &bull; &nbsp; ENGINEERED FOR STRENGTH</span><span>SYSTEM REVISION 2.4.9 &nbsp; &bull; &nbsp; <i></i> ALL NODES OPERATIONAL</span></div>
+    <div class="forum-container forum-footer-bottom page-footer-bottom"><span>&copy; 2025 IRONPULSE TELEMETRY CORP. &nbsp; &bull; &nbsp; ENGINEERED FOR STRENGTH</span><span>SYSTEM REVISION 2.4.9 &nbsp; &bull; &nbsp; <i></i> ALL NODES OPERATIONAL</span></div>
 </footer>
 
 <a class="forum-mobile-compose" href="#mobile-discussion-feed" aria-label="Start a discussion"><svg class="icon"><use href="#forum-plus"></use></svg><span>Post</span></a>
-<nav class="forum-mobile-nav" aria-label="Mobile">
+<nav class="forum-mobile-nav page-mobile-nav" aria-label="Mobile">
     <a href="/leaderboard"><svg class="icon"><use href="#forum-trophy"></use></svg><span>BOARD</span></a>
     <a class="is-active" href="/forum" aria-current="page"><svg class="icon"><use href="#forum-chat"></use></svg><span>FORUM</span></a>
     <a href="/gear"><svg class="icon"><use href="#forum-dumbbell"></use></svg><span>GEAR</span></a>

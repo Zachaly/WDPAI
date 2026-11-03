@@ -14,6 +14,7 @@ declare(strict_types=1);
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/page-components.css">
     <link rel="stylesheet" href="/css/submit-gym.css">
 </head>
 <body class="submit-gym-page">
@@ -59,9 +60,9 @@ declare(strict_types=1);
     </div>
 </header>
 
-<header class="sg-mobile-header">
-    <a class="sg-mobile-brand" href="/" aria-label="IronPulse home"><svg class="icon"><use href="#sg-dumbbell"></use></svg><span>IRON<span>PULSE</span></span></a>
-    <span class="sg-live"><i></i> LIVE</span>
+<header class="sg-mobile-header page-mobile-header">
+    <a class="sg-mobile-brand page-mobile-brand" href="/" aria-label="IronPulse home"><svg class="icon"><use href="#sg-dumbbell"></use></svg><span>IRON<span>PULSE</span></span></a>
+    <span class="sg-live page-live-badge"><i></i> LIVE</span>
     <a class="avatar-button" href="/#profile" aria-label="Your profile"><svg class="icon"><use href="#sg-user"></use></svg></a>
 </header>
 
@@ -243,21 +244,21 @@ declare(strict_types=1);
     </div>
 </main>
 
-<footer class="sg-footer">
-    <div class="sg-container sg-footer-grid">
-        <div class="sg-footer-brand"><a href="/" class="sg-footer-logo"><span><svg class="icon"><use href="#sg-dumbbell"></use></svg></span>IRONPULSE</a><p>High-performance telemetry and facility intelligence for strength sports. Real-time rack occupancy, calibrated plate tracking, and authentic powerlifting and weightlifting community culture.</p><small><i></i> NETWORK: 142 GYMS ACTIVE &nbsp; &bull; &nbsp; TELEMETRY LATENCY: 18MS</small></div>
+<footer class="sg-footer page-footer">
+    <div class="sg-container sg-footer-grid page-footer-grid">
+        <div class="sg-footer-brand page-footer-brand"><a href="/" class="sg-footer-logo"><span><svg class="icon"><use href="#sg-dumbbell"></use></svg></span>IRONPULSE</a><p>High-performance telemetry and facility intelligence for strength sports. Real-time rack occupancy, calibrated plate tracking, and authentic powerlifting and weightlifting community culture.</p><small><i></i> NETWORK: 142 GYMS ACTIVE &nbsp; &bull; &nbsp; TELEMETRY LATENCY: 18MS</small></div>
         <div><b>DISCOVERY</b><a href="/">Gym Directory</a><a href="/gear">Calibrated Gear</a><a href="/leaderboard">Facility Rankings</a><a href="/submit-gym">Submit Strength Hub</a></div>
         <div><b>COMMUNITY HUB</b><a href="/forum">Discussion Boards</a><a href="/forum#discussion-meet-debrief">Meet Preparation</a><a href="/forum#discussion-gear-review">Barbell Calibration Logs</a><a href="/leaderboard#spotter-karma">Coach Directory</a></div>
         <div><b>TELEMETRY &amp; LEGAL</b><a href="/submit-gym">Terms of Service</a><a href="/submit-gym">Privacy Policy</a><a href="/gear#hardware-index">Hardware Specs &amp; API</a><a href="/leaderboard">Live System Status</a></div>
     </div>
-    <div class="sg-container sg-footer-bottom"><span>&copy; 2025 IRONPULSE TELEMETRY CORP. &nbsp; &bull; &nbsp; ENGINEERED FOR STRENGTH</span><span>SYSTEM REVISION 2.4.9 &nbsp; &bull; &nbsp; ALL NODES OPERATIONAL</span></div>
+    <div class="sg-container sg-footer-bottom page-footer-bottom"><span>&copy; 2025 IRONPULSE TELEMETRY CORP. &nbsp; &bull; &nbsp; ENGINEERED FOR STRENGTH</span><span>SYSTEM REVISION 2.4.9 &nbsp; &bull; &nbsp; ALL NODES OPERATIONAL</span></div>
 </footer>
 
 <div class="sg-mobile-action-bar">
     <button class="sg-save-button" type="button" aria-describedby="sg-preview-note">▣ Draft</button>
     <button class="sg-submit-button" type="button" aria-describedby="sg-preview-note"><svg class="icon"><use href="#sg-check"></use></svg>Submit Sanctuary <small>+250</small></button>
 </div>
-<nav class="sg-mobile-nav" aria-label="Mobile">
+<nav class="sg-mobile-nav page-mobile-nav" aria-label="Mobile">
     <a href="/leaderboard"><svg class="icon"><use href="#sg-trophy"></use></svg><span>BOARD</span></a>
     <a href="/forum"><svg class="icon"><use href="#sg-forum"></use></svg><span>FORUM</span></a>
     <a href="/gear"><svg class="icon"><use href="#sg-dumbbell"></use></svg><span>GEAR</span></a>

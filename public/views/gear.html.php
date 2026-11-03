@@ -14,6 +14,7 @@ declare(strict_types=1);
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/page-components.css">
     <link rel="stylesheet" href="/css/gear.css">
 </head>
 <body class="gear-page">
@@ -59,12 +60,12 @@ declare(strict_types=1);
     </div>
 </header>
 
-<header class="gear-mobile-header">
-    <a class="gear-mobile-brand" href="/" aria-label="IronPulse home">
+<header class="gear-mobile-header page-mobile-header">
+    <a class="gear-mobile-brand page-mobile-brand" href="/" aria-label="IronPulse home">
         <svg class="icon"><use href="#gear-dumbbell"></use></svg>
         <span>IRON<span>PULSE</span></span>
     </a>
-    <span class="gear-live"><i></i> LIVE</span>
+    <span class="gear-live page-live-badge"><i></i> LIVE</span>
     <a class="avatar-button" href="/#profile" aria-label="Your profile"><svg class="icon"><use href="#gear-user"></use></svg></a>
 </header>
 
@@ -283,17 +284,17 @@ declare(strict_types=1);
     </div>
 </main>
 
-<footer class="gear-footer">
-    <div class="gear-container gear-footer-top">
-        <div class="gear-footer-brand"><a class="brand" href="/"><span class="brand-mark"><svg class="icon"><use href="#gear-dumbbell"></use></svg></span><span class="brand-text"><strong>IRONPULSE</strong></span></a><p>High-performance telemetry and facility intelligence for strength sports. Real-time rack occupancy, calibrated plate tracking, and authentic powerlifting &amp; weightlifting community culture.</p><span><i></i> NETWORK: 142 GYMS ACTIVE &nbsp; &bull; &nbsp; TELEMETRY LATENCY: 18MS</span></div>
+<footer class="gear-footer page-footer">
+    <div class="gear-container gear-footer-top page-footer-grid">
+        <div class="gear-footer-brand page-footer-brand"><a class="brand" href="/"><span class="brand-mark"><svg class="icon"><use href="#gear-dumbbell"></use></svg></span><span class="brand-text"><strong>IRONPULSE</strong></span></a><p>High-performance telemetry and facility intelligence for strength sports. Real-time rack occupancy, calibrated plate tracking, and authentic powerlifting &amp; weightlifting community culture.</p><span><i></i> NETWORK: 142 GYMS ACTIVE &nbsp; &bull; &nbsp; TELEMETRY LATENCY: 18MS</span></div>
         <div><strong>DISCOVERY</strong><a href="/">Gym Directory</a><a href="#hardware-index">Calibrated Gear</a><a href="#featured-manifests">Facility Rankings</a><a href="/submit-gym">Submit Strength Hub</a></div>
         <div><strong>COMMUNITY HUB</strong><a href="/forum">Discussion Boards</a><a href="/forum#discussion-meet-debrief">Meet Preparation</a><a href="/forum#discussion-gear-review">Barbell Calibration Logs</a><a href="/leaderboard#spotter-karma">Coach Directory</a></div>
         <div><strong>TELEMETRY &amp; LEGAL</strong><a href="#audit-entry">Terms of Service</a><a href="#audit-entry">Privacy Policy</a><a href="#hardware-index">Hardware Specs &amp; API</a><a href="#featured-manifests">Live System Status</a></div>
     </div>
-    <div class="gear-container gear-footer-bottom"><span>&copy; 2025 IRONPULSE TELEMETRY CORP. &nbsp; &bull; &nbsp; ENGINEERED FOR STRENGTH</span><span>SYSTEM REVISION 2.4.9 &nbsp; &bull; &nbsp; ALL NODES OPERATIONAL</span></div>
+    <div class="gear-container gear-footer-bottom page-footer-bottom"><span>&copy; 2025 IRONPULSE TELEMETRY CORP. &nbsp; &bull; &nbsp; ENGINEERED FOR STRENGTH</span><span>SYSTEM REVISION 2.4.9 &nbsp; &bull; &nbsp; ALL NODES OPERATIONAL</span></div>
 </footer>
 
-<nav class="gear-mobile-nav" aria-label="Mobile">
+<nav class="gear-mobile-nav page-mobile-nav" aria-label="Mobile">
     <a href="/leaderboard"><svg class="icon"><use href="#gear-board"></use></svg><span>BOARD</span></a>
     <a href="/forum"><svg class="icon"><use href="#gear-forum"></use></svg><span>FORUM</span></a>
     <a class="is-active" href="/gear" aria-current="page"><svg class="icon"><use href="#gear-dumbbell"></use></svg><span>GEAR</span></a>

@@ -5,8 +5,13 @@
     --surface-container: #171f33;
     --surface-high: #222a3d;
     --surface-higher: #2d3449;
+    --surface-input: #0e172b;
+    --surface-glass: rgba(11, 19, 38, 0.96);
+    --surface-nav-glass: rgba(6, 14, 32, 0.97);
     --on-surface: #dae2fd;
     --on-surface-variant: #c4c9ac;
+    --text-strong: #f8fafc;
+    --on-accent: #283500;
     --primary-container: #c3f400;
     --on-primary-container: #556d00;
     --secondary: #7bd0ff;
@@ -15,6 +20,8 @@
     --red: #93000a;
     --red-soft: #ffdad6;
     --outline: rgba(196, 201, 172, 0.14);
+    --outline-soft: rgba(196, 201, 172, 0.1);
+    --outline-glass: rgba(196, 201, 172, 0.07);
     --outline-strong: rgba(196, 201, 172, 0.24);
     --font: "Plus Jakarta Sans", "Segoe UI", Arial, sans-serif;
     --radius: 12px;
@@ -550,7 +557,7 @@ img {
     place-items: center;
     border-radius: 999px;
     background: #fff;
-    color: #283500;
+    color: var(--on-accent);
 }
 
 .avatar-button .icon {
@@ -1156,7 +1163,7 @@ img {
     position: relative;
     height: 208px;
     padding: 8px;
-    background-color: var(--surface-highest, #2d3449);
+    background-color: var(--surface-higher);
     background-size: cover;
     background-position: center;
 }
