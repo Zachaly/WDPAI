@@ -99,8 +99,8 @@ $footerComponent = [
 </svg>
 
 <?php
-require dirname(__DIR__, 2) . '/components/desktop-header.html.php';
-require dirname(__DIR__, 2) . '/components/mobile-header.html.php';
+require __DIR__ . '/components/desktop-header.html.php';
+require __DIR__ . '/components/mobile-header.html.php';
 ?>
 
 <main class="gear-main">
@@ -319,8 +319,8 @@ require dirname(__DIR__, 2) . '/components/mobile-header.html.php';
 </main>
 
 <?php
-require dirname(__DIR__, 2) . '/components/footer.html.php';
-require dirname(__DIR__, 2) . '/components/mobile-nav.html.php';
+require __DIR__ . '/components/footer.html.php';
+require __DIR__ . '/components/mobile-nav.html.php';
 ?>
 </body>
 </html>

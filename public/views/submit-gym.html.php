@@ -99,8 +99,8 @@ $footerComponent = [
 </svg>
 
 <?php
-require dirname(__DIR__, 2) . '/components/desktop-header.html.php';
-require dirname(__DIR__, 2) . '/components/mobile-header.html.php';
+require __DIR__ . '/components/desktop-header.html.php';
+require __DIR__ . '/components/mobile-header.html.php';
 ?>
 
 <main class="sg-main">
@@ -282,14 +282,14 @@ require dirname(__DIR__, 2) . '/components/mobile-header.html.php';
 </main>
 
 <?php
-require dirname(__DIR__, 2) . '/components/footer.html.php';
+require __DIR__ . '/components/footer.html.php';
 ?>
 <div class="sg-mobile-action-bar">
     <button class="sg-save-button" type="button" aria-describedby="sg-preview-note">▣ Draft</button>
     <button class="sg-submit-button" type="button" aria-describedby="sg-preview-note"><svg class="icon"><use href="#sg-check"></use></svg>Submit Sanctuary <small>+250</small></button>
 </div>
 <?php
-require dirname(__DIR__, 2) . '/components/mobile-nav.html.php';
+require __DIR__ . '/components/mobile-nav.html.php';
 ?>
 </body>
 </html>

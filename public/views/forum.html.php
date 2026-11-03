@@ -102,8 +102,8 @@ $footerComponent = [
 </svg>
 
 <?php
-require dirname(__DIR__, 2) . '/components/desktop-header.html.php';
-require dirname(__DIR__, 2) . '/components/mobile-header.html.php';
+require __DIR__ . '/components/desktop-header.html.php';
+require __DIR__ . '/components/mobile-header.html.php';
 ?>
 
 <main class="forum-main">
@@ -346,11 +346,11 @@ require dirname(__DIR__, 2) . '/components/mobile-header.html.php';
 </main>
 
 <?php
-require dirname(__DIR__, 2) . '/components/footer.html.php';
+require __DIR__ . '/components/footer.html.php';
 ?>
 <a class="forum-mobile-compose" href="#mobile-discussion-feed" aria-label="Start a discussion"><svg class="icon"><use href="#forum-plus"></use></svg><span>Post</span></a>
 <?php
-require dirname(__DIR__, 2) . '/components/mobile-nav.html.php';
+require __DIR__ . '/components/mobile-nav.html.php';
 ?>
 </body>
 </html>
