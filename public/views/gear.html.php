@@ -50,7 +50,7 @@ declare(strict_types=1);
             <a class="is-active" href="/gear" aria-current="page">Gear<br>Inventory</a>
             <a href="/forum">Community<br>Forum</a>
             <a href="/leaderboard">Leaderboard</a>
-            <a href="/#submit">Submit<br>Gym</a>
+            <a href="/submit-gym">Submit<br>Gym</a>
         </nav>
         <div class="header-actions">
             <a class="icon-button" href="#hardware-index" aria-label="Browse hardware index"><svg class="icon"><use href="#gear-search"></use></svg></a>
@@ -286,7 +286,7 @@ declare(strict_types=1);
 <footer class="gear-footer">
     <div class="gear-container gear-footer-top">
         <div class="gear-footer-brand"><a class="brand" href="/"><span class="brand-mark"><svg class="icon"><use href="#gear-dumbbell"></use></svg></span><span class="brand-text"><strong>IRONPULSE</strong></span></a><p>High-performance telemetry and facility intelligence for strength sports. Real-time rack occupancy, calibrated plate tracking, and authentic powerlifting &amp; weightlifting community culture.</p><span><i></i> NETWORK: 142 GYMS ACTIVE &nbsp; &bull; &nbsp; TELEMETRY LATENCY: 18MS</span></div>
-        <div><strong>DISCOVERY</strong><a href="/">Gym Directory</a><a href="#hardware-index">Calibrated Gear</a><a href="#featured-manifests">Facility Rankings</a><a href="#audit-entry">Submit Strength Hub</a></div>
+        <div><strong>DISCOVERY</strong><a href="/">Gym Directory</a><a href="#hardware-index">Calibrated Gear</a><a href="#featured-manifests">Facility Rankings</a><a href="/submit-gym">Submit Strength Hub</a></div>
         <div><strong>COMMUNITY HUB</strong><a href="/forum">Discussion Boards</a><a href="/forum#discussion-meet-debrief">Meet Preparation</a><a href="/forum#discussion-gear-review">Barbell Calibration Logs</a><a href="/leaderboard#spotter-karma">Coach Directory</a></div>
         <div><strong>TELEMETRY &amp; LEGAL</strong><a href="#audit-entry">Terms of Service</a><a href="#audit-entry">Privacy Policy</a><a href="#hardware-index">Hardware Specs &amp; API</a><a href="#featured-manifests">Live System Status</a></div>
     </div>
@@ -297,7 +297,7 @@ declare(strict_types=1);
     <a href="/leaderboard"><svg class="icon"><use href="#gear-board"></use></svg><span>BOARD</span></a>
     <a href="/forum"><svg class="icon"><use href="#gear-forum"></use></svg><span>FORUM</span></a>
     <a class="is-active" href="/gear" aria-current="page"><svg class="icon"><use href="#gear-dumbbell"></use></svg><span>GEAR</span></a>
-    <a href="#audit-entry"><svg class="icon"><use href="#gear-pin"></use></svg><span>SUBMIT</span></a>
+    <a href="/submit-gym"><svg class="icon"><use href="#gear-pin"></use></svg><span>SUBMIT</span></a>
 </nav>
 </body>
 </html>

@@ -50,7 +50,7 @@
                 <a href="/gear">Gear<br>Inventory</a>
                 <a href="/forum">Community<br>Forum</a>
                 <a href="/leaderboard">Leaderboard</a>
-                <a href="#submit">Submit<br>Gym</a>
+                <a href="/submit-gym">Submit<br>Gym</a>
             </nav>
             <div class="header-actions">
                 <a class="icon-button" href="#leaderboard" aria-label="Saved bookmarks"><svg class="icon"><use href="#i-bookmark"></use></svg></a>
@@ -492,7 +492,7 @@
                         <span class="eyebrow-text text-lime"><svg class="icon"><use href="#i-pin"></use></svg>EXPAND THE NETWORK</span>
                         <h3>Know a hardcore powerlifting bunker not on IronPulse?</h3>
                         <p>Submit local specialty facilities, underground weightlifting basements, or keycard strength clubs. We dispatch an auditor to verify plates and rack capacity.</p>
-                        <a class="primary-button" href="#submit">SUBMIT AN UNLISTED GYM</a>
+                        <a class="primary-button" href="/submit-gym">SUBMIT AN UNLISTED GYM</a>
                     </div>
 
                     <div class="pr-widget">
@@ -665,7 +665,7 @@
                 <div class="m-title"><svg class="icon icon-lime"><use href="#i-shield"></use></svg><h2>Auditor Protocol</h2></div>
             </div>
             <div class="m-action-grid">
-                <a class="m-action-card" href="#m-submit">
+                <a class="m-action-card" href="/submit-gym">
                     <div class="m-action-top"><span class="m-action-icon"><svg class="icon"><use href="#i-plus"></use></svg></span><span class="text-lime">+250 XP</span></div>
                     <strong>Submit Armory</strong>
                     <span>Audit underground gym equipment &amp; racks</span>
@@ -683,7 +683,7 @@
         <a href="/leaderboard"><svg class="icon"><use href="#i-trophy"></use></svg><span>BOARD</span></a>
         <a href="/forum"><svg class="icon"><use href="#i-comment"></use></svg><span>FORUM</span></a>
         <a href="/gear"><svg class="icon"><use href="#i-dumbbell"></use></svg><span>GEAR</span></a>
-        <a href="#m-submit"><svg class="icon"><use href="#i-plus"></use></svg><span>SUBMIT</span></a>
+        <a href="/submit-gym"><svg class="icon"><use href="#i-plus"></use></svg><span>SUBMIT</span></a>
     </nav>
 </div>
 </body>

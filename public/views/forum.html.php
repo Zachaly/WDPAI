@@ -53,7 +53,7 @@ declare(strict_types=1);
             <a href="/gear">Gear<br>Inventory</a>
             <a class="is-active" href="/forum" aria-current="page">Community<br>Forum</a>
             <a href="/leaderboard">Leaderboard</a>
-            <a href="/#submit">Submit<br>Gym</a>
+            <a href="/submit-gym">Submit<br>Gym</a>
         </nav>
         <div class="header-actions">
             <a class="icon-button" href="#discussion-feed" aria-label="Find a discussion"><svg class="icon"><use href="#forum-search"></use></svg></a>
@@ -310,7 +310,7 @@ declare(strict_types=1);
 <footer class="forum-footer">
     <div class="forum-container forum-footer-content">
         <div class="forum-footer-brand"><a class="brand" href="/"><span class="brand-mark"><svg class="icon"><use href="#forum-dumbbell"></use></svg></span><span class="brand-text"><strong>IRONPULSE</strong></span></a><p>High-performance telemetry and facility intelligence for strength sports. Real-time rack occupancy, calibrated plate tracking, and authentic powerlifting and weightlifting community culture.</p><span><i></i> NETWORK: 142 GYMS ACTIVE &nbsp; <b>&bull;</b> &nbsp; TELEMETRY LATENCY: 18MS</span></div>
-        <div><strong>DISCOVERY</strong><a href="/">Gym Directory</a><a href="/gear">Calibrated Gear</a><a href="/#reviews">Facility Rankings</a><a href="/#submit">Submit Strength Hub</a></div>
+        <div><strong>DISCOVERY</strong><a href="/">Gym Directory</a><a href="/gear">Calibrated Gear</a><a href="/#reviews">Facility Rankings</a><a href="/submit-gym">Submit Strength Hub</a></div>
         <div><strong>COMMUNITY HUB</strong><a href="/forum">Discussion Boards</a><a href="/forum#discussion-meet-debrief">Meet Preparation</a><a href="/forum#discussion-gear-review">Barbell Calibration Logs</a><a href="/leaderboard#spotter-karma">Coach Directory</a></div>
         <div><strong>TELEMETRY &amp; LEGAL</strong><a href="/forum">Terms of Service</a><a href="/forum">Privacy Policy</a><a href="/gear#hardware-index">Hardware Specs &amp; API</a><a href="/gear">Live System Status</a></div>
     </div>
@@ -322,7 +322,7 @@ declare(strict_types=1);
     <a href="/leaderboard"><svg class="icon"><use href="#forum-trophy"></use></svg><span>BOARD</span></a>
     <a class="is-active" href="/forum" aria-current="page"><svg class="icon"><use href="#forum-chat"></use></svg><span>FORUM</span></a>
     <a href="/gear"><svg class="icon"><use href="#forum-dumbbell"></use></svg><span>GEAR</span></a>
-    <a href="/gear#audit-entry"><svg class="icon"><use href="#forum-pin"></use></svg><span>SUBMIT</span></a>
+    <a href="/submit-gym"><svg class="icon"><use href="#forum-pin"></use></svg><span>SUBMIT</span></a>
 </nav>
 </body>
 </html>
