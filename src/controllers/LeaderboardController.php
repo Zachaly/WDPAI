@@ -10,6 +10,9 @@ final class LeaderboardController extends AppController
     {
         $this->render('leaderboard', [
             'pageTitle' => 'Global Leaderboards — IronPulse',
+            'pageDescription' => 'Verified powerlifting totals, spotter karma, and strength sanctuary rankings from the IronPulse community.',
+            'bodyClass' => 'leaderboard-page',
+            'pageStylesheets' => ['/css/page-components.css', '/css/leaderboard.css'],
         ]);
     }
 }

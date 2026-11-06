@@ -75,7 +75,7 @@
     padding: 0 6px;
     border-radius: 4px;
     background: var(--surface-low);
-    color: #d3d9e7;
+    color: var(--on-surface);
     font-size: 8px;
     line-height: 12px;
     font-weight: 800;
@@ -147,7 +147,7 @@
 
 .forum-search {
     background: var(--surface-high);
-    color: #d9e0ef;
+    color: var(--on-surface);
     font-size: 12px;
     font-weight: 600;
 }
@@ -228,7 +228,7 @@
 }
 
 .forum-categories a small {
-    color: #8e9379;
+    color: var(--on-surface-variant);
     font-size: 7px;
 }
 
@@ -400,8 +400,8 @@
     flex: none;
     place-items: center;
     border-radius: 50%;
-    background: #354052;
-    color: #e0e6f4;
+    background: var(--surface-higher);
+    color: var(--on-surface);
     font-size: 8px;
     line-height: 12px;
     font-weight: 700;
@@ -427,7 +427,7 @@
     min-width: 0;
     flex-direction: column;
     gap: 1px;
-    color: #f4f6fb;
+    color: var(--text-strong);
     font-size: 9px;
     line-height: 12px;
 }
@@ -529,7 +529,7 @@
 
 .forum-thread h2 {
     margin: 4px 0 5px;
-    color: #f7f9fe;
+    color: var(--text-strong);
     font-size: 16px;
     line-height: 21px;
     font-weight: 600;
@@ -633,7 +633,7 @@
     padding: 2px 4px;
     border-radius: 3px;
     background: var(--surface-high);
-    color: #e6ebf7;
+    color: var(--on-surface);
 }
 
 .forum-thread-featured .forum-excerpt {
@@ -665,7 +665,7 @@
 }
 
 .forum-thread-footer > span b {
-    color: #eef2fa;
+    color: var(--text-strong);
 }
 
 .forum-thread-footer .forum-velocity {
@@ -739,7 +739,7 @@
 }
 
 .grip-score > strong {
-    color: #f7f9fe;
+    color: var(--text-strong);
     font-size: 17px;
     line-height: 20px;
 }
@@ -779,7 +779,7 @@
 }
 
 .forum-lab-report small {
-    color: #8e9379;
+    color: var(--on-surface-variant);
     font-size: 7px;
 }
 
@@ -823,7 +823,7 @@
 }
 
 .meet-stats strong {
-    color: #f7f9fe;
+    color: var(--text-strong);
     font-size: 12px;
 }
 
@@ -861,7 +861,7 @@
     padding: 0 10px;
     border-radius: 6px;
     background: var(--surface-high);
-    color: #e5eaf5;
+    color: var(--on-surface);
     font-size: 10px;
     font-weight: 600;
     letter-spacing: 0;
@@ -895,7 +895,7 @@
     display: flex;
     align-items: center;
     gap: 5px;
-    color: #f7f9fe;
+    color: var(--text-strong);
     font-size: 12px;
     line-height: 17px;
     font-weight: 600;
@@ -1002,7 +1002,7 @@
 }
 
 .spotter-list li > span strong {
-    color: #f4f6fb;
+    color: var(--text-strong);
     font-size: 9px;
     line-height: 12px;
 }
@@ -1049,7 +1049,7 @@
 
 .poll-card > p {
     margin-bottom: 8px;
-    color: #e5eaf5;
+    color: var(--on-surface);
     font-size: 9px;
     line-height: 14px;
 }
@@ -1146,7 +1146,7 @@
 
 .meet-card article h3 {
     margin-top: 3px;
-    color: #f5f7fc;
+    color: var(--text-strong);
     font-size: 9px;
     line-height: 13px;
 }
@@ -1188,7 +1188,7 @@
     align-items: center;
     gap: 5px;
     margin-bottom: 8px;
-    color: #f7f9fe;
+    color: var(--text-strong);
     font-size: 12px;
     line-height: 17px;
     font-weight: 600;
@@ -1219,7 +1219,7 @@
 }
 
 .rules-card li strong {
-    color: #e5eaf5;
+    color: var(--on-surface);
 }
 
 .forum-footer {
@@ -1390,7 +1390,7 @@
         border: 1px solid rgba(255, 255, 255, 0.025);
         border-radius: 10px;
         background: var(--surface-container);
-        color: #929cb0;
+        color: var(--on-surface-variant);
         font-size: 11px;
     }
 
@@ -1566,7 +1566,7 @@
 
     .mobile-thread h2 {
         margin: 9px 0;
-        color: #f7f9fe;
+        color: var(--text-strong);
         font-size: 18px;
         line-height: 24px;
         font-weight: 600;
@@ -1634,7 +1634,7 @@
         padding: 2px 4px;
         border-radius: 3px;
         background: var(--surface-high);
-        color: #f5f7fc;
+        color: var(--text-strong);
         font-style: normal;
     }
 
@@ -1752,7 +1752,7 @@
     }
 
     .mobile-meet-stats strong {
-        color: #f5f7fc;
+        color: var(--text-strong);
         font-size: 14px;
         line-height: 19px;
     }

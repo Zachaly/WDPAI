@@ -31,7 +31,7 @@
     gap: 16px;
     min-height: 27px;
     border-bottom: 1px solid rgba(255, 255, 255, 0.035);
-    color: #d3d9e7;
+    color: var(--on-surface);
     font-size: 8px;
     line-height: 12px;
 }
@@ -147,7 +147,7 @@
     padding: 0 10px;
     border-radius: 5px;
     background: var(--surface-high);
-    color: #e5eaf5;
+    color: var(--on-surface);
     font-size: 10px;
     font-weight: 600;
     white-space: nowrap;
@@ -193,7 +193,7 @@
 .leaderboard-metrics article > strong {
     display: block;
     margin-top: 4px;
-    color: #f7f9fe;
+    color: var(--text-strong);
     font-size: 20px;
     line-height: 24px;
     font-weight: 800;
@@ -316,7 +316,7 @@
 
 .leaderboard-filter-search {
     overflow: hidden;
-    color: #8e9379;
+    color: var(--on-surface-variant);
 }
 
 .leaderboard-filter-search .icon {
@@ -373,7 +373,7 @@
     display: flex;
     align-items: center;
     gap: 4px;
-    color: #f7f9fe;
+    color: var(--text-strong);
     font-size: 13px;
     line-height: 18px;
     font-weight: 700;
@@ -448,8 +448,8 @@
 }
 
 .podium-bronze .podium-card-label > strong {
-    background: #354052;
-    color: #d4dbea;
+    background: var(--surface-higher);
+    color: var(--on-surface);
 }
 
 .podium-card-label > span {
@@ -517,7 +517,7 @@
     align-items: center;
     gap: 3px;
     overflow: hidden;
-    color: #f7f9fe;
+    color: var(--text-strong);
     font-size: 12px;
     line-height: 16px;
     font-weight: 600;
@@ -572,7 +572,7 @@
 }
 
 .podium-lifts strong {
-    color: #f7f9fe;
+    color: var(--text-strong);
     font-size: 10px;
     line-height: 14px;
 }
@@ -623,7 +623,7 @@
 }
 
 .podium-total strong {
-    color: #f7f9fe;
+    color: var(--text-strong);
     font-size: 16px;
     line-height: 20px;
     letter-spacing: -0.02em;
@@ -652,7 +652,7 @@
 }
 
 .leaderboard-section-heading h2 {
-    color: #f7f9fe;
+    color: var(--text-strong);
     font-size: 14px;
     line-height: 19px;
     font-weight: 700;
@@ -727,7 +727,7 @@
 
 .standings-table td:first-child {
     width: 34px;
-    color: #f1f4fb;
+    color: var(--text-strong);
 }
 
 .standings-table td:first-child strong {
@@ -765,7 +765,7 @@
 
 .standings-table td:nth-child(7) strong,
 .standings-table td:nth-child(8) strong {
-    color: #f3f6fd;
+    color: var(--text-strong);
     font-size: 11px;
 }
 
@@ -774,7 +774,7 @@
 }
 
 .standings-table td:nth-child(9) {
-    color: #d4daea;
+    color: var(--on-surface);
 }
 
 .standings-table td:nth-child(9) small {
@@ -801,7 +801,7 @@
     place-items: center;
     border-radius: 4px;
     background: var(--surface-high);
-    color: #dce3f2;
+    color: var(--on-surface);
     font-size: 9px;
     font-weight: 800;
     vertical-align: middle;
@@ -818,7 +818,7 @@
     display: inline-flex;
     align-items: center;
     gap: 3px;
-    color: #f4f6fb;
+    color: var(--text-strong);
     font-size: 9px;
 }
 
@@ -847,7 +847,7 @@
 }
 
 .standings-foot strong {
-    color: #eef2fa;
+    color: var(--text-strong);
 }
 
 .standings-foot nav {
@@ -865,12 +865,12 @@
     place-items: center;
     border-radius: 4px;
     background: var(--surface-high);
-    color: #dce3f2;
+    color: var(--on-surface);
     font-size: 8px;
 }
 
 .standings-foot nav a:first-child {
-    color: #8e9379;
+    color: var(--on-surface-variant);
 }
 
 .standings-foot nav a.is-active {
@@ -916,7 +916,7 @@
     display: flex;
     align-items: center;
     gap: 4px;
-    color: #f7f9fe;
+    color: var(--text-strong);
     font-size: 12px;
     line-height: 16px;
     font-weight: 700;
@@ -1006,7 +1006,7 @@
     align-items: center;
     gap: 3px;
     overflow: hidden;
-    color: #f6f8fd;
+    color: var(--text-strong);
     font-size: 9px;
     line-height: 12px;
     text-overflow: ellipsis;
@@ -1030,7 +1030,7 @@
 
 .karma-list li > strong {
     flex: none;
-    color: #f4f6fb;
+    color: var(--text-strong);
     font-size: 13px;
     line-height: 16px;
 }
@@ -1063,7 +1063,7 @@
 }
 
 .karma-note p strong {
-    color: #e5eaf5;
+    color: var(--on-surface);
 }
 
 .sanctuary-list li {
@@ -1084,7 +1084,7 @@
     place-items: center;
     border-radius: 4px;
     background: var(--surface-high);
-    color: #dce3f2;
+    color: var(--on-surface);
     font-size: 9px;
 }
 
@@ -1105,7 +1105,7 @@
     align-items: center;
     gap: 3px;
     overflow: hidden;
-    color: #f4f6fb;
+    color: var(--text-strong);
     font-size: 9px;
     line-height: 12px;
     text-overflow: ellipsis;
@@ -1143,7 +1143,7 @@
 }
 
 .sanctuary-list li:nth-child(n + 2) .sanctuary-score > strong {
-    color: #dce3f2;
+    color: var(--on-surface);
 }
 
 .sanctuary-score > small {
@@ -1162,7 +1162,7 @@
     margin-top: 7px;
     border-radius: 4px;
     background: var(--surface-high);
-    color: #e5eaf5;
+    color: var(--on-surface);
     font-size: 8px;
     font-weight: 600;
 }
@@ -1191,7 +1191,7 @@
 
 .leaderboard-claim h2 {
     margin-top: 3px;
-    color: #f7f9fe;
+    color: var(--text-strong);
     font-size: 21px;
     line-height: 26px;
     font-weight: 800;
@@ -1472,7 +1472,7 @@
         align-items: center;
         gap: 3px;
         overflow: hidden;
-        color: #f7f9fe;
+        color: var(--text-strong);
         font-size: 10px;
         line-height: 14px;
         text-overflow: ellipsis;
@@ -1496,7 +1496,7 @@
     }
 
     .mobile-athlete-card > b {
-        color: #f7f9fe;
+        color: var(--text-strong);
         font-size: 13px;
         white-space: nowrap;
     }
@@ -1540,7 +1540,7 @@
         flex-direction: column;
         align-items: center;
         gap: 1px;
-        color: #e4e9f4;
+        color: var(--text-strong);
         font-size: 9px;
         line-height: 12px;
         white-space: nowrap;

@@ -1,4 +1,6 @@
-:root {
+:root,
+:root[data-theme="dark"] {
+    color-scheme: dark;
     --surface: #0b1326;
     --surface-lowest: #060e20;
     --surface-low: #131b2e;
@@ -25,6 +27,40 @@
     --outline-strong: rgba(196, 201, 172, 0.24);
     --font: "Plus Jakarta Sans", "Segoe UI", Arial, sans-serif;
     --radius: 12px;
+}
+
+:root[data-theme="light"] {
+    color-scheme: light;
+    --surface: #f2f4ef;
+    --surface-lowest: #e5e9e1;
+    --surface-low: #ffffff;
+    --surface-container: #ffffff;
+    --surface-high: #e9ede6;
+    --surface-higher: #dce3d8;
+    --surface-input: #ffffff;
+    --surface-glass: rgba(248, 250, 246, 0.96);
+    --surface-nav-glass: rgba(248, 250, 246, 0.97);
+    --on-surface: #283329;
+    --on-surface-variant: #596657;
+    --text-strong: #172219;
+    --on-accent: #283500;
+    --primary-container: #587700;
+    --on-primary-container: #435d00;
+    --secondary: #00658a;
+    --on-secondary: #ffffff;
+    --orange: #9a4f00;
+    --red: #ba1b1b;
+    --red-soft: #93000a;
+    --outline: rgba(58, 72, 53, 0.16);
+    --outline-soft: rgba(58, 72, 53, 0.11);
+    --outline-glass: rgba(58, 72, 53, 0.1);
+    --outline-strong: rgba(58, 72, 53, 0.25);
+}
+
+:root[data-theme="light"] .media-badge,
+:root[data-theme="light"] .media-caption h3,
+:root[data-theme="light"] .author-avatar-steel {
+    color: #fff;
 }
 
 *,
@@ -294,7 +330,7 @@ img {
     border: 1px solid var(--outline);
     border-radius: 8px;
     background: var(--surface-high);
-    color: #fff;
+    color: var(--text-strong);
     font-size: 16px;
     line-height: 24px;
     font-weight: 600;
@@ -371,7 +407,7 @@ img {
 
 .chip:hover {
     background: var(--surface-high);
-    color: #fff;
+    color: var(--text-strong);
 }
 
 .chip.is-active {
@@ -464,7 +500,7 @@ img {
 }
 
 .brand-text strong {
-    color: #fff;
+    color: var(--text-strong);
     font-size: 20px;
     line-height: 20px;
     font-weight: 600;
@@ -519,7 +555,7 @@ img {
 }
 
 .main-nav a:hover {
-    color: #fff;
+    color: var(--text-strong);
     background: rgba(255, 255, 255, 0.04);
 }
 
@@ -533,6 +569,48 @@ img {
     align-items: center;
     gap: 8px;
     margin-left: 8px;
+}
+
+.theme-toggle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    min-height: 34px;
+    padding: 0 10px;
+    border: 1px solid var(--outline-strong);
+    border-radius: 999px;
+    background: var(--surface-high);
+    color: var(--on-surface);
+    font-size: 11px;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+.theme-toggle:hover {
+    background: var(--surface-higher);
+}
+
+.theme-toggle .icon {
+    width: 15px;
+    height: 15px;
+}
+
+.theme-icon-dark {
+    display: none;
+}
+
+:root[data-theme="light"] .theme-icon-light {
+    display: none;
+}
+
+:root[data-theme="light"] .theme-icon-dark {
+    display: block;
+}
+
+.theme-toggle:focus-visible {
+    outline: 2px solid var(--secondary);
+    outline-offset: 3px;
 }
 
 .icon-button {
@@ -608,7 +686,7 @@ img {
 }
 
 .telemetry-stats strong {
-    color: #fff;
+    color: var(--text-strong);
     font-size: 13px;
     font-weight: 800;
 }
@@ -659,7 +737,7 @@ img {
 
 .hero-content h1 {
     margin: 16px 0;
-    color: #fff;
+    color: var(--text-strong);
     font-size: 56px;
     line-height: 56px;
     font-weight: 800;
@@ -708,7 +786,7 @@ img {
 .stat-value {
     display: block;
     margin-top: 0;
-    color: #fff;
+    color: var(--text-strong);
     font-size: 28px;
     line-height: 35px;
     font-weight: 800;
@@ -743,7 +821,7 @@ img {
     display: flex;
     align-items: center;
     gap: 8px;
-    color: #fff;
+    color: var(--text-strong);
     font-size: 20px;
     line-height: 28px;
     font-weight: 600;
@@ -826,7 +904,7 @@ img {
     min-width: 0;
     border: 0;
     background: transparent;
-    color: #fff;
+    color: var(--text-strong);
     font-size: 14px;
     line-height: 22px;
     outline: none;
@@ -928,7 +1006,7 @@ img {
 .section-head h2,
 .forum-head h2 {
     margin: 4px 0;
-    color: #fff;
+    color: var(--text-strong);
     font-size: 32px;
     line-height: 40px;
     font-weight: 700;
@@ -1001,7 +1079,7 @@ img {
 
 .facility-head h3 {
     margin-top: 6px;
-    color: #fff;
+    color: var(--text-strong);
     font-size: 20px;
     line-height: 28px;
     font-weight: 600;
@@ -1087,7 +1165,7 @@ img {
 .equipment-tile strong {
     display: block;
     margin-top: 0;
-    color: #fff;
+    color: var(--text-strong);
     font-size: 16px;
     line-height: 24px;
     font-weight: 700;
@@ -1192,7 +1270,7 @@ img {
     border-radius: 4px;
     background: rgba(11, 19, 38, 0.82);
     backdrop-filter: blur(8px);
-    color: #fff;
+    color: var(--text-strong);
     font-size: 11px;
     line-height: 16px;
     font-weight: 700;
@@ -1233,7 +1311,7 @@ img {
 
 .media-caption h3 {
     margin-top: 4px;
-    color: #fff;
+    color: var(--text-strong);
     font-size: 24px;
     line-height: 32px;
     font-weight: 700;
@@ -1368,7 +1446,7 @@ img {
 
 .reviews-footer-copy strong {
     display: block;
-    color: #fff;
+    color: var(--text-strong);
     font-size: 20px;
     line-height: 28px;
     font-weight: 600;
@@ -1476,7 +1554,7 @@ img {
 }
 
 .vote strong {
-    color: #fff;
+    color: var(--text-strong);
     font-size: 14px;
     line-height: 22px;
     font-weight: 700;
@@ -1504,7 +1582,7 @@ img {
 }
 
 .thread-body h3 a {
-    color: #fff;
+    color: var(--text-strong);
 }
 
 .thread-body h3 a:hover {
@@ -1558,7 +1636,7 @@ img {
 
 .author-avatar-steel {
     background: var(--surface-high);
-    color: #fff;
+    color: var(--text-strong);
 }
 
 .author-avatar-lime {
@@ -1610,7 +1688,7 @@ img {
 
 .leaderboard-head h3 {
     margin-top: 2px;
-    color: #fff;
+    color: var(--text-strong);
     font-size: 20px;
     line-height: 28px;
     font-weight: 600;
@@ -1655,7 +1733,7 @@ img {
     place-items: center;
     border-radius: 999px;
     background: var(--surface-high);
-    color: #fff;
+    color: var(--text-strong);
     font-size: 12px;
     line-height: 18px;
     font-weight: 700;
@@ -1668,7 +1746,7 @@ img {
 }
 
 .spotter-name strong {
-    color: #fff;
+    color: var(--text-strong);
     font-size: 14px;
     line-height: 20px;
     font-weight: 700;
@@ -1684,7 +1762,7 @@ img {
 }
 
 .spotter-count {
-    color: #fff;
+    color: var(--text-strong);
     font-size: 12px;
     line-height: 18px;
     font-weight: 700;
@@ -1710,7 +1788,7 @@ img {
 
 .submit-banner h3 {
     margin-top: 12px;
-    color: #fff;
+    color: var(--text-strong);
     font-size: 20px;
     line-height: 27.5px;
     font-weight: 600;
@@ -1765,7 +1843,7 @@ img {
 }
 
 .pr-value strong {
-    color: #fff;
+    color: var(--text-strong);
     font-size: 28px;
     line-height: 32px;
     font-weight: 800;
@@ -1818,7 +1896,7 @@ img {
 }
 
 .footer-status-right strong {
-    color: #fff;
+    color: var(--text-strong);
     font-size: 12px;
     font-weight: 400;
     margin-right: 4px;
@@ -1845,7 +1923,7 @@ img {
 }
 
 .footer-col h4 {
-    color: #fff;
+    color: var(--text-strong);
     font-size: 11px;
     line-height: 16px;
     font-weight: 700;
@@ -1871,7 +1949,7 @@ img {
 }
 
 .footer-col a:hover {
-    color: #fff;
+    color: var(--text-strong);
 }
 
 .footer-bottom {
@@ -1891,7 +1969,7 @@ img {
 }
 
 .footer-bottom a:hover {
-    color: #fff;
+    color: var(--text-strong);
 }
 
 /* ---------- tablet ---------- */
@@ -2004,8 +2082,8 @@ img {
         align-items: center;
         gap: 12px;
         padding: 0 16px;
-        background: rgba(11, 19, 38, 0.96);
-        border-bottom: 1px solid rgba(196, 201, 172, 0.06);
+        background: var(--surface-glass);
+        border-bottom: 1px solid var(--outline-glass);
         backdrop-filter: blur(16px);
     }
 
@@ -2035,6 +2113,23 @@ img {
     .m-header .avatar-button {
         width: 32px;
         height: 32px;
+    }
+
+    .m-header .theme-toggle {
+        width: 32px;
+        min-height: 32px;
+        padding: 0;
+    }
+
+    .m-header .theme-toggle-label,
+    .page-mobile-header .theme-toggle-label {
+        display: none;
+    }
+
+    .page-mobile-header .theme-toggle {
+        width: 32px;
+        min-height: 32px;
+        padding: 0;
     }
 
     .live-badge {
@@ -2103,7 +2198,7 @@ img {
 
     .m-hero h1 {
         margin: 16px 0 10px;
-        color: #fff;
+        color: var(--text-strong);
         font-size: 26px;
         line-height: 34px;
         font-weight: 700;
@@ -2172,7 +2267,7 @@ img {
         min-width: 0;
         border: 0;
         background: transparent;
-        color: #fff;
+        color: var(--text-strong);
         font-size: 14px;
         line-height: 18px;
         outline: none;
@@ -2217,7 +2312,7 @@ img {
     }
 
     .m-stat-strip strong {
-        color: #fff;
+        color: var(--text-strong);
         font-size: 20px;
         line-height: 28px;
         font-weight: 600;
@@ -2260,7 +2355,7 @@ img {
     }
 
     .m-title h2 {
-        color: #fff;
+        color: var(--text-strong);
         font-size: 20px;
         line-height: 28px;
         font-weight: 600;
@@ -2351,7 +2446,7 @@ img {
     }
 
     .sanctuary-title h3 {
-        color: #fff;
+        color: var(--text-strong);
         font-size: 16px;
         line-height: 24px;
         font-weight: 700;
@@ -2407,7 +2502,7 @@ img {
     }
 
     .m-equipment-grid strong {
-        color: #fff;
+        color: var(--text-strong);
         font-size: 16px;
         line-height: 24px;
         font-weight: 700;
@@ -2497,7 +2592,7 @@ img {
     }
 
     .record-name strong {
-        color: #fff;
+        color: var(--text-strong);
         font-size: 16px;
         line-height: 24px;
         font-weight: 700;
@@ -2578,7 +2673,7 @@ img {
     }
 
     .lift-strip strong {
-        color: #fff;
+        color: var(--text-strong);
         font-size: 16px;
         line-height: 26px;
         font-weight: 700;
@@ -2640,7 +2735,7 @@ img {
 
     .m-thread-body h3 {
         margin: 6px 0 4px;
-        color: #fff;
+        color: var(--text-strong);
         font-size: 14px;
         line-height: 19px;
         font-weight: 600;
@@ -2697,7 +2792,7 @@ img {
         inset: 0;
         display: grid;
         place-items: center;
-        color: #fff;
+        color: var(--text-strong);
     }
 
     .m-play .icon {
@@ -2714,7 +2809,7 @@ img {
         padding: 0 3px;
         border-radius: 4px;
         background: var(--surface-lowest);
-        color: #fff;
+        color: var(--text-strong);
         font-size: 9px;
         line-height: 14px;
     }
@@ -2767,7 +2862,7 @@ img {
     }
 
     .m-action-card strong {
-        color: #fff;
+        color: var(--text-strong);
         font-size: 16px;
         line-height: 24px;
         font-weight: 700;
