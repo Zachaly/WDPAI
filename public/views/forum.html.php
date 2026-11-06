@@ -75,6 +75,7 @@ $footerComponent = [
     <link rel="stylesheet" href="/css/style.css">
     <link rel="stylesheet" href="/css/page-components.css">
     <link rel="stylesheet" href="/css/forum.css">
+    <script src="/js/schemeChange.js" defer></script>
 </head>
 <body class="forum-page">
 <svg class="icon-sprite" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg">
