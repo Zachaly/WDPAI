@@ -10,6 +10,9 @@ final class ForumController extends AppController
     {
         $this->render('forum', [
             'pageTitle' => 'The Locker Room — IronPulse Forum',
+            'pageDescription' => 'Meet the IronPulse strength community for form checks, gear reviews, meet prep, and gym intelligence.',
+            'bodyClass' => 'forum-page',
+            'pageStylesheets' => ['/css/page-components.css', '/css/forum.css'],
         ]);
     }
 }

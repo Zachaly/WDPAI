@@ -10,6 +10,7 @@ final class DefaultController extends AppController
     {
         $this->render('home', [
             'pageTitle' => 'IronPulse — Verified Strength Telemetry',
+            'pageDescription' => 'IronPulse is a verified strength telemetry network: audited gym equipment inventories, calibrated gear reviews, and a community of serious lifters.',
         ]);
     }
 
@@ -17,6 +18,7 @@ final class DefaultController extends AppController
     {
         $this->render('not-found', [
             'pageTitle' => 'Nie znaleziono strony',
+            'pageLanguage' => 'pl',
         ]);
     }
 }

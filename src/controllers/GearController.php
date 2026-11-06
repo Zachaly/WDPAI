@@ -10,6 +10,9 @@ final class GearController extends AppController
     {
         $this->render('gear', [
             'pageTitle' => 'Verified Equipment Inventory — IronPulse',
+            'pageDescription' => 'Browse verified strength equipment inventories, calibrated bars, and audited gym manifests on IronPulse.',
+            'bodyClass' => 'gear-page',
+            'pageStylesheets' => ['/css/page-components.css', '/css/gear.css'],
         ]);
     }
 }
