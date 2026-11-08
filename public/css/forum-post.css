@@ -5,7 +5,7 @@
 }
 
 .fp-main {
-    min-height: calc(100vh - 64px);
+    min-height: var(--page-content-min-height);
     padding: 18px 0 38px;
 }
 
@@ -152,12 +152,8 @@
     padding: 11px 13px;
     border: 1px solid var(--outline-glass);
     border-radius: 9px;
-    background: rgba(19, 27, 46, 0.82);
+    background: var(--surface-panel-glass);
     box-shadow: 0 5px 16px rgba(0, 0, 0, 0.08);
-}
-
-:root[data-theme="light"] .fp-panel {
-    background: var(--surface-low);
 }
 
 .fp-notice {

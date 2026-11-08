@@ -28,7 +28,7 @@
 }
 
 .sg-main {
-    min-height: calc(100vh - 64px);
+    min-height: var(--page-content-min-height);
     padding: 10px 0 42px;
 }
 
@@ -304,7 +304,7 @@
 .sg-steps a.is-active > span:first-child {
     border-color: var(--primary-container);
     background: var(--primary-container);
-    color: #263100;
+    color: var(--on-accent);
 }
 
 .sg-steps a > span:last-child {
@@ -1045,7 +1045,7 @@
 
 .sg-submit-button {
     background: var(--primary-container);
-    color: #1b2500;
+    color: var(--on-accent);
 }
 
 .sg-submit-button .icon {
@@ -1338,7 +1338,7 @@
     place-items: center;
     border-radius: 3px;
     background: var(--primary-container);
-    color: #1b2500;
+    color: var(--on-accent);
 }
 
 .sg-footer-logo .icon {
@@ -1471,12 +1471,12 @@
         padding: 3px 6px;
         border-radius: 99px;
         background: var(--primary-container);
-        color: #1b2500;
+        color: var(--on-accent);
         font-size: 8px;
     }
 
     .sg-system-bar .sg-karma .icon {
-        color: #1b2500;
+        color: var(--on-accent);
     }
 
     .sg-hero {
@@ -1573,7 +1573,7 @@
 
     .sg-section {
         padding: 13px;
-        border-radius: 12px;
+        border-radius: var(--radius);
         scroll-margin-top: 66px;
     }
 
@@ -1960,4 +1960,27 @@
     .sg-steps small {
         font-size: 6px;
     }
+}
+
+:root[data-theme="light"] .submit-gym-page .sg-dispatch-card,
+:root[data-theme="light"] .submit-gym-page .sg-metrics article,
+:root[data-theme="light"] .submit-gym-page .sg-panel,
+:root[data-theme="light"] .submit-gym-page .sg-side-card,
+:root[data-theme="light"] .submit-gym-page .sg-actions {
+    border-color: var(--outline-glass);
+    background: var(--surface-low);
+}
+
+:root[data-theme="light"] .submit-gym-page .sg-field input,
+:root[data-theme="light"] .submit-gym-page .sg-field select,
+:root[data-theme="light"] .submit-gym-page .sg-culture-input input,
+:root[data-theme="light"] .submit-gym-page .sg-plate-content input,
+:root[data-theme="light"] .submit-gym-page .sg-plate-content select {
+    border-color: var(--outline-glass);
+}
+
+:root[data-theme="light"] .submit-gym-page .sg-side-heading > b,
+:root[data-theme="light"] .submit-gym-page .sg-criteria li.sg-criterion-warning,
+:root[data-theme="light"] .submit-gym-page .sg-criteria li.sg-criterion-warning .icon {
+    color: var(--red-soft);
 }

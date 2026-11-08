@@ -5,13 +5,13 @@
 }
 
 .profile-main {
-    min-height: calc(100vh - 64px);
+    min-height: var(--page-content-min-height);
     padding: 18px 0 42px;
 }
 
 .profile-page .forum-container {
-    width: min(100% - 80px, 1360px);
-    margin-inline: auto;
+    --forum-container-gutter: 80px;
+    --forum-container-mobile-padding: 16px;
 }
 
 .profile-breadcrumb {
@@ -39,13 +39,7 @@
 .profile-stat-card {
     border: 1px solid var(--outline-glass);
     border-radius: 11px;
-    background: rgba(19, 27, 46, 0.84);
-}
-
-:root[data-theme="light"] .profile-hero,
-:root[data-theme="light"] .profile-card,
-:root[data-theme="light"] .profile-stat-card {
-    background: var(--surface-low);
+    background: var(--surface-panel-glass-raised);
 }
 
 .profile-hero {
@@ -1053,11 +1047,6 @@
     .profile-main {
         min-height: auto;
         padding: 12px 0 84px;
-    }
-
-    .profile-page .forum-container {
-        width: 100%;
-        padding-inline: 16px;
     }
 
     .profile-content-grid {

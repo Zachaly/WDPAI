@@ -5,7 +5,8 @@
 }
 
 .forum-container {
-    width: min(100% - 80px, 1360px);
+    --forum-container-gutter: 80px;
+    width: min(100% - var(--forum-container-gutter), 1360px);
     margin-inline: auto;
 }
 
@@ -19,7 +20,7 @@
 }
 
 .forum-main {
-    min-height: calc(100vh - 64px);
+    min-height: var(--page-content-min-height);
     padding: 18px 0 40px;
 }
 
@@ -1173,7 +1174,7 @@
 }
 
 .meet-card article > div span {
-    color: var(--secondary);
+    color: var(--secondary-on-dark);
 }
 
 .meet-card article > div strong {
@@ -1277,7 +1278,7 @@
 
 @media (max-width: 1120px) {
     .forum-container {
-        width: min(100% - 48px, 1360px);
+        --forum-container-gutter: 48px;
     }
 
     .forum-layout {
@@ -1327,7 +1328,7 @@
 
     .forum-container {
         width: 100%;
-        padding: 0 16px;
+        padding-inline: var(--forum-container-mobile-padding, 16px);
     }
 
     .forum-page {
@@ -1824,7 +1825,7 @@
         border-radius: 999px;
         background: var(--primary-container);
         box-shadow: 0 5px 20px rgba(195, 244, 0, 0.24);
-        color: #172000;
+        color: var(--on-accent);
         font-size: 13px;
         font-weight: 700;
     }
@@ -1838,7 +1839,7 @@
 
 @media (max-width: 380px) {
     .forum-container {
-        padding-inline: 12px;
+        padding-inline: var(--forum-container-mobile-padding, 12px);
     }
 
     .forum-mobile-header {
