@@ -624,6 +624,16 @@
     font-size: 10px;
 }
 
+.ft-comment-heading > a {
+    color: var(--text-strong);
+    font-size: 10px;
+}
+
+.ft-comment-heading > a:hover,
+.ft-author > span:nth-child(2) > a:hover {
+    color: var(--primary-container);
+}
+
 .ft-comment-heading > span {
     padding: 2px 5px;
     border-radius: 3px;
@@ -783,6 +793,11 @@
     flex: 1;
     flex-direction: column;
     gap: 3px;
+}
+
+.ft-author > span:nth-child(2) > a {
+    color: var(--text-strong);
+    font-size: 10px;
 }
 
 .ft-author > span:nth-child(2) strong {
@@ -1088,6 +1103,10 @@
     }
 
     .ft-post-meta .forum-author > div > strong {
+        font-size: 9px;
+    }
+
+    .ft-post-meta .forum-author > div > a {
         font-size: 9px;
     }
 

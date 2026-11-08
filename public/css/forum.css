@@ -445,6 +445,18 @@
     white-space: nowrap;
 }
 
+.forum-author > div > a {
+    overflow: hidden;
+    color: var(--text-strong);
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.forum-author > div > a:hover,
+.forum-author > div > a:focus-visible {
+    color: var(--primary-container);
+}
+
 .forum-author > small {
     overflow: hidden;
     color: var(--on-surface-variant);

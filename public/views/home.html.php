@@ -45,7 +45,7 @@
                     <span class="theme-toggle-label" data-theme-toggle-label>Light</span>
                 </button>
                 <a class="icon-button" href="#leaderboard" aria-label="Saved bookmarks"><svg class="icon"><use href="#i-bookmark"></use></svg></a>
-                <a class="avatar-button" href="#leaderboard" aria-label="Your profile"><svg class="icon"><use href="#i-user"></use></svg></a>
+                <a class="avatar-button" href="/profile" aria-label="Your profile"><svg class="icon"><use href="#i-user"></use></svg></a>
             </div>
         </div>
     </header>
@@ -401,7 +401,7 @@
                                 <h3><a href="#forum">[Gym PSA] How Metro Iron handles the 5 PM rush &mdash; Rack reservation etiquette breakdown</a></h3>
                                 <p>PSA for visiting lifters: don&rsquo;t reserve squat rack 4 if you plan to do 20 minutes of dynamic warmups. The gym manager announced new floor guidelines for peak hours...</p>
                                 <div class="thread-foot">
-                                    <span class="author"><span class="author-avatar">JD</span>@J_Donnelly <span class="tag tag-steel">IPF Competitor</span></span>
+                                    <span class="author"><a class="author-avatar" href="/profile/3" aria-label="View Jordan Donnelly's profile">JD</a><a href="/profile/3">@J_Donnelly</a> <span class="tag tag-steel">IPF Competitor</span></span>
                                     <span class="thread-stat"><svg class="icon"><use href="#i-comment"></use></svg>88 replies</span>
                                     <span class="thread-stat"><svg class="icon"><use href="#i-eye"></use></svg>2.4k views</span>
                                 </div>
@@ -419,7 +419,7 @@
                                 <h3><a href="#forum">[Gear Review] Eleiko Oppen Deadlift Bar vs Rogue TB-2: Commercial gym durability test after 6 months</a></h3>
                                 <p>We subjected both specialty trap bars to 500+ daily deadlift sets. Knurling wear, sleeve chrome peeling, and center-balance feedback over 180 days of abuse...</p>
                                 <div class="thread-foot">
-                                    <span class="author"><span class="author-avatar author-avatar-blue">TB</span>@T_BarbellLab <span class="tag tag-steel">Facility Owner</span></span>
+                                    <span class="author"><a class="author-avatar author-avatar-blue" href="/profile/2" aria-label="View T Barbell Lab's profile">TB</a><a href="/profile/2">@T_BarbellLab</a> <span class="tag tag-steel">Facility Owner</span></span>
                                     <span class="thread-stat"><svg class="icon"><use href="#i-comment"></use></svg>143 replies</span>
                                     <span class="thread-stat"><svg class="icon"><use href="#i-trophy"></use></svg>3 Awards</span>
                                 </div>
@@ -437,7 +437,7 @@
                                 <h3><a href="#forum">[City Guide] Hidden gem powerlifting garages in Austin &amp; Dallas with 24/7 drop-in rates</a></h3>
                                 <p>Traveling for work? Here are five private keycard garage gyms that welcome drop-ins, have calibrated steel plates, and won&rsquo;t charge $45 a day like mainstream boxes...</p>
                                 <div class="thread-foot">
-                                    <span class="author"><span class="author-avatar author-avatar-steel">RT</span>@RoadWarrior_PR</span>
+                                    <span class="author"><a class="author-avatar author-avatar-steel" href="/profile/5" aria-label="View Road Warrior's profile">RT</a><a href="/profile/5">@RoadWarrior_PR</a></span>
                                     <span class="thread-stat"><svg class="icon"><use href="#i-comment"></use></svg>42 replies</span>
                                 </div>
                             </div>
@@ -454,7 +454,7 @@
                                 <h3><a href="#forum">[Form Check Friday] 500lb Low-Bar Squat depth and bar path analysis</a></h3>
                                 <p>Hit a 500x3 low bar set at Vanguard Barbell. Looking for feedback on hip crease below parallel and thoracic tension on the ascent. Video recorded with side angle marker...</p>
                                 <div class="thread-foot">
-                                    <span class="author"><span class="author-avatar author-avatar-lime">AL</span>@Alex_Lith</span>
+                                    <span class="author"><a class="author-avatar author-avatar-lime" href="/profile/1" aria-label="View Alex Lith's profile">AL</a><a href="/profile/1">@Alex_Lith</a></span>
                                     <span class="thread-stat"><svg class="icon"><use href="#i-comment"></use></svg>95 replies</span>
                                     <span class="thread-stat"><svg class="icon"><use href="#i-check"></use></svg>Coached Feedback</span>
                                 </div>
@@ -471,7 +471,7 @@
                         </div>
                         <p class="aside-copy">Lifters logging accurate floor reports, rack statuses, and equipment audits earn platform karma badges.</p>
                         <ol class="spotter-list">
-                            <li><span class="rank text-lime">#1</span><span class="spotter-avatar">EK</span><span class="spotter-name"><strong>@Elena_K</strong><small class="text-lime">MASTER SPOTTER &middot; 840 REP</small></span><span class="spotter-count">42 Updates</span></li>
+                            <li><span class="rank text-lime">#1</span><a class="spotter-avatar" href="/profile/4" aria-label="View Elena Korov's profile">EK</a><span class="spotter-name"><strong><a href="/profile/4">@Elena_K</a></strong><small class="text-lime">MASTER SPOTTER &middot; 840 REP</small></span><span class="spotter-count">42 Updates</span></li>
                             <li><span class="rank text-blue">#2</span><span class="spotter-avatar">MK</span><span class="spotter-name"><strong>@Marcus_K</strong><small class="text-blue">IRON SCOUT &middot; 610 REP</small></span><span class="spotter-count">31 Updates</span></li>
                             <li><span class="rank text-orange">#3</span><span class="spotter-avatar">DL</span><span class="spotter-name"><strong>@DaveLiftz</strong><small class="text-orange">EQUIPMENT AUDITOR</small></span><span class="spotter-count">27 Updates</span></li>
                             <li><span class="rank muted">#4</span><span class="spotter-avatar">TR</span><span class="spotter-name"><strong>@TaraRacks</strong><small class="muted">VERIFIED LIFTER</small></span><span class="spotter-count">19 Updates</span></li>
@@ -560,7 +560,7 @@
             <svg class="icon theme-icon-dark" aria-hidden="true" viewBox="0 0 24 24"><path d="M20.5 15.5A8.5 8.5 0 0 1 8.5 3.5 8.5 8.5 0 1 0 20.5 15.5Z"></path></svg>
             <span class="theme-toggle-label" data-theme-toggle-label>Light</span>
         </button>
-        <a class="avatar-button" href="#m-board" aria-label="Your profile"><svg class="icon"><use href="#i-user"></use></svg></a>
+        <a class="avatar-button" href="/profile" aria-label="Your profile"><svg class="icon"><use href="#i-user"></use></svg></a>
     </header>
 
     <main class="m-main">

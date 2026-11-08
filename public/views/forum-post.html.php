@@ -193,7 +193,7 @@ require __DIR__ . '/components/mobile-header.html.php';
 
                 <section class="fp-panel fp-author-panel">
                     <div class="fp-sidebar-heading"><h2>Author Trust Reputation</h2><span><svg class="icon"><use href="#forum-shield"></use></svg> TIER II AUDITOR</span></div>
-                    <div class="fp-author-card"><img src="/assets/img/marcus-vance.jpg" alt=""><span><strong>Marcus Vance</strong><small>Total Posts: 74 &bull; 24 Peer Audits</small></span><b>98.4%</b></div>
+                    <a class="fp-author-card" href="/profile/7"><img src="/assets/img/marcus-vance.jpg" alt=""><span><strong>Marcus Vance</strong><small>Total Posts: 74 &bull; 24 Peer Audits</small></span><b>98.4%</b></a>
                     <p>Posts backed by verified barbell velocity telemetry receive 3x more visibility across global strength algorithms.</p>
                     <div class="fp-author-tip"><i></i>Calibration data will be cross-checked before your post enters the verified feed.</div>
                 </section>

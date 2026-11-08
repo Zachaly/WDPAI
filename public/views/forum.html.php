@@ -150,8 +150,8 @@ require __DIR__ . '/components/mobile-header.html.php';
                         <div class="forum-vote" aria-label="428 votes"><svg class="icon"><use href="#forum-up"></use></svg><strong>428</strong><svg class="icon vote-down"><use href="#forum-up"></use></svg></div>
                         <div class="forum-thread-main">
                             <div class="forum-thread-heading">
-                                <span class="forum-avatar avatar-lime">AL</span>
-                                <div class="forum-author"><div><strong>@Alex_Lith</strong><span class="forum-tag tag-green">USAPL 93KG COMPETITOR</span></div><small>Squat Check &bull; 14m ago</small></div>
+                                <a class="forum-avatar avatar-lime" href="/profile/1" aria-label="View Alex Lith's profile">AL</a>
+                                <div class="forum-author"><div><a href="/profile/1"><strong>@Alex_Lith</strong></a><span class="forum-tag tag-green">USAPL 93KG COMPETITOR</span></div><small>Squat Check &bull; 14m ago</small></div>
                                 <span class="forum-post-category tag-green">FORM ANALYSIS</span>
                                 <a class="forum-bookmark" href="#discussion-form-check" aria-label="Save discussion"><svg class="icon"><use href="#forum-bookmark"></use></svg></a>
                             </div>
@@ -177,8 +177,8 @@ require __DIR__ . '/components/mobile-header.html.php';
                         <div class="forum-vote" aria-label="619 votes"><svg class="icon"><use href="#forum-up"></use></svg><strong>619</strong><svg class="icon vote-down"><use href="#forum-up"></use></svg></div>
                         <div class="forum-thread-main">
                             <div class="forum-thread-heading">
-                                <span class="forum-avatar avatar-blue">KL</span>
-                                <div class="forum-author"><div><strong>@MarcusKnurling</strong><span class="forum-tag tag-blue"><svg class="icon"><use href="#forum-shield"></use></svg>AUDITOR</span></div><small>Knurl Lab &bull; 2h ago</small></div>
+                                <a class="forum-avatar avatar-blue" href="/profile/2" aria-label="View Marcus Knurling's profile">KL</a>
+                                <div class="forum-author"><div><a href="/profile/2"><strong>@MarcusKnurling</strong></a><span class="forum-tag tag-blue"><svg class="icon"><use href="#forum-shield"></use></svg>AUDITOR</span></div><small>Knurl Lab &bull; 2h ago</small></div>
                                 <span class="forum-post-category tag-blue">GEAR DIAGNOSTICS &amp; LAB</span>
                                 <span class="forum-award">8 AWARDS</span>
                                 <a class="forum-bookmark" href="#discussion-gear-review" aria-label="Save discussion"><svg class="icon"><use href="#forum-bookmark"></use></svg></a>
@@ -201,8 +201,8 @@ require __DIR__ . '/components/mobile-header.html.php';
                         <div class="forum-vote" aria-label="315 votes"><svg class="icon"><use href="#forum-up"></use></svg><strong>315</strong><svg class="icon vote-down"><use href="#forum-up"></use></svg></div>
                         <div class="forum-thread-main">
                             <div class="forum-thread-heading">
-                                <span class="forum-avatar avatar-orange">JD</span>
-                                <div class="forum-author"><div><strong>@J_Donnelly</strong><span class="forum-post-category tag-orange">SANCTUARY PSA &amp; INTEL</span></div><small>METRO IRON REGULAR &bull; 8h ago</small></div>
+                                <a class="forum-avatar avatar-orange" href="/profile/3" aria-label="View Jordan Donnelly's profile">JD</a>
+                                <div class="forum-author"><div><a href="/profile/3"><strong>@J_Donnelly</strong></a><span class="forum-post-category tag-orange">SANCTUARY PSA &amp; INTEL</span></div><small>METRO IRON REGULAR &bull; 8h ago</small></div>
                                 <span class="forum-location">AUSTIN, TX</span>
                                 <a class="forum-bookmark" href="#discussion-gym-psa" aria-label="Save discussion"><svg class="icon"><use href="#forum-bookmark"></use></svg></a>
                             </div>
@@ -217,8 +217,8 @@ require __DIR__ . '/components/mobile-header.html.php';
                         <div class="forum-vote" aria-label="284 votes"><svg class="icon"><use href="#forum-up"></use></svg><strong>284</strong><svg class="icon vote-down"><use href="#forum-up"></use></svg></div>
                         <div class="forum-thread-main">
                             <div class="forum-thread-heading">
-                                <span class="forum-avatar avatar-orange">EK</span>
-                                <div class="forum-author"><div><strong>@Elena_K</strong><span class="forum-tag tag-orange">MASTER SPOTTER &bull; 840 REP</span></div><small>Meet Prep &bull; 14h ago</small></div>
+                                <a class="forum-avatar avatar-orange" href="/profile/4" aria-label="View Elena Korov's profile">EK</a>
+                                <div class="forum-author"><div><a href="/profile/4"><strong>@Elena_K</strong></a><span class="forum-tag tag-orange">MASTER SPOTTER &bull; 840 REP</span></div><small>Meet Prep &bull; 14h ago</small></div>
                                 <span class="forum-post-category tag-orange">MEET DEBRIEF</span>
                                 <span class="forum-sanctioned">WRPF SANCTIONED</span>
                                 <a class="forum-bookmark" href="#discussion-meet-debrief" aria-label="Save discussion"><svg class="icon"><use href="#forum-bookmark"></use></svg></a>
@@ -233,7 +233,7 @@ require __DIR__ . '/components/mobile-header.html.php';
                     <article class="forum-thread forum-thread-optional">
                         <div class="forum-vote" aria-label="197 votes"><svg class="icon"><use href="#forum-up"></use></svg><strong>197</strong><svg class="icon vote-down"><use href="#forum-up"></use></svg></div>
                         <div class="forum-thread-main">
-                            <div class="forum-thread-heading"><span class="forum-avatar avatar-blue">RW</span><div class="forum-author"><div><strong>@RoadWarrior_PR</strong><span class="forum-post-category tag-blue">CITY GUIDE &amp; SOURCING</span></div><small>TRAVEL LIFTER &bull; 1d ago</small></div><a class="forum-bookmark" href="#discussion-feed" aria-label="Save discussion"><svg class="icon"><use href="#forum-bookmark"></use></svg></a></div>
+                            <div class="forum-thread-heading"><a class="forum-avatar avatar-blue" href="/profile/5" aria-label="View Road Warrior's profile">RW</a><div class="forum-author"><div><a href="/profile/5"><strong>@RoadWarrior_PR</strong></a><span class="forum-post-category tag-blue">CITY GUIDE &amp; SOURCING</span></div><small>TRAVEL LIFTER &bull; 1d ago</small></div><a class="forum-bookmark" href="#discussion-feed" aria-label="Save discussion"><svg class="icon"><use href="#forum-bookmark"></use></svg></a></div>
                             <h2>[City Guide] Hidden 24/7 keycard powerlifting bunkers in Dallas &amp; Fort Worth with calibrated steel &amp; monolifts</h2>
                             <p class="forum-excerpt">Tired of hotel DB racks? Compiled four private key-fob strength warehouses with Ivanko / Eleiko calibrated plates, Texas power bars, and drop-in guest policies for traveling powerlifters.</p>
                             <div class="forum-thread-footer"><span><svg class="icon"><use href="#forum-chat"></use></svg><b>48</b> Replies</span><span><svg class="icon"><use href="#forum-eye"></use></svg>2.1k Views</span><span class="forum-thread-tags"><i>#CityGuide</i><i>#KeycardGyms</i><i>#DallasPowerlifting</i></span></div>
@@ -243,7 +243,7 @@ require __DIR__ . '/components/mobile-header.html.php';
                     <article class="forum-thread forum-thread-optional">
                         <div class="forum-vote" aria-label="152 votes"><svg class="icon"><use href="#forum-up"></use></svg><strong>152</strong><svg class="icon vote-down"><use href="#forum-up"></use></svg></div>
                         <div class="forum-thread-main">
-                            <div class="forum-thread-heading"><span class="forum-avatar avatar-blue">HV</span><div class="forum-author"><div><strong>@HeavyDan_PR</strong><span class="forum-post-category tag-blue">PROGRAM ANALYST</span></div><small>PROGRAMMING &amp; RECOVERY &bull; 1d ago</small></div><a class="forum-bookmark" href="#discussion-feed" aria-label="Save discussion"><svg class="icon"><use href="#forum-bookmark"></use></svg></a></div>
+                            <div class="forum-thread-heading"><a class="forum-avatar avatar-blue" href="/profile/6" aria-label="View Heavy Dan's profile">HV</a><div class="forum-author"><div><a href="/profile/6"><strong>@HeavyDan_PR</strong></a><span class="forum-post-category tag-blue">PROGRAM ANALYST</span></div><small>PROGRAMMING &amp; RECOVERY &bull; 1d ago</small></div><a class="forum-bookmark" href="#discussion-feed" aria-label="Save discussion"><svg class="icon"><use href="#forum-bookmark"></use></svg></a></div>
                             <h2>Sheiko Gold vs. Calgary Barbell 16-Week: Bench volume fatigue &amp; pecs recovery comparison</h2>
                             <p class="forum-excerpt">Tallying joint soreness indexes and bar deceleration over two consecutive 16-week cycles. Sheiko undulating intra-session benching showed significantly lower shoulder impingement risk despite higher tonnage.</p>
                             <div class="forum-thread-footer"><span><svg class="icon"><use href="#forum-chat"></use></svg><b>54</b> Replies</span><span><svg class="icon"><use href="#forum-eye"></use></svg>1.8k Views</span><span class="forum-thread-tags"><i>#Programming</i><i>#Sheiko</i><i>#BenchPress</i></span></div>
@@ -264,10 +264,10 @@ require __DIR__ . '/components/mobile-header.html.php';
                 <section class="forum-side-card spotters-card">
                     <div class="forum-side-heading"><h2><svg class="icon"><use href="#forum-trophy"></use></svg>Top Spotters (Karma)</h2><span>THIS WEEK</span></div>
                     <ol class="spotter-list">
-                        <li><b>1</b><span><strong>@Elena_K</strong><small>FORM VERIFIER &bull; ATX</small></span><strong>840 REP</strong></li>
-                        <li><b>2</b><span><strong>@Marcus_K</strong><small>IPF NATIONAL REF</small></span><strong>610 REP</strong></li>
-                        <li><b>3</b><span><strong>@DaveLiftz</strong><small>KNURL LAB AUDITOR</small></span><strong>512 REP</strong></li>
-                        <li><b>4</b><span><strong>@TaraRacks</strong><small>COACH &bull; SEATTLE</small></span><strong>420 REP</strong></li>
+                        <li><b>1</b><span><strong><a href="/profile/4">@Elena_K</a></strong><small>FORM VERIFIER &bull; ATX</small></span><strong>840 REP</strong></li>
+                        <li><b>2</b><span><strong><a href="/profile/2">@Marcus_K</a></strong><small>IPF NATIONAL REF</small></span><strong>610 REP</strong></li>
+                        <li><b>3</b><span><strong><a href="/profile/8">@DaveLiftz</a></strong><small>KNURL LAB AUDITOR</small></span><strong>512 REP</strong></li>
+                        <li><b>4</b><span><strong><a href="/profile/4">@TaraRacks</a></strong><small>COACH &bull; SEATTLE</small></span><strong>420 REP</strong></li>
                     </ol>
                     <a class="forum-side-link" href="/leaderboard#spotter-karma">VIEW GLOBAL KARMA BOARD <svg class="icon"><use href="#forum-send"></use></svg></a>
                 </section>
@@ -297,14 +297,14 @@ require __DIR__ . '/components/mobile-header.html.php';
 
         <section class="forum-mobile-posts" id="mobile-discussion-feed" aria-label="Trending discussion threads">
             <article class="mobile-thread mobile-thread-form">
-                <div class="mobile-thread-top"><span class="forum-avatar avatar-lime">AL</span><div class="forum-author"><div><strong>@Alex_Lith</strong><span class="forum-tag tag-green">USAPL 93kg</span></div><small>Squat Check &bull; 14m ago</small></div><a class="forum-bookmark" href="#discussion-form-check" aria-label="Save discussion"><svg class="icon"><use href="#forum-bookmark"></use></svg></a></div>
+                <div class="mobile-thread-top"><a class="forum-avatar avatar-lime" href="/profile/1" aria-label="View Alex Lith's profile">AL</a><div class="forum-author"><div><a href="/profile/1"><strong>@Alex_Lith</strong></a><span class="forum-tag tag-green">USAPL 93kg</span></div><small>Squat Check &bull; 14m ago</small></div><a class="forum-bookmark" href="#discussion-form-check" aria-label="Save discussion"><svg class="icon"><use href="#forum-bookmark"></use></svg></a></div>
                 <h2>Squat RPE 9.5 lockout hitch: knee valgus or quad fatigue off the pins?</h2>
                 <div class="mobile-video" style="background-image:url('/assets/img/form-check.jpg')"><span class="mobile-video-label"><svg class="icon"><use href="#forum-chart"></use></svg>BAR VELOCITY 0.28 m/s</span><span class="forum-video-play"><svg class="icon"><use href="#forum-play"></use></svg></span><span class="forum-video-time">0:42</span><strong>KINEMATIC TRACK: 3RD ATTEMPT SIMULATION <i>4K 60FPS</i></strong></div>
                 <div class="mobile-thread-footer"><span><svg class="icon"><use href="#forum-up"></use></svg>428</span><span><svg class="icon"><use href="#forum-chat"></use></svg>112</span><b>NEEDS 2 COACH VOTES</b></div>
             </article>
 
             <article class="mobile-thread">
-                <div class="mobile-thread-top"><span class="forum-avatar avatar-blue">KL</span><div class="forum-author"><div><strong>@MarcusKnurling</strong><span class="forum-tag tag-blue"><svg class="icon"><use href="#forum-shield"></use></svg>AUDITOR</span></div><small>Knurl Lab &bull; 2h ago</small></div><a class="forum-bookmark" href="#discussion-gear-review" aria-label="Save discussion"><svg class="icon"><use href="#forum-bookmark"></use></svg></a></div>
+                <div class="mobile-thread-top"><a class="forum-avatar avatar-blue" href="/profile/2" aria-label="View Marcus Knurling's profile">KL</a><div class="forum-author"><div><a href="/profile/2"><strong>@MarcusKnurling</strong></a><span class="forum-tag tag-blue"><svg class="icon"><use href="#forum-shield"></use></svg>AUDITOR</span></div><small>Knurl Lab &bull; 2h ago</small></div><a class="forum-bookmark" href="#discussion-gear-review" aria-label="Save discussion"><svg class="icon"><use href="#forum-bookmark"></use></svg></a></div>
                 <h2>[Deep Dive] Eleiko IPF Comp vs Rogue Ohio Power Bar: 2-Year Knurl Wear &amp; Peak Hill Decay</h2>
                 <div class="mobile-knurl-comparison"><div class="knurl-photo" style="background-image:url('/assets/img/black-iron.jpg')"><span>MICROMETER: 1.2mm PYRAMID</span></div><div class="grip-score"><span>GRIP RET.</span><strong>92.4%</strong><small><svg class="icon"><use href="#forum-bars"></use></svg> Raw Steel</small></div></div>
                 <p>After 730 training cycles across 4 lifters, laser profile telemetry reveals Rogue Aggressive volcanic knurl degrades 18% slower than raw Swedish...</p>
@@ -312,7 +312,7 @@ require __DIR__ . '/components/mobile-header.html.php';
             </article>
 
             <article class="mobile-thread">
-                <div class="mobile-thread-top"><span class="forum-avatar avatar-orange">EK</span><div class="forum-author"><div><strong>@Elena_K</strong><span class="forum-tag tag-orange">MASTER SPOTTER</span></div><small>Meet Prep &bull; 5h ago</small></div><a class="forum-bookmark" href="#discussion-meet-debrief" aria-label="Save discussion"><svg class="icon"><use href="#forum-bookmark"></use></svg></a></div>
+                <div class="mobile-thread-top"><a class="forum-avatar avatar-orange" href="/profile/4" aria-label="View Elena Korov's profile">EK</a><div class="forum-author"><div><a href="/profile/4"><strong>@Elena_K</strong></a><span class="forum-tag tag-orange">MASTER SPOTTER</span></div><small>Meet Prep &bull; 5h ago</small></div><a class="forum-bookmark" href="#discussion-meet-debrief" aria-label="Save discussion"><svg class="icon"><use href="#forum-bookmark"></use></svg></a></div>
                 <h2>[Meet Debrief] Cutting to 82.5kg for WRPF Nationals: Water cut protocol &amp; 3rd attempt selections</h2>
                 <div class="mobile-meet-stats"><div><span>CUT TARGET</span><strong>-4.2 kg</strong></div><div><span>REFEED TIME</span><strong class="text-blue">14 hrs</strong></div><div><span>TOTAL</span><strong class="text-lime">542.5 kg</strong></div></div>
                 <p>Sodium ramp from Sunday to Wednesday, 8L distilled water protocol, followed by rapid 2hr hyper-osmotic electrolytes replenishment once...</p>
@@ -320,7 +320,7 @@ require __DIR__ . '/components/mobile-header.html.php';
             </article>
 
             <article class="mobile-thread">
-                <div class="mobile-thread-top"><span class="forum-avatar avatar-blue">MI</span><div class="forum-author"><div><strong>@MetroIronStaff</strong><span class="forum-tag tag-green">HQ VERIFIED</span></div><small>Gym Intel &bull; 8h ago</small></div><a class="forum-bookmark" href="#discussion-gym-psa" aria-label="Save discussion"><svg class="icon"><use href="#forum-bookmark"></use></svg></a></div>
+                <div class="mobile-thread-top"><a class="forum-avatar avatar-blue" href="/profile/9" aria-label="View Metro Iron's profile">MI</a><div class="forum-author"><div><a href="/profile/9"><strong>@MetroIronStaff</strong></a><span class="forum-tag tag-green">HQ VERIFIED</span></div><small>Gym Intel &bull; 8h ago</small></div><a class="forum-bookmark" href="#discussion-gym-psa" aria-label="Save discussion"><svg class="icon"><use href="#forum-bookmark"></use></svg></a></div>
                 <h2>[Gym PSA] How Metropolitan Iron handles peak 5 PM rack availability: Board rotation rules update</h2>
                 <div class="mobile-policy"><span></span>12 Combo Racks: 20-min max squat rotation<b>POLICY</b></div>
                 <div class="mobile-thread-footer"><span><svg class="icon"><use href="#forum-up"></use></svg>192</span><span><svg class="icon"><use href="#forum-chat"></use></svg>41</span><b class="mobile-location"><svg class="icon"><use href="#forum-pin"></use></svg>EAST DOCK, AUSTIN</b></div>

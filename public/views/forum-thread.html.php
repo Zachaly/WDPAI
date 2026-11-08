@@ -113,9 +113,9 @@ require __DIR__ . '/components/mobile-header.html.php';
                 <header class="ft-post-header">
                     <div class="ft-post-meta">
                         <a class="ft-back" href="/forum" aria-label="Back to forum"><svg class="icon"><path d="m15 18-6-6 6-6"/></svg></a>
-                        <span class="forum-avatar avatar-lime"><?= htmlspecialchars($post['initials'], ENT_QUOTES, 'UTF-8') ?></span>
+                        <a class="forum-avatar avatar-lime" href="/profile/1" aria-label="View Alex Lith's profile"><?= htmlspecialchars($post['initials'], ENT_QUOTES, 'UTF-8') ?></a>
                         <div class="forum-author">
-                            <div><strong>@<?= htmlspecialchars($post['author'], ENT_QUOTES, 'UTF-8') ?></strong><span class="forum-tag tag-green"><?= htmlspecialchars($post['credential'], ENT_QUOTES, 'UTF-8') ?></span></div>
+                            <div><a href="/profile/1"><strong>@<?= htmlspecialchars($post['author'], ENT_QUOTES, 'UTF-8') ?></strong></a><span class="forum-tag tag-green"><?= htmlspecialchars($post['credential'], ENT_QUOTES, 'UTF-8') ?></span></div>
                             <small><?= htmlspecialchars($post['posted'], ENT_QUOTES, 'UTF-8') ?> <span>&bull;</span> <svg class="icon"><use href="#forum-pin"></use></svg> <?= $post['location'] ?></small>
                         </div>
                         <span class="forum-post-category tag-green"><?= htmlspecialchars($post['category'], ENT_QUOTES, 'UTF-8') ?></span>
@@ -172,7 +172,7 @@ require __DIR__ . '/components/mobile-header.html.php';
                 <section class="ft-replies" id="ft-replies">
                     <div class="ft-replies-heading"><h2>Locker Room Replies <span>112</span></h2><button type="button">TOP SPOTTERS <svg class="icon"><path d="m6 9 6 6 6-6"/></svg></button></div>
                     <form class="ft-reply-form" data-reply-form>
-                        <span class="forum-avatar avatar-blue">MV</span>
+                        <a class="forum-avatar avatar-blue" href="/profile/7" aria-label="View Marcus Vance's profile">MV</a>
                         <label class="ft-visually-hidden" for="ft-reply">Add a reply</label>
                         <textarea id="ft-reply" rows="2" placeholder="Add a technical, constructive reply..." data-reply-input></textarea>
                         <button type="submit" aria-label="Submit reply"><svg class="icon"><use href="#forum-send"></use></svg></button>
@@ -180,17 +180,17 @@ require __DIR__ . '/components/mobile-header.html.php';
                     <p class="ft-reply-notice" role="status" aria-live="polite" data-reply-notice hidden></p>
                     <div class="ft-comment-list" data-comment-list>
                         <article class="ft-comment">
-                            <span class="forum-avatar avatar-blue">DK</span>
+                            <a class="forum-avatar avatar-blue" href="/profile/8" aria-label="View Dave Knurl's profile">DK</a>
                             <div class="ft-comment-body">
-                                <div class="ft-comment-heading"><strong>@DaveKnurl</strong><span>IPF COACH</span><time>8 MIN AGO</time></div>
+                                <div class="ft-comment-heading"><a href="/profile/8"><strong>@DaveKnurl</strong></a><span>IPF COACH</span><time>8 MIN AGO</time></div>
                                 <p>From the front angle the bar path shifts before the knees cave. Try cueing pressure through the whole foot and bracing into the left lat before the descent. Your depth looks solid.</p>
                                 <div class="ft-comment-actions"><button type="button" data-comment-like><svg class="icon"><use href="#forum-up"></use></svg> <span>24</span></button><button type="button" data-reply-to>REPLY</button></div>
                             </div>
                         </article>
                         <article class="ft-comment">
-                            <span class="forum-avatar avatar-orange">EK</span>
+                            <a class="forum-avatar avatar-orange" href="/profile/4" aria-label="View Elena Korov's profile">EK</a>
                             <div class="ft-comment-body">
-                                <div class="ft-comment-heading"><strong>@Elena_K</strong><span class="ft-coach-badge"><svg class="icon"><use href="#forum-shield"></use></svg> VERIFIED SPOTTER</span><time>5 MIN AGO</time></div>
+                                <div class="ft-comment-heading"><a href="/profile/4"><strong>@Elena_K</strong></a><span class="ft-coach-badge"><svg class="icon"><use href="#forum-shield"></use></svg> VERIFIED SPOTTER</span><time>5 MIN AGO</time></div>
                                 <p>Agree with Dave. The right knee tracks well; watch the left foot pressure as you hit depth. The 0.28 m/s bar speed suggests you had enough drive to finish that rep.</p>
                                 <div class="ft-comment-actions"><button type="button" data-comment-like><svg class="icon"><use href="#forum-up"></use></svg> <span>18</span></button><button type="button" data-reply-to>REPLY</button></div>
                             </div>
@@ -204,8 +204,8 @@ require __DIR__ . '/components/mobile-header.html.php';
                 <section class="ft-side-card ft-author-card">
                     <div class="ft-side-heading"><h2>POST AUTHOR</h2><span><i></i> VERIFIED</span></div>
                     <div class="ft-author">
-                        <span class="ft-author-avatar">AL</span>
-                        <span><strong>@Alex_Lith</strong><small>USAPL 93kg &bull; Austin, TX</small></span>
+                        <a class="ft-author-avatar" href="/profile/1" aria-label="View Alex Lith's profile">AL</a>
+                        <span><a href="/profile/1"><strong>@Alex_Lith</strong></a><small>USAPL 93kg &bull; Austin, TX</small></span>
                         <button type="button" data-follow>FOLLOW</button>
                     </div>
                     <p>Competitive powerlifter tracking technique and bar speed through the qualifying season.</p>

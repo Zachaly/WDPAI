@@ -92,7 +92,7 @@ if (threadPage) {
 
     threadPage.querySelectorAll('[data-reply-to]').forEach((button) => {
         button.addEventListener('click', () => {
-            const author = button.closest('.ft-comment').querySelector('.ft-comment-heading > strong').textContent;
+            const author = button.closest('.ft-comment').querySelector('.ft-comment-heading a > strong').textContent;
             replyInput.value = `${author} ${replyInput.value}`;
             replyInput.focus();
             replyInput.setSelectionRange(replyInput.value.length, replyInput.value.length);

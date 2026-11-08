@@ -23,7 +23,7 @@ declare(strict_types=1);
                 <span class="theme-toggle-label" data-theme-toggle-label>Light</span>
             </button>
             <a class="icon-button" href="<?= htmlspecialchars((string) $desktopHeaderComponent['searchHref'], ENT_QUOTES, 'UTF-8') ?>" aria-label="<?= htmlspecialchars((string) $desktopHeaderComponent['searchLabel'], ENT_QUOTES, 'UTF-8') ?>"><svg class="icon"><use href="#<?= htmlspecialchars((string) $iconPrefix, ENT_QUOTES, 'UTF-8') ?>-search"></use></svg></a>
-            <a class="avatar-button" href="/#profile" aria-label="Your profile"><svg class="icon"><use href="#<?= htmlspecialchars((string) $iconPrefix, ENT_QUOTES, 'UTF-8') ?>-user"></use></svg></a>
+            <a class="avatar-button" href="/profile" aria-label="Your profile"><svg class="icon"><use href="#<?= htmlspecialchars((string) $iconPrefix, ENT_QUOTES, 'UTF-8') ?>-user"></use></svg></a>
         </div>
     </div>
 </header>
