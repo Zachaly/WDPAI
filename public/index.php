@@ -20,6 +20,7 @@ $routing = new Routing();
 $routing->get('/forum', ForumController::class, 'index');
 $routing->get('/forum/new', ForumPostController::class, 'index');
 $routing->post('/forum/new', ForumPostController::class, 'store');
+$routing->get('/forum/{id}', ForumController::class, 'show');
 $routing->get('/gear', GearController::class, 'index');
 $routing->get('/leaderboard', LeaderboardController::class, 'index');
 $routing->get('/login', LoginController::class, 'index');

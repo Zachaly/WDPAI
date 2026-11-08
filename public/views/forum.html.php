@@ -155,7 +155,7 @@ require __DIR__ . '/components/mobile-header.html.php';
                                 <span class="forum-post-category tag-green">FORM ANALYSIS</span>
                                 <a class="forum-bookmark" href="#discussion-form-check" aria-label="Save discussion"><svg class="icon"><use href="#forum-bookmark"></use></svg></a>
                             </div>
-                            <h2>Squat RPE 9.5 lockout hitch: knee valgus or quad fatigue off the pins?</h2>
+                            <h2><a href="/forum/1">Squat RPE 9.5 lockout hitch: knee valgus or quad fatigue off the pins?</a></h2>
                             <div class="forum-video" style="background-image:url('/assets/img/form-check.jpg')">
                                 <span class="forum-video-label"><svg class="icon"><use href="#forum-chart"></use></svg>BAR VELOCITY 0.28 m/s</span>
                                 <span class="forum-video-play"><svg class="icon"><use href="#forum-play"></use></svg></span>
@@ -183,7 +183,7 @@ require __DIR__ . '/components/mobile-header.html.php';
                                 <span class="forum-award">8 AWARDS</span>
                                 <a class="forum-bookmark" href="#discussion-gear-review" aria-label="Save discussion"><svg class="icon"><use href="#forum-bookmark"></use></svg></a>
                             </div>
-                            <h2>[Deep Dive] Eleiko IPF Comp vs Rogue Ohio Power Bar: 2-Year Knurl Wear &amp; Peak Hill Decay</h2>
+                            <h2><a href="/forum/2">[Deep Dive] Eleiko IPF Comp vs Rogue Ohio Power Bar: 2-Year Knurl Wear &amp; Peak Hill Decay</a></h2>
                             <div class="forum-gear-comparison">
                                 <div class="knurl-photo" style="background-image:url('/assets/img/black-iron.jpg')"><span>MICROMETER: 1.2mm PYRAMID</span></div>
                                 <div class="grip-score"><span>GRIP RET.</span><strong>92.4%</strong><small><svg class="icon"><use href="#forum-bars"></use></svg> RAW STEEL</small></div>
@@ -206,7 +206,7 @@ require __DIR__ . '/components/mobile-header.html.php';
                                 <span class="forum-location">AUSTIN, TX</span>
                                 <a class="forum-bookmark" href="#discussion-gym-psa" aria-label="Save discussion"><svg class="icon"><use href="#forum-bookmark"></use></svg></a>
                             </div>
-                            <h2>[Gym PSA] How Metropolitan Iron handles peak 5 PM rack availability &mdash; New 20-min warmup floor rule &amp; queue etiquette</h2>
+                            <h2><a href="/forum/3">[Gym PSA] How Metropolitan Iron handles peak 5 PM rack availability &mdash; New 20-min warmup floor rule &amp; queue etiquette</a></h2>
                             <p class="forum-excerpt">Management just instituted the deadlift bullpen queue chalk board. If you plan on camping rack #4 for heavy doubles past 5:30 PM, sign in early. Platform etiquette details and chalk usage protocols inside.</p>
                             <div class="forum-thread-tags"><i>#Austin</i><i>#MetropolitanIron</i><i>#GymEtiquette</i><i>#RackTelemetry</i></div>
                             <div class="forum-thread-footer"><span><svg class="icon"><use href="#forum-chat"></use></svg><b>96</b> Replies</span><span><svg class="icon"><use href="#forum-eye"></use></svg>3.8k Views</span></div>
@@ -223,7 +223,7 @@ require __DIR__ . '/components/mobile-header.html.php';
                                 <span class="forum-sanctioned">WRPF SANCTIONED</span>
                                 <a class="forum-bookmark" href="#discussion-meet-debrief" aria-label="Save discussion"><svg class="icon"><use href="#forum-bookmark"></use></svg></a>
                             </div>
-                            <h2>[Meet Debrief] Cutting to 82.5kg for WRPF Nationals: Water cut protocol, 3rd attempt selections</h2>
+                            <h2><a href="/forum/4">[Meet Debrief] Cutting to 82.5kg for WRPF Nationals: Water cut protocol, 3rd attempt selections</a></h2>
                             <div class="meet-stats"><div><span>CUT TARGET</span><strong>-4.2 kg</strong></div><div><span>REFEED TIME</span><strong class="text-blue">14 hrs</strong></div><div><span>TOTAL</span><strong class="text-lime">542.5 kg</strong></div></div>
                             <p class="forum-excerpt">Comprehensive breakdown: Sodium loading starting 6 days out, water taper from 8L down to 500ml, rehydration electrolyte osmolarity ratios, and why jumping 12.5kg instead of 7.5kg on final bench cost the podium spot.</p>
                             <div class="forum-thread-footer"><span><svg class="icon"><use href="#forum-chat"></use></svg><b>63</b> Replies</span><span><svg class="icon"><use href="#forum-eye"></use></svg>2.9k Views</span><span class="forum-thread-tags"><i>#MeetPrep</i><i>#WRPF</i><i>#WeightCut</i><i>#AttemptStrategy</i></span></div>

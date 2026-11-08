@@ -1,0 +1,1217 @@
+.forum-thread-page {
+    background:
+        radial-gradient(ellipse at 87% 2%, rgba(35, 54, 72, 0.18), transparent 34rem),
+        var(--surface);
+}
+
+.ft-main {
+    min-height: calc(100vh - 64px);
+    padding: 18px 0 42px;
+}
+
+.ft-breadcrumb {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 13px;
+    color: var(--on-surface-variant);
+    font-size: 9px;
+    line-height: 14px;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+}
+
+.ft-breadcrumb strong {
+    color: var(--primary-container);
+}
+
+.ft-breadcrumb > span {
+    opacity: 0.6;
+}
+
+.ft-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 286px;
+    align-items: start;
+    gap: 18px;
+}
+
+.ft-article,
+.ft-sidebar {
+    min-width: 0;
+}
+
+.ft-article {
+    overflow: hidden;
+    border: 1px solid var(--outline-glass);
+    border-radius: 12px;
+    background: rgba(19, 27, 46, 0.82);
+}
+
+:root[data-theme="light"] .ft-article,
+:root[data-theme="light"] .ft-side-card {
+    background: var(--surface-low);
+}
+
+.ft-post-header {
+    padding: 17px 19px 13px;
+}
+
+.ft-post-meta {
+    display: flex;
+    min-width: 0;
+    align-items: center;
+    gap: 8px;
+}
+
+.ft-back,
+.ft-bookmark,
+.ft-more {
+    display: grid;
+    width: 30px;
+    height: 30px;
+    flex: none;
+    place-items: center;
+    border: 1px solid var(--outline-glass);
+    border-radius: 7px;
+    background: var(--surface-lowest);
+    color: var(--on-surface-variant);
+}
+
+.ft-back .icon,
+.ft-bookmark .icon {
+    width: 15px;
+    height: 15px;
+}
+
+.ft-post-meta > .forum-avatar {
+    width: 34px;
+    height: 34px;
+    font-size: 11px;
+}
+
+.ft-post-meta .forum-author {
+    gap: 3px;
+    font-size: 11px;
+    line-height: 14px;
+}
+
+.ft-post-meta .forum-author > small {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 9px;
+}
+
+.ft-post-meta .forum-author > small .icon {
+    width: 11px;
+    height: 11px;
+    color: var(--secondary);
+}
+
+.ft-post-meta .forum-post-category {
+    margin-left: auto;
+}
+
+.ft-bookmark {
+    width: 28px;
+    height: 28px;
+}
+
+.ft-bookmark[aria-pressed="true"] {
+    border-color: rgba(195, 244, 0, 0.25);
+    color: var(--primary-container);
+}
+
+.ft-bookmark[aria-pressed="true"] .icon {
+    fill: currentColor;
+}
+
+.ft-more {
+    display: flex;
+    width: 25px;
+    height: 28px;
+    flex-direction: column;
+    justify-content: center;
+    gap: 2px;
+    border: 0;
+    background: transparent;
+}
+
+.ft-more span {
+    width: 3px;
+    height: 3px;
+    border-radius: 50%;
+    background: currentColor;
+}
+
+.ft-post-header h1 {
+    margin-top: 15px;
+    color: var(--text-strong);
+    font-size: clamp(24px, 2.5vw, 33px);
+    line-height: 1.22;
+    font-weight: 800;
+    letter-spacing: -0.035em;
+}
+
+.ft-stats {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 14px;
+    margin-top: 10px;
+}
+
+.ft-stats > span {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    color: var(--on-surface-variant);
+    font-size: 8px;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+}
+
+.ft-stats .icon {
+    width: 12px;
+    height: 12px;
+    color: var(--secondary);
+}
+
+.ft-stats .ft-id {
+    margin-left: auto;
+    color: var(--primary-container);
+}
+
+.ft-video {
+    position: relative;
+    display: flex;
+    min-height: 310px;
+    align-items: center;
+    justify-content: center;
+    margin: 0 19px;
+    overflow: hidden;
+    border-radius: 9px;
+    background-color: var(--surface-lowest);
+    background-position: center 42%;
+    background-size: cover;
+}
+
+.ft-video::before {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(6, 14, 32, 0.2), transparent 42%, rgba(6, 14, 32, 0.82));
+    content: "";
+}
+
+.ft-video-label,
+.ft-video-time,
+.ft-video figcaption {
+    position: absolute;
+    z-index: 1;
+    color: #fff;
+}
+
+.ft-video-label {
+    top: 12px;
+    left: 12px;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 8px;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 5px;
+    background: rgba(6, 14, 32, 0.78);
+    color: var(--primary-container);
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: 0.05em;
+}
+
+.ft-video-label .icon {
+    width: 13px;
+    height: 13px;
+}
+
+.ft-play {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    width: 56px;
+    height: 56px;
+    place-items: center;
+    border-radius: 50%;
+    background: var(--primary-container);
+    color: var(--on-accent);
+    box-shadow: 0 0 32px rgba(195, 244, 0, 0.35);
+}
+
+.ft-play[aria-pressed="true"] {
+    background: #fff;
+}
+
+.ft-play .icon {
+    width: 23px;
+    height: 23px;
+    fill: currentColor;
+}
+
+.ft-video-time {
+    right: 12px;
+    bottom: 12px;
+    padding: 4px 6px;
+    border-radius: 4px;
+    background: rgba(6, 14, 32, 0.8);
+    font-size: 10px;
+}
+
+.ft-video figcaption {
+    right: 70px;
+    bottom: 13px;
+    left: 12px;
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: 0.05em;
+}
+
+.ft-video figcaption b {
+    margin-left: 8px;
+    padding: 3px 5px;
+    border-radius: 3px;
+    background: rgba(123, 208, 255, 0.2);
+    color: var(--secondary);
+    font-size: 8px;
+}
+
+.ft-post-copy {
+    padding: 18px 20px 14px;
+    color: var(--on-surface);
+    font-size: 13px;
+    line-height: 1.8;
+}
+
+.ft-post-copy > p + p {
+    margin-top: 12px;
+}
+
+.ft-post-copy > p strong {
+    color: var(--text-strong);
+}
+
+.ft-telemetry {
+    margin: 16px 0;
+    padding: 13px 14px 10px;
+    border: 1px solid var(--outline-glass);
+    border-radius: 8px;
+    background: var(--surface-lowest);
+}
+
+.ft-telemetry-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+}
+
+.ft-telemetry-heading > span,
+.ft-telemetry-heading > b {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 8px;
+    font-weight: 800;
+    letter-spacing: 0.06em;
+}
+
+.ft-telemetry-heading > span {
+    color: var(--text-strong);
+}
+
+.ft-telemetry-heading .icon {
+    width: 13px;
+    height: 13px;
+    color: var(--secondary);
+}
+
+.ft-telemetry-heading > b {
+    color: var(--primary-container);
+}
+
+.ft-telemetry-heading > b i {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--primary-container);
+}
+
+.ft-metrics {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 7px;
+    margin-top: 11px;
+}
+
+.ft-metrics > div {
+    display: flex;
+    min-height: 55px;
+    flex-direction: column;
+    justify-content: center;
+    gap: 3px;
+    padding: 7px 9px;
+    border-radius: 5px;
+    background: var(--surface-container);
+}
+
+.ft-metrics > div > span {
+    color: var(--on-surface-variant);
+    font-size: 7px;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+}
+
+.ft-metrics > div > strong {
+    color: var(--text-strong);
+    font-size: 14px;
+    line-height: 18px;
+}
+
+.ft-metrics > div > strong small {
+    color: var(--on-surface-variant);
+    font-size: 9px;
+    font-weight: 500;
+}
+
+.ft-chart {
+    display: block;
+    width: 100%;
+    height: 94px;
+    margin-top: 8px;
+}
+
+.ft-chart-grid {
+    fill: none;
+    stroke: var(--outline-glass);
+    stroke-width: 1;
+}
+
+.ft-chart-area {
+    fill: rgba(123, 208, 255, 0.08);
+}
+
+.ft-chart-line {
+    fill: none;
+    stroke: var(--secondary);
+    stroke-width: 2;
+}
+
+.ft-chart circle {
+    fill: var(--primary-container);
+    stroke: var(--surface-lowest);
+    stroke-width: 2;
+}
+
+.ft-chart-scale {
+    display: flex;
+    justify-content: space-between;
+    color: var(--on-surface-variant);
+    font-size: 7px;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+}
+
+.ft-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-top: 15px;
+}
+
+.ft-tags a {
+    padding: 4px 8px;
+    border-radius: 4px;
+    background: var(--surface-high);
+    color: var(--secondary);
+    font-size: 9px;
+}
+
+.ft-tags a:hover {
+    color: var(--primary-container);
+}
+
+.ft-post-actions {
+    display: flex;
+    min-height: 52px;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+    padding: 8px 18px;
+    border-top: 1px solid var(--outline-glass);
+    border-bottom: 1px solid var(--outline-glass);
+    background: var(--surface-lowest);
+}
+
+.ft-post-actions > button,
+.ft-post-actions > a {
+    display: inline-flex;
+    min-height: 30px;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    padding: 0 9px;
+    border-radius: 5px;
+    color: var(--on-surface-variant);
+    font-size: 8px;
+    font-weight: 800;
+    letter-spacing: 0.04em;
+}
+
+.ft-post-actions .icon {
+    width: 14px;
+    height: 14px;
+}
+
+.ft-post-actions .ft-vote {
+    background: var(--surface-high);
+    color: var(--primary-container);
+}
+
+.ft-vote[aria-pressed="true"] .icon {
+    fill: currentColor;
+}
+
+.ft-post-actions > button:hover,
+.ft-post-actions > a:hover {
+    color: var(--text-strong);
+}
+
+.ft-post-actions .ft-report {
+    margin-left: auto;
+}
+
+.ft-action-notice,
+.ft-reply-notice {
+    padding: 8px 18px;
+    background: rgba(123, 208, 255, 0.08);
+    color: var(--secondary);
+    font-size: 10px;
+}
+
+.ft-replies {
+    padding: 17px 19px 20px;
+}
+
+.ft-replies-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    margin-bottom: 12px;
+}
+
+.ft-replies-heading h2 {
+    color: var(--text-strong);
+    font-size: 16px;
+    line-height: 22px;
+    font-weight: 700;
+}
+
+.ft-replies-heading h2 span {
+    margin-left: 4px;
+    color: var(--on-surface-variant);
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.ft-replies-heading > button {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    color: var(--on-surface-variant);
+    font-size: 8px;
+    font-weight: 800;
+    letter-spacing: 0.05em;
+}
+
+.ft-replies-heading > button .icon {
+    width: 12px;
+    height: 12px;
+}
+
+.ft-reply-form {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    padding: 9px;
+    border: 1px solid var(--outline-glass);
+    border-radius: 7px;
+    background: var(--surface-lowest);
+}
+
+.ft-reply-form > .forum-avatar {
+    width: 28px;
+    height: 28px;
+    font-size: 9px;
+}
+
+.ft-reply-form textarea {
+    min-width: 0;
+    min-height: 35px;
+    flex: 1;
+    padding: 5px;
+    border: 0;
+    outline: none;
+    background: transparent;
+    color: var(--on-surface);
+    font: inherit;
+    font-size: 10px;
+    resize: vertical;
+}
+
+.ft-reply-form textarea::placeholder {
+    color: var(--on-surface-variant);
+}
+
+.ft-reply-form > button {
+    display: grid;
+    width: 29px;
+    height: 29px;
+    flex: none;
+    place-items: center;
+    border-radius: 5px;
+    background: var(--primary-container);
+    color: var(--on-accent);
+}
+
+.ft-reply-form > button .icon {
+    width: 14px;
+    height: 14px;
+}
+
+.ft-comment-list {
+    display: grid;
+    gap: 0;
+    margin-top: 8px;
+}
+
+.ft-comment {
+    display: flex;
+    align-items: flex-start;
+    gap: 9px;
+    padding: 13px 3px;
+    border-bottom: 1px solid var(--outline-glass);
+}
+
+.ft-comment > .forum-avatar {
+    width: 29px;
+    height: 29px;
+    font-size: 9px;
+}
+
+.ft-comment-body {
+    min-width: 0;
+    flex: 1;
+}
+
+.ft-comment-heading {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 6px;
+}
+
+.ft-comment-heading > strong {
+    color: var(--text-strong);
+    font-size: 10px;
+}
+
+.ft-comment-heading > span {
+    padding: 2px 5px;
+    border-radius: 3px;
+    background: var(--surface-high);
+    color: var(--secondary);
+    font-size: 7px;
+    font-weight: 800;
+}
+
+.ft-comment-heading .ft-coach-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 3px;
+    background: rgba(195, 244, 0, 0.12);
+    color: var(--primary-container);
+}
+
+.ft-coach-badge .icon {
+    width: 9px;
+    height: 9px;
+}
+
+.ft-comment-heading time {
+    margin-left: auto;
+    color: var(--on-surface-variant);
+    font-size: 7px;
+    font-weight: 700;
+}
+
+.ft-comment-body > p {
+    margin-top: 5px;
+    color: var(--on-surface-variant);
+    font-size: 10px;
+    line-height: 16px;
+}
+
+.ft-comment-actions {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+    margin-top: 7px;
+}
+
+.ft-comment-actions button {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    color: var(--on-surface-variant);
+    font-size: 8px;
+    font-weight: 700;
+}
+
+.ft-comment-actions .icon {
+    width: 12px;
+    height: 12px;
+}
+
+.ft-comment-actions [aria-pressed="true"] {
+    color: var(--primary-container);
+}
+
+.ft-load-replies {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    margin-top: 12px;
+    color: var(--secondary);
+    font-size: 8px;
+    font-weight: 800;
+    letter-spacing: 0.05em;
+}
+
+.ft-load-replies .icon {
+    width: 12px;
+    height: 12px;
+}
+
+.ft-sidebar {
+    display: grid;
+    gap: 10px;
+}
+
+.ft-side-card {
+    padding: 12px;
+    border: 1px solid var(--outline-glass);
+    border-radius: 9px;
+    background: rgba(19, 27, 46, 0.82);
+}
+
+.ft-side-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 7px;
+    margin-bottom: 10px;
+}
+
+.ft-side-heading h2 {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    color: var(--text-strong);
+    font-size: 10px;
+    line-height: 14px;
+    font-weight: 800;
+    letter-spacing: 0.04em;
+}
+
+.ft-side-heading h2 .icon {
+    width: 13px;
+    height: 13px;
+    color: var(--secondary);
+}
+
+.ft-side-heading > span,
+.ft-side-heading > a {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    color: var(--primary-container);
+    font-size: 7px;
+    font-weight: 800;
+    letter-spacing: 0.04em;
+    white-space: nowrap;
+}
+
+.ft-side-heading > span > i {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--primary-container);
+}
+
+.ft-author {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.ft-author-avatar {
+    display: grid;
+    width: 39px;
+    height: 39px;
+    flex: none;
+    place-items: center;
+    border: 1px solid rgba(195, 244, 0, 0.18);
+    border-radius: 50%;
+    background: #293119;
+    color: var(--primary-container);
+    font-size: 11px;
+    font-weight: 800;
+}
+
+.ft-author > span:nth-child(2) {
+    display: flex;
+    min-width: 0;
+    flex: 1;
+    flex-direction: column;
+    gap: 3px;
+}
+
+.ft-author > span:nth-child(2) strong {
+    color: var(--text-strong);
+    font-size: 10px;
+}
+
+.ft-author > span:nth-child(2) small {
+    color: var(--on-surface-variant);
+    font-size: 7px;
+}
+
+.ft-author > button {
+    padding: 5px 7px;
+    border: 1px solid var(--outline-strong);
+    border-radius: 4px;
+    color: var(--on-surface);
+    font-size: 7px;
+    font-weight: 800;
+}
+
+.ft-author > button[aria-pressed="true"] {
+    border-color: rgba(195, 244, 0, 0.3);
+    color: var(--primary-container);
+}
+
+.ft-author-card > p {
+    margin-top: 9px;
+    color: var(--on-surface-variant);
+    font-size: 8px;
+    line-height: 13px;
+}
+
+.ft-author-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 4px;
+    margin-top: 9px;
+    padding-top: 8px;
+    border-top: 1px solid var(--outline-glass);
+}
+
+.ft-author-stats > span {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    color: var(--on-surface-variant);
+    font-size: 6px;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+}
+
+.ft-author-stats b {
+    color: var(--text-strong);
+    font-size: 11px;
+}
+
+.ft-session-card dl {
+    display: grid;
+    gap: 0;
+}
+
+.ft-session-card dl > div {
+    display: flex;
+    justify-content: space-between;
+    gap: 8px;
+    padding: 7px 0;
+    border-top: 1px solid var(--outline-glass);
+}
+
+.ft-session-card dt {
+    color: var(--on-surface-variant);
+    font-size: 7px;
+    font-weight: 800;
+    letter-spacing: 0.05em;
+}
+
+.ft-session-card dd {
+    color: var(--on-surface);
+    font-size: 8px;
+    text-align: right;
+}
+
+.ft-review-progress {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 7px;
+}
+
+.ft-review-progress > span {
+    height: 6px;
+    flex: 1;
+    overflow: hidden;
+    border-radius: 99px;
+    background: var(--surface-high);
+}
+
+.ft-review-progress > span > i {
+    display: block;
+    width: 66.67%;
+    height: 100%;
+    border-radius: inherit;
+    background: var(--primary-container);
+}
+
+.ft-review-progress > strong {
+    color: var(--primary-container);
+    font-size: 7px;
+    white-space: nowrap;
+}
+
+.ft-review-card > p {
+    margin-top: 7px;
+    color: var(--on-surface-variant);
+    font-size: 8px;
+    line-height: 13px;
+}
+
+.ft-coach-avatars {
+    display: flex;
+    align-items: center;
+    margin-top: 9px;
+}
+
+.ft-coach-avatars > span {
+    display: grid;
+    width: 25px;
+    height: 25px;
+    place-items: center;
+    margin-right: -4px;
+    border: 2px solid var(--surface-container);
+    border-radius: 50%;
+    background: var(--surface-high);
+    color: var(--on-surface);
+    font-size: 7px;
+    font-weight: 800;
+}
+
+.ft-coach-avatars > span:nth-child(2) {
+    background: #382d26;
+    color: var(--orange);
+}
+
+.ft-coach-avatars > span:nth-child(3) {
+    background: var(--surface-lowest);
+    color: var(--on-surface-variant);
+}
+
+.ft-coach-avatars > small {
+    margin-left: 10px;
+    color: var(--on-surface-variant);
+    font-size: 7px;
+    font-weight: 700;
+}
+
+.ft-related-card > a {
+    display: grid;
+    gap: 4px;
+    padding: 8px 0;
+    border-top: 1px solid var(--outline-glass);
+}
+
+.ft-related-card > a > span {
+    color: var(--secondary);
+    font-size: 7px;
+    font-weight: 800;
+    letter-spacing: 0.05em;
+}
+
+.ft-related-card > a > strong {
+    color: var(--text-strong);
+    font-size: 9px;
+    line-height: 13px;
+}
+
+.ft-related-card > a > small {
+    color: var(--on-surface-variant);
+    font-size: 7px;
+}
+
+.ft-related-card > a:hover > strong {
+    color: var(--primary-container);
+}
+
+.ft-disclaimer {
+    display: flex;
+    align-items: flex-start;
+    gap: 6px;
+    padding: 9px;
+    border: 1px solid var(--outline-glass);
+    border-radius: 7px;
+    color: var(--on-surface-variant);
+    font-size: 8px;
+    line-height: 13px;
+}
+
+.ft-disclaimer .icon {
+    width: 13px;
+    height: 13px;
+    flex: none;
+    color: var(--secondary);
+}
+
+.ft-visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    clip-path: inset(50%);
+}
+
+[hidden] {
+    display: none !important;
+}
+
+@media (max-width: 1080px) and (min-width: 901px) {
+    .ft-layout {
+        grid-template-columns: minmax(0, 1fr) 255px;
+        gap: 12px;
+    }
+
+    .ft-post-header {
+        padding-inline: 14px;
+    }
+
+    .ft-video {
+        min-height: 260px;
+        margin-inline: 14px;
+    }
+
+    .ft-post-copy {
+        padding-inline: 15px;
+    }
+}
+
+@media (max-width: 900px) {
+    .ft-main {
+        min-height: auto;
+        padding: 12px 0 84px;
+    }
+
+    .ft-layout {
+        grid-template-columns: 1fr;
+        gap: 13px;
+    }
+
+    .ft-sidebar {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .ft-disclaimer {
+        grid-column: 1 / -1;
+    }
+
+    .ft-video {
+        min-height: clamp(220px, 55vw, 390px);
+    }
+}
+
+@media (max-width: 560px) {
+    .ft-main {
+        padding-top: 10px;
+    }
+
+    .ft-breadcrumb {
+        margin-bottom: 9px;
+        font-size: 7px;
+    }
+
+    .ft-layout {
+        gap: 10px;
+    }
+
+    .ft-post-header {
+        padding: 11px 11px 10px;
+    }
+
+    .ft-post-meta {
+        gap: 6px;
+    }
+
+    .ft-back {
+        width: 26px;
+        height: 26px;
+    }
+
+    .ft-post-meta > .forum-avatar {
+        width: 29px;
+        height: 29px;
+    }
+
+    .ft-post-meta .forum-author {
+        flex: 1;
+        font-size: 9px;
+    }
+
+    .ft-post-meta .forum-author > div {
+        gap: 3px;
+    }
+
+    .ft-post-meta .forum-author > div > strong {
+        font-size: 9px;
+    }
+
+    .ft-post-meta .forum-tag {
+        padding-inline: 4px;
+        font-size: 6px;
+    }
+
+    .ft-post-meta .forum-author > small {
+        font-size: 7px;
+    }
+
+    .ft-post-meta .forum-post-category,
+    .ft-more {
+        display: none;
+    }
+
+    .ft-bookmark {
+        width: 25px;
+        height: 25px;
+    }
+
+    .ft-post-header h1 {
+        margin-top: 11px;
+        font-size: 22px;
+        line-height: 1.25;
+    }
+
+    .ft-stats {
+        gap: 8px;
+        margin-top: 8px;
+    }
+
+    .ft-stats > span {
+        gap: 3px;
+        font-size: 7px;
+    }
+
+    .ft-stats .ft-id {
+        display: none;
+    }
+
+    .ft-video {
+        min-height: 218px;
+        margin-inline: 10px;
+    }
+
+    .ft-video-label {
+        top: 8px;
+        left: 8px;
+        font-size: 7px;
+    }
+
+    .ft-video figcaption {
+        right: 56px;
+        bottom: 10px;
+        left: 8px;
+        font-size: 7px;
+    }
+
+    .ft-video figcaption b {
+        display: none;
+    }
+
+    .ft-video-time {
+        right: 8px;
+        bottom: 8px;
+        font-size: 8px;
+    }
+
+    .ft-post-copy {
+        padding: 13px 12px 11px;
+        font-size: 11px;
+        line-height: 1.75;
+    }
+
+    .ft-metrics {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .ft-telemetry {
+        padding: 10px;
+    }
+
+    .ft-post-actions {
+        gap: 3px;
+        padding-inline: 8px;
+    }
+
+    .ft-post-actions > button,
+    .ft-post-actions > a {
+        min-height: 29px;
+        gap: 4px;
+        padding-inline: 6px;
+        font-size: 7px;
+    }
+
+    .ft-post-actions .ft-report {
+        margin-left: 0;
+    }
+
+    .ft-replies {
+        padding: 13px 11px 16px;
+    }
+
+    .ft-replies-heading h2 {
+        font-size: 14px;
+    }
+
+    .ft-replies-heading > button {
+        font-size: 7px;
+    }
+
+    .ft-comment-heading time {
+        width: 100%;
+        margin-left: 0;
+    }
+
+    .ft-sidebar {
+        grid-template-columns: 1fr;
+        gap: 8px;
+    }
+
+    .ft-disclaimer {
+        grid-column: auto;
+    }
+}
