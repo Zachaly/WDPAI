@@ -14,6 +14,9 @@
         <link rel="stylesheet" href="<?= htmlspecialchars((string) $stylesheet, ENT_QUOTES, 'UTF-8') ?>">
     <?php endforeach; ?>
     <script src="/js/schemeChange.js" defer></script>
+    <?php foreach ($pageScripts ?? [] as $script): ?>
+        <script src="<?= htmlspecialchars((string) $script, ENT_QUOTES, 'UTF-8') ?>" defer></script>
+    <?php endforeach; ?>
 </head>
 <body<?= isset($bodyClass) && $bodyClass !== '' ? ' class="' . htmlspecialchars((string) $bodyClass, ENT_QUOTES, 'UTF-8') . '"' : '' ?>>
 <?= $content ?>

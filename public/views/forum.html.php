@@ -106,14 +106,14 @@ require __DIR__ . '/components/mobile-header.html.php';
                 </div>
                 <div class="forum-title-actions">
                     <div class="forum-search"><svg class="icon"><use href="#forum-search"></use></svg><span>Search Forum</span><kbd>⌘K</kbd></div>
-                    <a class="forum-button" href="#quick-launcher"><svg class="icon"><use href="#forum-plus"></use></svg><span>Start Discussion</span></a>
+                    <a class="forum-button" href="/forum/new"><svg class="icon"><use href="#forum-plus"></use></svg><span>Start Discussion</span></a>
                 </div>
             </div>
         </section>
 
         <div class="forum-mobile-tools">
             <div class="forum-mobile-search"><svg class="icon"><use href="#forum-search"></use></svg><span>Search gear specs, meet cuts, form checks...</span></div>
-            <a href="#mobile-discussion-feed"><svg class="icon"><use href="#forum-plus"></use></svg>Thread</a>
+            <a href="/forum/new"><svg class="icon"><use href="#forum-plus"></use></svg>Thread</a>
         </div>
 
         <nav class="forum-categories" aria-label="Discussion categories">
@@ -258,7 +258,7 @@ require __DIR__ . '/components/mobile-header.html.php';
                 <section class="forum-side-card quick-launcher" id="quick-launcher">
                     <div class="forum-side-heading"><h2>QUICK LAUNCHER</h2><span>TELEMETRY SYNCED</span></div>
                     <div class="launcher-compose">Ask for form analysis, report rack crowding, or debate gear specs...</div>
-                    <div class="launcher-actions"><span><svg class="icon"><use href="#forum-camera"></use></svg></span><span><svg class="icon"><use href="#forum-photo"></use></svg></span><span><svg class="icon"><use href="#forum-pin"></use></svg></span><span><svg class="icon"><use href="#forum-chart"></use></svg></span><a href="#quick-launcher">Post Thread</a></div>
+                    <div class="launcher-actions"><span><svg class="icon"><use href="#forum-camera"></use></svg></span><span><svg class="icon"><use href="#forum-photo"></use></svg></span><span><svg class="icon"><use href="#forum-pin"></use></svg></span><span><svg class="icon"><use href="#forum-chart"></use></svg></span><a href="/forum/new">Post Thread</a></div>
                 </section>
 
                 <section class="forum-side-card spotters-card">
@@ -332,7 +332,7 @@ require __DIR__ . '/components/mobile-header.html.php';
 <?php
 require __DIR__ . '/components/footer.html.php';
 ?>
-<a class="forum-mobile-compose" href="#mobile-discussion-feed" aria-label="Start a discussion"><svg class="icon"><use href="#forum-plus"></use></svg><span>Post</span></a>
+<a class="forum-mobile-compose" href="/forum/new" aria-label="Start a discussion"><svg class="icon"><use href="#forum-plus"></use></svg><span>Post</span></a>
 <?php
 require __DIR__ . '/components/mobile-nav.html.php';
 ?>
