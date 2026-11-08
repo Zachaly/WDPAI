@@ -352,6 +352,15 @@
     background: rgba(23, 31, 51, 0.94);
 }
 
+:root[data-theme="light"] .sg-dispatch-card,
+:root[data-theme="light"] .sg-metrics article,
+:root[data-theme="light"] .sg-panel,
+:root[data-theme="light"] .sg-side-card,
+:root[data-theme="light"] .sg-actions {
+    border-color: var(--outline-soft);
+    background: var(--surface-container);
+}
+
 .sg-section {
     padding: 15px 16px;
     scroll-margin-top: 80px;
@@ -1887,6 +1896,11 @@
         background: rgba(11, 19, 38, 0.97);
         box-shadow: 0 -8px 22px rgba(0, 0, 0, 0.2);
         backdrop-filter: blur(16px);
+    }
+
+    :root[data-theme="light"] .sg-mobile-action-bar {
+        border-top-color: var(--outline-glass);
+        background: var(--surface-glass);
     }
 
     .sg-mobile-action-bar .sg-save-button {
