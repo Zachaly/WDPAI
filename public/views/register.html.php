@@ -104,6 +104,17 @@ declare(strict_types=1);
                     </div>
 
                     <div class="registration-field">
+                        <label for="profile-description">PROFILE DESCRIPTION <span>OPTIONAL</span></label>
+                        <textarea id="profile-description" name="description" rows="3" maxlength="500" placeholder="Tell the community a little about your training and goals"><?= htmlspecialchars((string) ($formValues['description'] ?? ''), ENT_QUOTES, 'UTF-8') ?></textarea>
+                        <p class="registration-helper">Up to 500 characters. This will appear on your profile.</p>
+                    </div>
+
+                    <div class="registration-field">
+                        <label for="city">CITY <span>OPTIONAL</span></label>
+                        <input id="city" name="city" type="text" autocomplete="address-level2" placeholder="Warsaw" maxlength="100" value="<?= htmlspecialchars((string) ($formValues['city'] ?? ''), ENT_QUOTES, 'UTF-8') ?>">
+                    </div>
+
+                    <div class="registration-field">
                         <label for="email-address">EMAIL ADDRESS <span aria-hidden="true">*</span></label>
                         <div class="registration-input-wrap">
                             <input id="email-address" name="email" type="email" autocomplete="email" placeholder="athlete@ironpulse.io" maxlength="255" value="<?= htmlspecialchars((string) ($formValues['email'] ?? ''), ENT_QUOTES, 'UTF-8') ?>" required>

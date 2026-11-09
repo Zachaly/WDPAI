@@ -10,7 +10,7 @@ declare(strict_types=1);
         </a>
         <div class="header-status" aria-hidden="true"><svg class="icon"><use href="#<?= htmlspecialchars((string) $iconPrefix, ENT_QUOTES, 'UTF-8') ?>-bars"></use></svg></div>
         <nav class="<?= htmlspecialchars((string) $desktopHeaderComponent['navigationClass'], ENT_QUOTES, 'UTF-8') ?>" aria-label="Primary">
-            <a href="/#reviews">Gym<?= $desktopHeaderComponent['singleLineNavigation'] ? ' ' : '<br>' ?>Reviews</a>
+            <a href="/#reviews"<?= $desktopHeaderComponent['activePage'] === 'home' ? ' class="is-active" aria-current="page"' : '' ?>>Gym<?= $desktopHeaderComponent['singleLineNavigation'] ? ' ' : '<br>' ?>Reviews</a>
             <a href="/gear"<?= $desktopHeaderComponent['activePage'] === 'gear' ? ' class="is-active" aria-current="page"' : '' ?>>Gear<?= $desktopHeaderComponent['singleLineNavigation'] ? ' ' : '<br>' ?>Inventory</a>
             <a href="/forum"<?= $desktopHeaderComponent['activePage'] === 'forum' ? ' class="is-active" aria-current="page"' : '' ?>>Community<?= $desktopHeaderComponent['singleLineNavigation'] ? ' ' : '<br>' ?>Forum</a>
             <a href="/leaderboard"<?= $desktopHeaderComponent['activePage'] === 'leaderboard' ? ' class="is-active" aria-current="page"' : '' ?>>Leaderboard</a>

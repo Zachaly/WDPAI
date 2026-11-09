@@ -325,6 +325,16 @@
     margin-top: 12px;
 }
 
+.profile-account-stats {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+}
+
+.profile-account-stats .profile-stat-card > strong {
+    overflow-wrap: anywhere;
+    font-size: 15px;
+    line-height: 19px;
+}
+
 .profile-stat-card {
     display: grid;
     min-height: 96px;
@@ -795,6 +805,62 @@
     padding: 12px;
 }
 
+.profile-account-card {
+    max-width: none;
+    margin: 0;
+    padding: 18px;
+}
+
+.profile-account-card .profile-section-heading {
+    margin-bottom: 14px;
+}
+
+.profile-account-card .profile-section-heading > .icon {
+    width: 18px;
+    height: 18px;
+    color: var(--primary-container);
+}
+
+.profile-account-card dl {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+    margin: 0;
+}
+
+.profile-account-card dl > div {
+    min-width: 0;
+}
+
+.profile-account-card dt {
+    margin-bottom: 4px;
+    color: var(--on-surface-variant);
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+}
+
+.profile-account-card dd {
+    margin: 0;
+    overflow-wrap: anywhere;
+    color: var(--text-strong);
+    font-size: 13px;
+}
+
+.profile-account-description {
+    grid-column: 1 / -1;
+}
+
+.profile-account-description dd {
+    color: var(--on-surface-variant);
+    line-height: 1.6;
+}
+
+.profile-sidebar .profile-account-card {
+    padding: 12px;
+}
+
 .profile-trust-card .profile-section-heading > .icon,
 .profile-gym-card .profile-section-heading > .icon {
     width: 15px;
@@ -1100,6 +1166,10 @@
         margin-left: auto;
     }
 
+    .profile-account-stats {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
     .profile-bio {
         margin: 8px 14px 0;
         font-size: 9px;
@@ -1140,6 +1210,15 @@
 @media (max-width: 480px) {
     .profile-main {
         padding-top: 9px;
+    }
+
+    .profile-account-card {
+        padding: 13px;
+    }
+
+    .profile-account-card dl {
+        grid-template-columns: 1fr;
+        gap: 10px;
     }
 
     .profile-breadcrumb {

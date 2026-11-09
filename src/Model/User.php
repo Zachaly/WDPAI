@@ -17,6 +17,8 @@ final readonly class User
         public string $passwordHash,
         public DateTimeImmutable $termsAcceptedAt,
         public ?DateTimeImmutable $createdAt = null,
+        public string $description = '',
+        public string $city = '',
     ) {
     }
 }

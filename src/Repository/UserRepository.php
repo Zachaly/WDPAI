@@ -23,14 +23,18 @@ final class UserRepository
                 handle,
                 email,
                 password_hash,
-                terms_accepted_at
+                terms_accepted_at,
+                description,
+                city
             ) VALUES (
                 :first_name,
                 :last_name,
                 :handle,
                 :email,
                 :password_hash,
-                :terms_accepted_at
+                :terms_accepted_at,
+                :description,
+                :city
             )
             RETURNING id',
         );
@@ -42,6 +46,8 @@ final class UserRepository
             'email' => $user->email,
             'password_hash' => $user->passwordHash,
             'terms_accepted_at' => $user->termsAcceptedAt->format('Y-m-d H:i:s.uP'),
+            'description' => $user->description,
+            'city' => $user->city,
         ]);
 
         return (int) $statement->fetchColumn();
@@ -58,7 +64,9 @@ final class UserRepository
                 email,
                 password_hash,
                 terms_accepted_at,
-                created_at
+                created_at,
+                description,
+                city
             FROM users
             WHERE LOWER(email) = LOWER(:email)
                 OR LOWER(handle) = LOWER(:handle)
@@ -83,6 +91,46 @@ final class UserRepository
             passwordHash: (string) $row['password_hash'],
             termsAcceptedAt: new DateTimeImmutable((string) $row['terms_accepted_at']),
             createdAt: new DateTimeImmutable((string) $row['created_at']),
+            description: (string) $row['description'],
+            city: (string) $row['city'],
+        );
+    }
+
+    public function findById(int $userId): ?User
+    {
+        $statement = $this->database->prepare(
+            'SELECT
+                id,
+                first_name,
+                last_name,
+                handle,
+                email,
+                password_hash,
+                terms_accepted_at,
+                created_at,
+                description,
+                city
+            FROM users
+            WHERE id = :id',
+        );
+        $statement->execute(['id' => $userId]);
+
+        $row = $statement->fetch();
+        if ($row === false) {
+            return null;
+        }
+
+        return new User(
+            id: (int) $row['id'],
+            firstName: (string) $row['first_name'],
+            lastName: (string) $row['last_name'],
+            handle: (string) $row['handle'],
+            email: (string) $row['email'],
+            passwordHash: (string) $row['password_hash'],
+            termsAcceptedAt: new DateTimeImmutable((string) $row['terms_accepted_at']),
+            createdAt: new DateTimeImmutable((string) $row['created_at']),
+            description: (string) $row['description'],
+            city: (string) $row['city'],
         );
     }
 

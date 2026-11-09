@@ -22,6 +22,8 @@ final class RegisterController extends AppController
     {
         $firstName = trim($this->postString('first_name'));
         $lastName = trim($this->postString('last_name'));
+        $description = trim($this->postString('description'));
+        $city = trim($this->postString('city'));
         $handle = trim($this->postString('handle'));
         $email = strtolower(trim($this->postString('email')));
         $password = $this->postString('password');
@@ -32,6 +34,8 @@ final class RegisterController extends AppController
         $formValues = [
             'first_name' => $firstName,
             'last_name' => $lastName,
+            'description' => $description,
+            'city' => $city,
             'handle' => $handle,
             'email' => $email,
         ];
@@ -48,6 +52,14 @@ final class RegisterController extends AppController
 
         if ($lastName === '' || !$this->isWithinCharacterLimit($lastName, 100)) {
             $errors[] = 'Enter a last name of up to 100 characters.';
+        }
+
+        if (!$this->isWithinCharacterLimit($description, 500)) {
+            $errors[] = 'Keep the description to 500 characters or fewer.';
+        }
+
+        if (!$this->isWithinCharacterLimit($city, 100)) {
+            $errors[] = 'Keep the city to 100 characters or fewer.';
         }
 
         if (preg_match('/\A[A-Za-z0-9_]{3,30}\z/', $handle) !== 1) {
@@ -96,6 +108,8 @@ final class RegisterController extends AppController
             email: $email,
             passwordHash: $passwordHash,
             termsAcceptedAt: new DateTimeImmutable('now', new DateTimeZone('UTC')),
+            description: $description,
+            city: $city,
         );
 
         try {
