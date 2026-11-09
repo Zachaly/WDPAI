@@ -73,7 +73,26 @@ declare(strict_types=1);
                     <p class="login-revision"><span>SYSTEM REVISION</span><strong>v4.18.2-SEC</strong></p>
                 </header>
 
+                <?php if (isset($authenticatedUserName)): ?>
+                    <section class="login-authenticated" aria-live="polite">
+                        <p class="login-authenticated-status"><i aria-hidden="true"></i> ACCESS GRANTED</p>
+                        <h3><?= htmlspecialchars($authenticatedUserName, ENT_QUOTES, 'UTF-8') ?></h3>
+                        <p>Your athlete session is active in this browser.</p>
+
+                        <?php if (isset($loginError)): ?>
+                            <p class="login-notice login-notice-error" role="alert"><?= htmlspecialchars($loginError, ENT_QUOTES, 'UTF-8') ?></p>
+                        <?php endif; ?>
+
+                        <form action="/logout" method="post">
+                            <input type="hidden" name="csrfToken" value="<?= htmlspecialchars((string) ($csrfToken ?? ''), ENT_QUOTES, 'UTF-8') ?>">
+                            <button class="login-submit" type="submit">
+                                <span>SIGN OUT</span>
+                            </button>
+                        </form>
+                    </section>
+                <?php else: ?>
                 <form class="login-form" action="/login" method="post" data-login-form>
+                    <input type="hidden" name="csrfToken" value="<?= htmlspecialchars((string) ($csrfToken ?? ''), ENT_QUOTES, 'UTF-8') ?>">
                     <div class="login-field">
                         <div class="login-field-label">
                             <label for="login-identifier">ATHLETE HANDLE OR VERIFIED EMAIL</label>
@@ -81,7 +100,7 @@ declare(strict_types=1);
                         </div>
                         <div class="login-input-wrap">
                             <img src="/assets/icons/login-athlete.svg" alt="" aria-hidden="true">
-                            <input id="login-identifier" name="identifier" type="text" autocomplete="username" placeholder="e.g. haack@ironpulse.io or #USAPL-44918" required>
+                            <input id="login-identifier" name="identifier" type="text" autocomplete="username" placeholder="e.g. haack@ironpulse.io or bench_beast93" value="<?= htmlspecialchars((string) ($loginIdentifier ?? ''), ENT_QUOTES, 'UTF-8') ?>" required>
                         </div>
                     </div>
 
@@ -100,10 +119,7 @@ declare(strict_types=1);
                     </div>
 
                     <div class="login-options">
-                        <label class="login-remember">
-                            <input type="checkbox" name="remember" value="1" checked>
-                            <span>Remember this audited terminal for 30 days</span>
-                        </label>
+                        <span class="login-session-note">SESSION COOKIE // HTTPONLY</span>
                         <span class="login-tpm"><i aria-hidden="true"></i>TPM ATTESTED</span>
                     </div>
 
@@ -112,18 +128,25 @@ declare(strict_types=1);
                         <img src="/assets/icons/login-arrow.svg" alt="" aria-hidden="true">
                     </button>
 
-                    <p class="login-notice" role="status" aria-live="polite" data-login-notice<?= isset($loginMessage) ? '' : ' hidden' ?>><?= htmlspecialchars((string) ($loginMessage ?? ''), ENT_QUOTES, 'UTF-8') ?></p>
+                    <?php if (isset($loginError)): ?>
+                        <p class="login-notice login-notice-error" role="alert"><?= htmlspecialchars($loginError, ENT_QUOTES, 'UTF-8') ?></p>
+                    <?php else: ?>
+                        <p class="login-notice" role="status" aria-live="polite" data-login-notice<?= isset($loginMessage) ? '' : ' hidden' ?>><?= htmlspecialchars((string) ($loginMessage ?? ''), ENT_QUOTES, 'UTF-8') ?></p>
+                    <?php endif; ?>
                 </form>
+                <?php endif; ?>
 
                 <footer class="login-terminal-footer">
                     <p class="login-signed-badge">
                         <img src="/assets/icons/login-lock.svg" alt="" aria-hidden="true">
                         <span>256-BIT SIGNED &bull; NODE: US-CENTRAL-1 &bull;<br>ZERO FLUFF</span>
                     </p>
+                    <?php if (!isset($authenticatedUserName)): ?>
                     <div class="login-register-link">
                         <p>Unregistered<br>lifter?</p>
                         <a href="/register">Request Auditor<br>Verification</a>
                     </div>
+                    <?php endif; ?>
                 </footer>
             </div>
         </section>

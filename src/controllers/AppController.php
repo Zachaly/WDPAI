@@ -7,6 +7,28 @@ namespace App\Controller;
 
 abstract class AppController
 {
+    protected function csrfToken(): string
+    {
+        if (!isset($_SESSION['csrf_token']) || !\is_string($_SESSION['csrf_token'])) {
+            $_SESSION['csrf_token'] = bin2hex(random_bytes(32));
+        }
+
+        return $_SESSION['csrf_token'];
+    }
+
+    protected function isCsrfTokenValid(string $token): bool
+    {
+        return isset($_SESSION['csrf_token'])
+            && \is_string($_SESSION['csrf_token'])
+            && hash_equals($_SESSION['csrf_token'], $token);
+    }
+
+    protected function redirect(string $path): never
+    {
+        header('Location: ' . $path, true, 303);
+        exit;
+    }
+
     protected function render(string $template, array $variables = []): void
     {
         $templatePath = dirname(__DIR__, 2) . '/public/views/' . $template . '.html.php';

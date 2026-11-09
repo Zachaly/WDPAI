@@ -7,14 +7,12 @@ if (registrationForm instanceof HTMLFormElement) {
     const passwordStatus = registrationForm.querySelector('[data-password-status]');
     const strengthMeter = registrationForm.querySelector('[data-password-strength]');
     const strengthSegments = strengthMeter?.querySelectorAll('span');
-    const notice = registrationForm.querySelector('[data-registration-notice]');
 
     if (
         passwordInput instanceof HTMLInputElement
         && confirmationInput instanceof HTMLInputElement
         && passwordStatus instanceof HTMLElement
         && strengthMeter instanceof HTMLElement
-        && notice instanceof HTMLElement
         && strengthSegments
     ) {
         const rules = {
@@ -79,16 +77,5 @@ if (registrationForm instanceof HTMLFormElement) {
             });
         });
 
-        registrationForm.addEventListener('submit', (event) => {
-            event.preventDefault();
-            updatePasswordFeedback();
-
-            if (!registrationForm.reportValidity()) {
-                return;
-            }
-
-            notice.hidden = false;
-            notice.textContent = 'This registration preview is a mockup. Account creation is not connected yet.';
-        });
     }
 }
