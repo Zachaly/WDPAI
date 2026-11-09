@@ -60,6 +60,7 @@ $footerComponent = [
         ]],
     ],
 ];
+$gearData = require __DIR__ . '/gear-data.php';
 ?>
 <svg class="icon-sprite" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg">
     <symbol id="gear-dumbbell" viewBox="0 0 24 24"><path d="M3 9v6M6.5 7v10M17.5 7v10M21 9v6M6.5 12h11"/></symbol>
@@ -105,11 +106,9 @@ require __DIR__ . '/components/mobile-header.html.php';
         </section>
 
         <section class="gear-summary" aria-label="Inventory summary">
-            <article class="summary-metric"><span class="summary-label">COMP BENCHES</span><strong>8,420</strong><small>Ghost, ER, TSS, Eleiko</small><svg class="icon metric-mark"><use href="#gear-bench"></use></svg></article>
-            <article class="summary-metric"><span class="summary-label">RACKS &amp; MONOLIFTS</span><strong>4,150</strong><small>IPF specs &amp; hybrid units</small><svg class="icon metric-mark"><use href="#gear-rack"></use></svg></article>
-            <article class="summary-metric"><span class="summary-label">SPECIALTY BARS</span><strong>1,290</strong><small>SSB, Buffalo, Kabuki</small><svg class="icon metric-mark"><use href="#gear-bars"></use></svg></article>
-            <article class="summary-metric"><span class="summary-label">CALIBRATED STEEL</span><strong>1.9M <small>KG</small></strong><small>+10g Ivanko &amp; Rogue KG</small><svg class="icon metric-mark"><use href="#gear-weight"></use></svg></article>
-            <article class="summary-metric summary-accuracy"><span class="summary-label">AUDIT ACCURACY</span><strong>99.4%</strong><small>89,400+ peer reviews</small><svg class="icon metric-mark"><use href="#gear-shield"></use></svg></article>
+            <?php foreach ($gearData['metrics'] as $metric): ?>
+                <?php require __DIR__ . '/components/gear-summary-metric.html.php'; ?>
+            <?php endforeach; ?>
         </section>
 
         <section class="gear-search-panel" aria-label="Search equipment inventory">
@@ -166,18 +165,9 @@ require __DIR__ . '/components/mobile-header.html.php';
                 <span>2 Verified Stems</span>
             </div>
             <div class="knurl-grid">
-                <article class="knurl-card">
-                    <div class="knurl-card-top"><span class="knurl-brand">ELEIKO IPF</span><span class="knurl-weight">20 KG</span></div>
-                    <h3>Comp Bar</h3>
-                    <dl><div><dt>Profile</dt><dd>Volcano</dd></div><div><dt>Shaft</dt><dd>29.0 mm</dd></div></dl>
-                    <div class="aggression"><span>AGGRESSION</span><strong aria-label="4 out of 5 stars">★★★★<i>★</i></strong></div>
-                </article>
-                <article class="knurl-card knurl-card-blue">
-                    <div class="knurl-card-top"><span class="knurl-brand">BUDDY CAPP'S</span><span class="knurl-weight">20 KG</span></div>
-                    <h3>Texas Power</h3>
-                    <dl><div><dt>Profile</dt><dd>Mountain</dd></div><div><dt>Shaft</dt><dd>28.5 mm</dd></div></dl>
-                    <div class="aggression"><span>AGGRESSION</span><strong aria-label="5 out of 5 stars">★★★★★</strong></div>
-                </article>
+                <?php foreach ($gearData['knurl'] as $knurl): ?>
+                    <?php require __DIR__ . '/components/gear-knurl-card.html.php'; ?>
+                <?php endforeach; ?>
             </div>
         </section>
 
@@ -188,71 +178,9 @@ require __DIR__ . '/components/mobile-header.html.php';
             </div>
 
             <div class="facility-manifests">
-                <article class="manifest-card">
-                    <div class="manifest-image" style="background-image:url('/assets/img/metro-iron.jpg')">
-                        <span class="manifest-score"><svg class="icon"><use href="#gear-shield"></use></svg>99.8% VERIFIED</span>
-                    </div>
-                    <div class="manifest-content">
-                        <div class="manifest-title"><div><h3>Metropolitan Iron Club</h3><span><svg class="icon"><use href="#gear-pin"></use></svg>Austin, TX &bull; 760 m&sup2;</span></div><strong>99.8%</strong></div>
-                        <div class="manifest-group">
-                            <div class="manifest-group-head"><span>RACKS &amp; BENCHES</span><strong>18 COMBOS ON DECK</strong></div>
-                            <div class="manifest-pair"><span>8&times; Eleiko IPF Combos</span><span>6&times; Ghost Strong Benches</span></div>
-                            <div class="manifest-pair"><span>Roller J-cups &amp; lever arms</span><span>37cm Competition Fat Pads</span></div>
-                        </div>
-                        <div class="manifest-group">
-                            <div class="manifest-group-head"><span>BARBELL ARMORY</span><strong>28 SPEC BARS</strong></div>
-                            <div class="manifest-pair"><span>12&times; Texas Power Bars (29mm)</span><span class="text-lime">AGGRESSIVE</span></div>
-                            <div class="manifest-pair"><span>6&times; Kabuki Squat Bars (32mm)</span><span class="text-blue">ZERO FLEX</span></div>
-                            <div class="manifest-pair"><span>4&times; Rogue Ohio Deadlift (27mm)</span><span class="text-orange">HIGH WHIP</span></div>
-                        </div>
-                        <div class="manifest-tags"><span>IVANKO KG SPEC</span><span>ELEIKO IPF STEEL</span><span>KABUKI SPECIALTY</span></div>
-                        <div class="manifest-footer"><span><svg class="icon"><use href="#gear-check"></use></svg>AUDITED 2D AGO</span><a href="#hardware-index">Inspect spec <svg class="icon"><use href="#gear-arrow"></use></svg></a></div>
-                    </div>
-                </article>
-
-                <article class="manifest-card">
-                    <div class="manifest-image manifest-image-apex" style="background-image:url('/assets/img/iron-haven.jpg')">
-                        <span class="manifest-score"><svg class="icon"><use href="#gear-shield"></use></svg>99.2% VERIFIED</span>
-                    </div>
-                    <div class="manifest-content">
-                        <div class="manifest-title"><div><h3>Apex Strength &amp; Conditioning</h3><span><svg class="icon"><use href="#gear-pin"></use></svg>Columbus, OH &bull; 1,060 m&sup2;</span></div><strong>99.2%</strong></div>
-                        <div class="manifest-group">
-                            <div class="manifest-group-head"><span>RACKS &amp; BENCHES</span><strong>14 CAGES &amp; COMBOS</strong></div>
-                            <div class="manifest-pair"><span>10&times; 3&times;3 11-Gauge Cages</span><span>8&times; TSS Comp Benches</span></div>
-                            <div class="manifest-pair"><span>Band pegs &amp; spotter straps</span><span>Grip vinyl &amp; comp footing</span></div>
-                        </div>
-                        <div class="manifest-group">
-                            <div class="manifest-group-head"><span>BARBELL ARMORY</span><strong>32 SPEC BARS</strong></div>
-                            <div class="manifest-pair"><span>16&times; Rogue Ohio Power (Bare Steel)</span><span class="text-lime">MAX GRIP</span></div>
-                            <div class="manifest-pair"><span>8&times; Texas Deadlift Bars (27mm)</span><span class="text-blue">DEEP KNURL</span></div>
-                            <div class="manifest-pair"><span>4&times; Kabuki Cadillac Bench Bars</span><span class="text-orange">MULTI-GRIP</span></div>
-                        </div>
-                        <div class="manifest-tags"><span>ROGUE CALIBRATED</span><span>TEXAS POWER BARS</span><span>BAND PEGS VERIFIED</span></div>
-                        <div class="manifest-footer"><span><svg class="icon"><use href="#gear-check"></use></svg>AUDITED 5D AGO</span><a href="#hardware-index">Inspect spec <svg class="icon"><use href="#gear-arrow"></use></svg></a></div>
-                    </div>
-                </article>
-
-                <article class="manifest-card">
-                    <div class="manifest-image manifest-image-vanguard" style="background-image:url('/assets/img/black-iron.jpg')">
-                        <span class="manifest-score"><svg class="icon"><use href="#gear-shield"></use></svg>100% VERIFIED</span>
-                    </div>
-                    <div class="manifest-content">
-                        <div class="manifest-title"><div><h3>Vanguard Barbell Co.</h3><span><svg class="icon"><use href="#gear-pin"></use></svg>East Austin Yards, TX &bull; 640 m&sup2;</span></div><strong>100%</strong></div>
-                        <div class="manifest-group">
-                            <div class="manifest-group-head"><span>RACKS &amp; BENCHES</span><strong>4 MONOS &bull; 6 COMBOS</strong></div>
-                            <div class="manifest-pair"><span>4&times; Custom Monolifts</span><span>8&times; Fat Pad Comp Benches</span></div>
-                            <div class="manifest-pair"><span>Hydraulic jack assist arms</span><span>IPF spec Thompson pads</span></div>
-                        </div>
-                        <div class="manifest-group">
-                            <div class="manifest-group-head"><span>BARBELL ARMORY</span><strong>25 SPEC BARS</strong></div>
-                            <div class="manifest-pair"><span>8&times; Kabuki Transformer SSB</span><span class="text-lime">24 POSITIONS</span></div>
-                            <div class="manifest-pair"><span>6&times; Texas Squat Bars (32mm)</span><span class="text-blue">SHARP KNURL</span></div>
-                            <div class="manifest-pair"><span>5&times; Okie Deadlift Bars</span><span class="text-orange">LEGENDARY WHIP</span></div>
-                        </div>
-                        <div class="manifest-tags"><span>VINTAGE MILLED CAST</span><span>FORZA BENCHES</span><span>STRONGMAN IMPLEMENTS</span></div>
-                        <div class="manifest-footer"><span><svg class="icon"><use href="#gear-check"></use></svg>AUDITED 1W AGO</span><a href="#hardware-index">Inspect spec <svg class="icon"><use href="#gear-arrow"></use></svg></a></div>
-                    </div>
-                </article>
+                <?php foreach ($gearData['manifests'] as $manifest): ?>
+                    <?php require __DIR__ . '/components/gear-manifest-card.html.php'; ?>
+                <?php endforeach; ?>
             </div>
         </section>
 
@@ -265,13 +193,9 @@ require __DIR__ . '/components/mobile-header.html.php';
                 <table class="hardware-table">
                     <thead><tr><th>Equipment &amp; hardware item</th><th>Manufacturer</th><th>Technical specification</th><th>Knurl / tolerance rating</th><th>Facilities indexed</th><th>Audit status</th></tr></thead>
                     <tbody>
-                        <tr><td><span class="hardware-symbol symbol-lime"><svg class="icon"><use href="#gear-bars"></use></svg></span><strong>Texas Power Bar<small>28.5mm Diameter &bull; 20KG Barbell</small></strong></td><td>Texas Power Bars /<br>Buddy Capps</td><td>190,000 PSI Tensile &bull; Raw Steel &bull;<br>Medium-Wide Center Knurl</td><td><strong class="text-lime">VOLCANO<br>9.2 / 10</strong><span>Aggressive bite</span></td><td><strong>1,420</strong><small>Gyms verified</small></td><td><strong class="audit-pass">VERIFIED<br>SPEC</strong></td></tr>
-                        <tr><td><span class="hardware-symbol symbol-blue"><svg class="icon"><use href="#gear-scale"></use></svg></span><strong>Rogue Calibrated Steel KG Discs<small>IPF Approved &bull; Slim Profile Iron</small></strong></td><td>Rogue Fitness</td><td>Precision Cast Iron &bull; E-Coat Powder<br>Finish &bull; Laser Etched Logo</td><td><strong class="text-blue">&plusmn;10G<br>CALIBRATION</strong><span>Competition Spec</span></td><td><strong>1,150</strong><small>Gyms verified</small></td><td><strong class="audit-pass">VERIFIED<br>SPEC</strong></td></tr>
-                        <tr><td><span class="hardware-symbol symbol-lime"><svg class="icon"><use href="#gear-rack"></use></svg></span><strong>Eleiko IPF Competition Combo Rack<small>Dual Squat &amp; Bench &bull; Pin-and-Pipe</small></strong></td><td>Eleiko Sport (Sweden)</td><td>Competition Lever Jack Arms &bull;<br>Polyurethane Rollers &bull; IPF Spec</td><td><strong class="text-lime">OFFICIAL<br>IPF</strong><span>Tolerance:<br>&lt;0.5mm</span></td><td><strong>840</strong><small>Gyms verified</small></td><td><strong class="audit-pass">VERIFIED<br>SPEC</strong></td></tr>
-                        <tr><td><span class="hardware-symbol symbol-orange"><svg class="icon"><use href="#gear-bench"></use></svg></span><strong>Ghost Strong Comp Bench / Return Rollers<small>Integrated Roller Spot &bull; 38cm Fat Pad</small></strong></td><td>Ghost Strong</td><td>Quick lever adjustment &bull; Grippy<br>texturized pad &bull; 3&times;3 7-Gauge steel</td><td><strong class="text-orange">ELITE GRIP 9.8</strong><span>Non-slip vinyl</span></td><td><strong>520</strong><small>Gyms verified</small></td><td><strong class="audit-pass">VERIFIED<br>SPEC</strong></td></tr>
-                        <tr><td><span class="hardware-symbol symbol-lime"><svg class="icon"><use href="#gear-dumbbell"></use></svg></span><strong>Kabuki Strength Transformer Bar<small>Adjustable Angle SSB &bull; 24 Load Mechanics</small></strong></td><td>Kabuki Strength</td><td>1.5&quot; diameter sleeve &bull; Removable<br>handles &bull; Spring pin selector</td><td><strong class="text-lime">PATENTED CAM</strong><span>6 angle settings</span></td><td><strong>390</strong><small>Gyms verified</small></td><td><strong class="audit-pass">VERIFIED<br>SPEC</strong></td></tr>
-                        <tr><td><span class="hardware-symbol symbol-blue"><svg class="icon"><use href="#gear-weight"></use></svg></span><strong>Westside Barbell Pro Reverse Hyper<small>Posterior Chain Restoration &bull; Pendulum Arm</small></td><td>Westside Barbell /<br>Rogue</td><td>Industrial Strap attachment &bull; UHMW<br>step plates &bull; 180kg load rating</td><td><strong class="text-blue">ORIGINAL<br>SPEC</strong><span>Louie Simmons<br>design</span></td><td><strong>640</strong><small>Gyms verified</small></td><td><strong class="audit-pass">VERIFIED<br>SPEC</strong></td></tr>
-                        <tr><td><span class="hardware-symbol symbol-lime"><svg class="icon"><use href="#gear-rack"></use></svg></span><strong>Texas Strength Systems Monolift<small>Full Heavyweight Monolift &bull; Counter-Weight Arms</small></td><td>Texas Strength<br>Systems</td><td>Hydraulic foot jack lift &bull; Multi-point<br>height adjustments &bull; 1000kg load test</td><td><strong class="text-lime">HYDRAULIC</strong><span>Heavyweight power</span></td><td><strong>280</strong><small>Gyms verified</small></td><td><strong class="audit-pass">VERIFIED<br>SPEC</strong></td></tr>
+                        <?php foreach ($gearData['hardware'] as $item): ?>
+                            <?php require __DIR__ . '/components/gear-hardware-row.html.php'; ?>
+                        <?php endforeach; ?>
                     </tbody>
                 </table>
             </div>

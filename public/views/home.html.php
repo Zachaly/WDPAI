@@ -1,3 +1,9 @@
+<?php
+
+declare(strict_types=1);
+
+$homeCards = require __DIR__ . '/home-cards.php';
+?>
 <svg class="icon-sprite" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg">
     <symbol id="i-dumbbell" viewBox="0 0 24 24"><path d="M3 9v6M6.5 7v10M17.5 7v10M21 9v6M6.5 12h11"/></symbol>
     <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.6-3.6"/></symbol>
@@ -158,77 +164,9 @@
                 </div>
 
                 <div class="inventory-grid">
-                    <article class="facility-card">
-                        <div class="facility-head">
-                            <div>
-                                <span class="facility-location">DOWNTOWN AUSTIN &middot; 1.2 MI</span>
-                                <h3>Metropolitan Iron<br>Club</h3>
-                            </div>
-                            <span class="tag tag-blue">AUDITED<br>SANCTUARY</span>
-                        </div>
-                        <div class="capacity">
-                            <div class="capacity-head"><span>CAPACITY INDEX</span><span class="text-lime">TIER 1 POWERLIFTING</span></div>
-                            <div class="capacity-track"><span class="capacity-fill"></span></div>
-                        </div>
-                        <div class="equipment-grid">
-                            <div class="equipment-tile"><span class="tile-label"><span class="dot"></span>COMBO RACKS</span><strong>8 Units</strong><span class="tile-note text-lime">Eleiko &amp; ER</span></div>
-                            <div class="equipment-tile"><span class="tile-label"><span class="dot"></span>COMP BENCHES</span><strong>6 Units</strong><span class="tile-note text-lime">Ghost &amp; TSS</span></div>
-                            <div class="equipment-tile"><span class="tile-label">DEADLIFT DECKS</span><strong>4 Platforms</strong><span class="tile-note">With jacks</span></div>
-                            <div class="equipment-tile"><span class="tile-label">CALIBRATED PLATES</span><strong>3 Full Sets</strong><span class="tile-note">Ivanko Calibrated</span></div>
-                        </div>
-                        <div class="facility-foot">
-                            <span class="auditor"><svg class="icon icon-lime"><use href="#i-check"></use></svg>By @BigDan_83</span>
-                            <a class="mini-button mini-button-solid" href="#reviews">View Inventory</a>
-                        </div>
-                    </article>
-
-                    <article class="facility-card">
-                        <div class="facility-head">
-                            <div>
-                                <span class="facility-location">NORTH INDUSTRIAL &middot; 4.8 MI</span>
-                                <h3>Apex Strength &amp;<br>Conditioning</h3>
-                            </div>
-                            <span class="tag tag-steel">HEAVY IRON<br>HUB</span>
-                        </div>
-                        <div class="capacity">
-                            <div class="capacity-head"><span>CAPACITY INDEX</span><span class="text-lime">EXPANSIVE ROSTER</span></div>
-                            <div class="capacity-track"><span class="capacity-fill"></span></div>
-                        </div>
-                        <div class="equipment-grid">
-                            <div class="equipment-tile"><span class="tile-label"><span class="dot"></span>POWER CAGES</span><strong>10 Units</strong><span class="tile-note text-lime">Full 3x3 11-Gauge</span></div>
-                            <div class="equipment-tile"><span class="tile-label"><span class="dot"></span>COMP BENCHES</span><strong>8 Units</strong><span class="tile-note text-lime">Competition Footing</span></div>
-                            <div class="equipment-tile"><span class="tile-label">DEADLIFT DECKS</span><strong>6 Platforms</strong><span class="tile-note">Band peg equipped</span></div>
-                            <div class="equipment-tile"><span class="tile-label">SPECIALTY BARS</span><strong>18 Bars</strong><span class="tile-note">SSB, Kabuki, Buffalo</span></div>
-                        </div>
-                        <div class="facility-foot">
-                            <span class="auditor"><svg class="icon icon-lime"><use href="#i-check"></use></svg>By @CoachSarah_K</span>
-                            <a class="mini-button" href="#reviews">Inspect Roster</a>
-                        </div>
-                    </article>
-
-                    <article class="facility-card">
-                        <div class="facility-head">
-                            <div>
-                                <span class="facility-location text-blue">EAST AUSTIN YARDS &middot; 3.1 MI</span>
-                                <h3>Vanguard Barbell<br>Co.</h3>
-                            </div>
-                            <span class="tag tag-blue-solid">24/7 KEYCARD<br>ACCESS</span>
-                        </div>
-                        <div class="capacity">
-                            <div class="capacity-head"><span>CAPACITY INDEX</span><span class="text-blue">SPECIALTY SANCTUARY</span></div>
-                            <div class="capacity-track"><span class="capacity-fill capacity-fill-blue"></span></div>
-                        </div>
-                        <div class="equipment-grid">
-                            <div class="equipment-tile"><span class="tile-label"><span class="dot"></span>MONOS &amp; RACKS</span><strong>10 Units</strong><span class="tile-note text-lime">4 Monos, 6 Combos</span></div>
-                            <div class="equipment-tile"><span class="tile-label"><span class="dot"></span>COMP BENCHES</span><strong>8 Units</strong><span class="tile-note text-lime">Fat pads &amp; IPF specs</span></div>
-                            <div class="equipment-tile"><span class="tile-label">DEADLIFT DECKS</span><strong>5 Decks</strong><span class="tile-note">Full rubber &amp; oak</span></div>
-                            <div class="equipment-tile"><span class="tile-label">POSTERIOR CHAIN</span><strong class="text-blue">2 Rev Hypers</strong><span class="tile-note">+ 4 Westside GHDs</span></div>
-                        </div>
-                        <div class="facility-foot">
-                            <span class="auditor"><svg class="icon icon-blue"><use href="#i-check"></use></svg>By @ThorLiftsHeavy</span>
-                            <a class="mini-button mini-button-blue" href="#reviews">View Inventory</a>
-                        </div>
-                    </article>
+                    <?php foreach ($homeCards['capacities'] as $capacity): ?>
+                        <?php require __DIR__ . '/components/capacity-card.html.php'; ?>
+                    <?php endforeach; ?>
                 </div>
             </div>
         </section>
@@ -251,121 +189,9 @@
                 </div>
 
                 <div class="review-grid">
-                    <article class="review-card">
-                        <div class="review-media" style="background-image:url('/assets/img/forge-barbell.jpg')">
-                            <div class="media-top">
-                                <span class="media-badge"><svg class="icon icon-lime"><use href="#i-shield"></use></svg>AUDITED FACILITY</span>
-                                <span class="rating"><svg class="icon"><use href="#i-star"></use></svg>4.98</span>
-                            </div>
-                            <div class="media-caption">
-                                <span class="eyebrow-text text-lime">AUSTIN, TX</span>
-                                <h3>The Forge Barbell Club</h3>
-                            </div>
-                        </div>
-                        <div class="review-body">
-                            <dl class="spec-list">
-                                <div><dt><svg class="icon icon-lime"><use href="#i-check"></use></svg>Chalk Allowed:</dt><dd><strong>Yes</strong> <span>(Unrestricted)</span></dd></div>
-                                <div><dt><svg class="icon icon-lime"><use href="#i-check"></use></svg>Bumper Plates:</dt><dd>Eleiko IWF</dd></div>
-                                <div><dt><svg class="icon icon-lime"><use href="#i-check"></use></svg>Squat Racks:</dt><dd><strong>14 Monos &amp; Power</strong></dd></div>
-                                <div><dt><svg class="icon icon-blue"><use href="#i-check"></use></svg>Dumbbells:</dt><dd>Up to 180 lbs</dd></div>
-                            </dl>
-                            <blockquote class="quote">
-                                <p>&ldquo;No commercial music restrictions, calibrated Ivanko discs, deadlift jacks at every single platform. Pure lifting sanctuary.&rdquo;</p>
-                                <footer><span class="text-lime">VERIFIED COMPETITOR</span><span class="muted">&middot; @MarcusVance (USAPL 83kg)</span></footer>
-                            </blockquote>
-                            <div class="tag-row">
-                                <span class="tag tag-steel">Competition Benches</span>
-                                <span class="tag tag-steel">Chalk Bowls</span>
-                                <span class="tag tag-steel">No Contract</span>
-                            </div>
-                            <div class="review-meta">
-                                <span class="muted">Rated by 340 lifters</span>
-                                <a class="text-link" href="#reviews">Full Specs <svg class="icon"><use href="#i-arrow-right"></use></svg></a>
-                            </div>
-                        </div>
-                    </article>
-
-                    <article class="review-card">
-                        <div class="review-media" style="background-image:url('/assets/img/iron-haven.jpg')">
-                            <div class="media-top">
-                                <span class="media-badge"><svg class="icon icon-lime"><use href="#i-shield"></use></svg>AUDITED FACILITY</span>
-                                <span class="rating"><svg class="icon"><use href="#i-star"></use></svg>4.92</span>
-                            </div>
-                            <div class="media-caption">
-                                <span class="eyebrow-text text-lime">COLUMBUS, OH</span>
-                                <h3>Iron Haven Compound</h3>
-                            </div>
-                        </div>
-                        <div class="review-body">
-                            <dl class="spec-list">
-                                <div><dt><svg class="icon icon-lime"><use href="#i-check"></use></svg>Chalk Allowed:</dt><dd><strong>Yes</strong> <span>(Provided)</span></dd></div>
-                                <div><dt><svg class="icon icon-lime"><use href="#i-check"></use></svg>Bumper Plates:</dt><dd><strong>Rogue Competition</strong></dd></div>
-                                <div><dt><svg class="icon icon-lime"><use href="#i-check"></use></svg>Squat Racks:</dt><dd><strong>18 Combo Units</strong></dd></div>
-                                <div><dt><svg class="icon icon-blue"><use href="#i-check"></use></svg>Dumbbells:</dt><dd>Up to 200 lbs</dd></div>
-                            </dl>
-                            <blockquote class="quote">
-                                <p>&ldquo;12 dedicated deadlift platforms, custom knurled Texas power bars, and zero judgement on dropping heavy pulls. Exceptional vibe.&rdquo;</p>
-                                <footer><span class="text-blue">POWERLIFTING COACH</span><span class="muted">&middot; @CoachSarah_K (IPF Certified)</span></footer>
-                            </blockquote>
-                            <div class="tag-row">
-                                <span class="tag tag-steel">Ghost Roller J-Cups</span>
-                                <span class="tag tag-steel">Monolifts</span>
-                                <span class="tag tag-steel">Ice Bath</span>
-                            </div>
-                            <div class="review-meta">
-                                <span class="muted">Rated by 412 lifters</span>
-                                <a class="text-link" href="#reviews">Full Specs <svg class="icon"><use href="#i-arrow-right"></use></svg></a>
-                            </div>
-                        </div>
-                    </article>
-
-                    <article class="review-card">
-                        <div class="review-media" style="background-image:url('/assets/img/black-iron.jpg')">
-                            <div class="media-top">
-                                <span class="media-badge"><svg class="icon icon-lime"><use href="#i-shield"></use></svg>AUDITED FACILITY</span>
-                                <span class="rating"><svg class="icon"><use href="#i-star"></use></svg>4.89</span>
-                            </div>
-                            <div class="media-caption">
-                                <span class="eyebrow-text text-lime">SEATTLE, WA</span>
-                                <h3>Black Iron Bastion</h3>
-                            </div>
-                        </div>
-                        <div class="review-body">
-                            <dl class="spec-list">
-                                <div><dt><svg class="icon icon-lime"><use href="#i-check"></use></svg>Chalk Allowed:</dt><dd><strong>Yes</strong> <span>(Unmetered)</span></dd></div>
-                                <div><dt><svg class="icon icon-lime"><use href="#i-check"></use></svg>Bumper Plates:</dt><dd><strong>Uesaka &amp; Rogue</strong></dd></div>
-                                <div><dt><svg class="icon icon-lime"><use href="#i-check"></use></svg>Squat Racks:</dt><dd><strong>10 Full Power Cages</strong></dd></div>
-                                <div><dt><svg class="icon icon-blue"><use href="#i-check"></use></svg>Dumbbells:</dt><dd>Up to 160 lbs</dd></div>
-                            </dl>
-                            <blockquote class="quote">
-                                <p>&ldquo;A cathedral of strength. Calibrated thin plates ensure you can load 700+ without running out of sleeve room. Best bar stock on the West Coast.&rdquo;</p>
-                                <footer><span class="text-orange">STRONGMAN PRO</span><span class="muted">&middot; @ThorLiftsHeavy</span></footer>
-                            </blockquote>
-                            <div class="tag-row">
-                                <span class="tag tag-steel">Atlas Stones</span>
-                                <span class="tag tag-steel">Sling Shot Allowed</span>
-                                <span class="tag tag-steel">Recovery Sauna</span>
-                            </div>
-                            <div class="review-meta">
-                                <span class="muted">Rated by 288 lifters</span>
-                                <a class="text-link" href="#reviews">Full Specs <svg class="icon"><use href="#i-arrow-right"></use></svg></a>
-                            </div>
-                        </div>
-                    </article>
-                </div>
-
-                <div class="reviews-footer">
-                    <div class="reviews-footer-copy">
-                        <svg class="icon icon-lime"><use href="#i-pin"></use></svg>
-                        <div>
-                            <strong>Looking for a specific gym or gear setup?</strong>
-                            <span class="muted">Over 14,200 powerlifting, weightlifting, and strongman hubs mapped worldwide.</span>
-                        </div>
-                    </div>
-                    <div class="reviews-footer-actions">
-                        <a class="secondary-button" href="#submit">Write a Gym Review</a>
-                        <a class="primary-button" href="#submit">Explore All 14,200+ Gyms</a>
-                    </div>
+                    <?php foreach ($homeCards['reviews'] as $review): ?>
+                        <?php require __DIR__ . '/components/review-card.html.php'; ?>
+                    <?php endforeach; ?>
                 </div>
             </div>
         </section>
