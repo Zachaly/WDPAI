@@ -15,11 +15,7 @@ final class RegisterController extends AppController
 {
     public function index(): void
     {
-        $registrationMessage = ($_GET['registered'] ?? '') === '1'
-            ? 'Your account has been created. Login will be available in a later step.'
-            : null;
-
-        $this->renderPage(registrationMessage: $registrationMessage);
+        $this->renderPage();
     }
 
     public function store(): void
@@ -119,7 +115,7 @@ final class RegisterController extends AppController
             return;
         }
 
-        $this->redirect('/register?registered=1');
+        $this->redirect('/login?registered=1');
     }
 
     private function postString(string $name): string

@@ -33,6 +33,10 @@ abstract class AppController
     {
         $templatePath = dirname(__DIR__, 2) . '/public/views/' . $template . '.html.php';
         $layoutPath = dirname(__DIR__, 2) . '/public/views/layout.html.php';
+        $variables['isAuthenticated'] = isset($_SESSION['user_id']);
+        if ($variables['isAuthenticated']) {
+            $variables['csrfToken'] = $this->csrfToken();
+        }
 
         if (!is_file($templatePath)) {
             throw new \RuntimeException('View not found: ' . $template);

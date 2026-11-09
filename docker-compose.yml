@@ -22,8 +22,11 @@ services:
       POSTGRES_PASSWORD: admin
     networks:
       - pg-network
-    volumes:
-      - ./docker/db:/docker-entrypoint-initdb.d
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres -d appdb"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
   
   php:
     build:
@@ -31,6 +34,10 @@ services:
       dockerfile: docker/php/Dockerfile
     volumes:
       - .:/app
+    command: ["sh", "-c", "php bin/migrate.php && exec php-fpm"]
+    depends_on:
+      db:
+        condition: service_healthy
     networks:
       - pg-network
 

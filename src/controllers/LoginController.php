@@ -20,9 +20,12 @@ final class LoginController extends AppController
             return;
         }
 
-        $loginMessage = ($_GET['logged_out'] ?? '') === '1'
-            ? 'You have been signed out.'
-            : null;
+        $loginMessage = match ($_GET['registered'] ?? '') {
+            '1' => 'Your account has been created. You can now sign in.',
+            default => ($_GET['logged_out'] ?? '') === '1'
+                ? 'You have been signed out.'
+                : null,
+        };
 
         $this->renderPage(loginMessage: $loginMessage);
     }
@@ -90,7 +93,7 @@ final class LoginController extends AppController
         $_SESSION['user_handle'] = $user->handle;
         $_SESSION['logged_in_at'] = time();
 
-        $this->redirect('/login');
+        $this->redirect('/');
     }
 
     public function logout(): void

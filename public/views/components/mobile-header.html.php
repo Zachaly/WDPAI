@@ -13,5 +13,16 @@ declare(strict_types=1);
         <svg class="icon theme-icon-dark" aria-hidden="true" viewBox="0 0 24 24"><path d="M20.5 15.5A8.5 8.5 0 0 1 8.5 3.5 8.5 8.5 0 1 0 20.5 15.5Z"></path></svg>
         <span class="theme-toggle-label" data-theme-toggle-label>Light</span>
     </button>
-    <a class="avatar-button" href="/profile" aria-label="Your profile"><svg class="icon"><use href="#<?= htmlspecialchars((string) $iconPrefix, ENT_QUOTES, 'UTF-8') ?>-user"></use></svg></a>
+    <?php if ($isAuthenticated): ?>
+        <a class="avatar-button" href="/profile" aria-label="Your profile"><svg class="icon"><use href="#<?= htmlspecialchars((string) $iconPrefix, ENT_QUOTES, 'UTF-8') ?>-user"></use></svg></a>
+        <form class="nav-logout-form" action="/logout" method="post">
+            <input type="hidden" name="csrfToken" value="<?= htmlspecialchars((string) $csrfToken, ENT_QUOTES, 'UTF-8') ?>">
+            <button class="nav-auth-link" type="submit">Sign out</button>
+        </form>
+    <?php else: ?>
+        <div class="nav-auth-links">
+            <a class="nav-auth-link" href="/login">Sign in</a>
+            <a class="nav-auth-link nav-auth-link-primary" href="/register">Sign up</a>
+        </div>
+    <?php endif; ?>
 </header>
