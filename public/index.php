@@ -16,6 +16,16 @@ use App\Routing;
 
 require_once dirname(__DIR__) . '/vendor/autoload.php';
 
+$isHttps = isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off';
+session_set_cookie_params([
+    'lifetime' => 0,
+    'path' => '/',
+    'secure' => $isHttps,
+    'httponly' => true,
+    'samesite' => 'Lax',
+]);
+session_start();
+
 $routing = new Routing();
 
 $routing->get('/forum', ForumController::class, 'index');
@@ -28,6 +38,7 @@ $routing->get('/gear', GearController::class, 'index');
 $routing->get('/leaderboard', LeaderboardController::class, 'index');
 $routing->get('/login', LoginController::class, 'index');
 $routing->post('/login', LoginController::class, 'store');
+$routing->post('/logout', LoginController::class, 'logout');
 $routing->get('/register', RegisterController::class, 'index');
 $routing->post('/register', RegisterController::class, 'store');
 $routing->get('/submit-gym', SubmitGymController::class, 'index');

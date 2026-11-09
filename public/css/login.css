@@ -551,36 +551,12 @@
     padding: 4px 0 8px;
 }
 
-.login-remember {
-    display: inline-flex;
-    min-width: 0;
-    align-items: center;
-    gap: 12px;
+.login-session-note {
     color: #c4c9ac;
-    font-size: 12px;
-    line-height: 18px;
-}
-
-.login-remember input {
-    appearance: none;
-    width: 20px;
-    height: 20px;
-    flex: none;
-    margin: 0;
-    border: 1px solid #596657;
-    border-radius: 5px;
-    background: #131b2e;
-    cursor: pointer;
-}
-
-.login-remember input:checked {
-    border-color: #c3f400;
-    background: #c3f400 url("/assets/icons/login-remember.svg") center / 20px 20px no-repeat;
-}
-
-.login-remember input:focus-visible {
-    outline: 2px solid #7bd0ff;
-    outline-offset: 3px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    line-height: 16px;
 }
 
 .login-tpm {
@@ -648,6 +624,48 @@
 
 .login-notice[hidden] {
     display: none;
+}
+
+.login-notice-error {
+    border-color: rgba(255, 112, 112, 0.4);
+    background: rgba(255, 72, 72, 0.08);
+    color: #ffd1d1;
+}
+
+.login-authenticated {
+    display: grid;
+    gap: 16px;
+    padding: 24px;
+    border: 1px solid rgba(195, 244, 0, 0.24);
+    border-radius: 12px;
+    background: rgba(6, 14, 32, 0.7);
+    color: #c4c9ac;
+}
+
+.login-authenticated-status {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #c3f400;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+}
+
+.login-authenticated-status i {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: #c3f400;
+}
+
+.login-authenticated h3 {
+    color: #dae2fd;
+    font-size: 22px;
+}
+
+.login-authenticated form {
+    display: grid;
 }
 
 .login-terminal-footer {

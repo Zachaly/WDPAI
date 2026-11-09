@@ -665,6 +665,53 @@ img {
     height: 18px;
 }
 
+.nav-auth-links {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.nav-logout-form {
+    display: inline-flex;
+    margin: 0;
+}
+
+.nav-auth-link {
+    display: inline-flex;
+    min-height: 34px;
+    align-items: center;
+    justify-content: center;
+    padding: 0 10px;
+    border: 1px solid var(--outline-strong);
+    border-radius: 999px;
+    color: var(--on-surface);
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 1;
+    white-space: nowrap;
+    cursor: pointer;
+    transition: background 0.15s ease, color 0.15s ease;
+}
+
+.nav-auth-link:hover {
+    background: var(--surface-higher);
+}
+
+.nav-auth-link-primary {
+    border-color: var(--primary-container);
+    background: var(--primary-container);
+    color: var(--on-primary-container);
+}
+
+.nav-auth-link-primary:hover {
+    background: var(--primary);
+}
+
+.nav-auth-link:focus-visible {
+    outline: 2px solid var(--secondary);
+    outline-offset: 3px;
+}
+
 /* ---------- telemetry ---------- */
 
 .telemetry-bar {
@@ -2160,6 +2207,18 @@ img {
     .m-header .avatar-button {
         width: 32px;
         height: 32px;
+    }
+
+    .m-header .nav-auth-links,
+    .page-mobile-header .nav-auth-links {
+        gap: 4px;
+    }
+
+    .m-header .nav-auth-link,
+    .page-mobile-header .nav-auth-link {
+        min-height: 30px;
+        padding: 0 7px;
+        font-size: 10px;
     }
 
     .m-header .theme-toggle {

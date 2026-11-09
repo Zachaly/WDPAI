@@ -10,7 +10,7 @@ declare(strict_types=1);
         </a>
         <div class="header-status" aria-hidden="true"><svg class="icon"><use href="#<?= htmlspecialchars((string) $iconPrefix, ENT_QUOTES, 'UTF-8') ?>-bars"></use></svg></div>
         <nav class="<?= htmlspecialchars((string) $desktopHeaderComponent['navigationClass'], ENT_QUOTES, 'UTF-8') ?>" aria-label="Primary">
-            <a href="/#reviews">Gym<?= $desktopHeaderComponent['singleLineNavigation'] ? ' ' : '<br>' ?>Reviews</a>
+            <a href="/#reviews"<?= $desktopHeaderComponent['activePage'] === 'home' ? ' class="is-active" aria-current="page"' : '' ?>>Gym<?= $desktopHeaderComponent['singleLineNavigation'] ? ' ' : '<br>' ?>Reviews</a>
             <a href="/gear"<?= $desktopHeaderComponent['activePage'] === 'gear' ? ' class="is-active" aria-current="page"' : '' ?>>Gear<?= $desktopHeaderComponent['singleLineNavigation'] ? ' ' : '<br>' ?>Inventory</a>
             <a href="/forum"<?= $desktopHeaderComponent['activePage'] === 'forum' ? ' class="is-active" aria-current="page"' : '' ?>>Community<?= $desktopHeaderComponent['singleLineNavigation'] ? ' ' : '<br>' ?>Forum</a>
             <a href="/leaderboard"<?= $desktopHeaderComponent['activePage'] === 'leaderboard' ? ' class="is-active" aria-current="page"' : '' ?>>Leaderboard</a>
@@ -23,7 +23,18 @@ declare(strict_types=1);
                 <span class="theme-toggle-label" data-theme-toggle-label>Light</span>
             </button>
             <a class="icon-button" href="<?= htmlspecialchars((string) $desktopHeaderComponent['searchHref'], ENT_QUOTES, 'UTF-8') ?>" aria-label="<?= htmlspecialchars((string) $desktopHeaderComponent['searchLabel'], ENT_QUOTES, 'UTF-8') ?>"><svg class="icon"><use href="#<?= htmlspecialchars((string) $iconPrefix, ENT_QUOTES, 'UTF-8') ?>-search"></use></svg></a>
-            <a class="avatar-button" href="/profile" aria-label="Your profile"><svg class="icon"><use href="#<?= htmlspecialchars((string) $iconPrefix, ENT_QUOTES, 'UTF-8') ?>-user"></use></svg></a>
+            <?php if ($isAuthenticated): ?>
+                <a class="avatar-button" href="/profile" aria-label="Your profile"><svg class="icon"><use href="#<?= htmlspecialchars((string) $iconPrefix, ENT_QUOTES, 'UTF-8') ?>-user"></use></svg></a>
+                <form class="nav-logout-form" action="/logout" method="post">
+                    <input type="hidden" name="csrfToken" value="<?= htmlspecialchars((string) $csrfToken, ENT_QUOTES, 'UTF-8') ?>">
+                    <button class="nav-auth-link" type="submit">Sign out</button>
+                </form>
+            <?php else: ?>
+                <div class="nav-auth-links">
+                    <a class="nav-auth-link" href="/login">Sign in</a>
+                    <a class="nav-auth-link nav-auth-link-primary" href="/register">Sign up</a>
+                </div>
+            <?php endif; ?>
         </div>
     </div>
 </header>

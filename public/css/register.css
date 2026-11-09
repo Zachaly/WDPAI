@@ -320,7 +320,8 @@
 }
 
 .registration-input-wrap,
-.registration-field > input {
+.registration-field > input,
+.registration-field > textarea {
     position: relative;
     display: flex;
     width: 100%;
@@ -335,14 +336,16 @@
 }
 
 .registration-input-wrap:focus-within,
-.registration-field > input:focus {
+.registration-field > input:focus,
+.registration-field > textarea:focus {
     border-color: #c3f400;
     box-shadow: 0 0 0 2px rgba(195, 244, 0, 0.12);
     outline: none;
 }
 
 .registration-input-wrap > input,
-.registration-field > input {
+.registration-field > input,
+.registration-field > textarea {
     width: 100%;
     min-width: 0;
     height: 44px;
@@ -354,6 +357,17 @@
     color: #dae2fd;
     font-size: 14px;
     line-height: 20px;
+}
+
+.registration-field > textarea {
+    min-height: 88px;
+    padding: 12px 16px;
+    resize: vertical;
+}
+
+.registration-field > textarea::placeholder {
+    color: rgba(196, 201, 172, 0.4);
+    opacity: 1;
 }
 
 .registration-handle > span {
@@ -591,6 +605,23 @@
 
 .registration-notice[hidden] {
     display: none;
+}
+
+.registration-errors {
+    padding: 10px 12px;
+    border: 1px solid rgba(255, 112, 112, 0.4);
+    border-radius: 8px;
+    background: rgba(255, 72, 72, 0.08);
+    color: #ffd1d1;
+    font-size: 13px;
+    line-height: 20px;
+}
+
+.registration-errors ul {
+    display: grid;
+    gap: 4px;
+    padding-left: 20px;
+    list-style: disc;
 }
 
 @media (max-width: 1000px) {

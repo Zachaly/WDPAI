@@ -23,18 +23,8 @@ if (loginForm instanceof HTMLFormElement) {
 
         forgotPasswordButton.addEventListener('click', () => {
             notice.hidden = false;
-            notice.textContent = 'Password recovery is not connected in this login preview.';
+            notice.textContent = 'Password recovery is not available yet.';
         });
 
-        loginForm.addEventListener('submit', (event) => {
-            event.preventDefault();
-
-            if (!loginForm.reportValidity()) {
-                return;
-            }
-
-            notice.hidden = false;
-            notice.textContent = 'This login preview is a mockup. Authentication is not connected yet.';
-        });
     }
 }

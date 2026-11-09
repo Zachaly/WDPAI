@@ -4,6 +4,9 @@ declare(strict_types=1);
 
 namespace App\Controller;
 
+use App\Database;
+use App\Repository\UserRepository;
+
 final class ProfileController extends AppController
 {
     private const PROFILES = [
@@ -209,7 +212,61 @@ final class ProfileController extends AppController
 
     public function index(): void
     {
-        $this->renderProfile(7);
+        $userId = $_SESSION['user_id'] ?? null;
+        if (!is_int($userId) && !(is_string($userId) && ctype_digit($userId))) {
+            $this->redirect('/login');
+        }
+
+        $user = (new UserRepository(Database::connect()))->findById((int) $userId);
+        if ($user === null) {
+            unset(
+                $_SESSION['user_id'],
+                $_SESSION['user_email'],
+                $_SESSION['user_name'],
+                $_SESSION['user_handle'],
+                $_SESSION['logged_in_at'],
+            );
+            $this->redirect('/login');
+        }
+
+        $name = $user->firstName . ' ' . $user->lastName;
+        $createdAt = $user->createdAt;
+        $joined = $createdAt === null
+            ? ''
+            : 'Joined ' . $createdAt->format('F Y');
+
+        $this->render('profile', [
+            'pageTitle' => $name . ' — IronPulse Profile',
+            'pageDescription' => 'Account profile for ' . $name . '.',
+            'bodyClass' => 'profile-page',
+            'pageStylesheets' => [
+                '/css/page-components.css',
+                '/css/forum.css',
+                '/css/profile.css',
+            ],
+            'pageScripts' => ['/js/profile.js'],
+            'isOwnProfile' => true,
+            'profile' => [
+                'id' => $user->id,
+                'name' => $name,
+                'firstName' => $user->firstName,
+                'lastName' => $user->lastName,
+                'username' => $user->handle,
+                'initials' => strtoupper($this->initial($user->firstName) . $this->initial($user->lastName)),
+                'email' => $user->email,
+                'location' => $user->city,
+                'joined' => $joined,
+                'createdAt' => $createdAt?->format('F j, Y') ?? '',
+                'termsAcceptedAt' => $user->termsAcceptedAt->format('F j, Y'),
+                'description' => $user->description,
+                'image' => '',
+            ],
+        ]);
+    }
+
+    private function initial(string $name): string
+    {
+        return preg_match('/^./u', $name, $matches) === 1 ? $matches[0] : '';
     }
 
     public function show(int $id): void

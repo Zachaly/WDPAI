@@ -1,6 +1,8 @@
 <?php
 
 declare(strict_types=1);
+
+$isOwnProfile = $isOwnProfile ?? false;
 ?>
 <svg class="icon-sprite" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg">
     <symbol id="forum-dumbbell" viewBox="0 0 24 24"><path d="M3 9v6M6.5 7v10M17.5 7v10M21 9v6M6.5 12h11"/></symbol>
@@ -90,13 +92,13 @@ require __DIR__ . '/components/mobile-header.html.php';
 
 <main class="profile-main">
     <div class="forum-container">
-        <nav class="profile-breadcrumb" aria-label="Breadcrumb"><a href="/forum">COMMUNITY</a><span>/</span><strong>ATHLETE PROFILE</strong></nav>
+        <nav class="profile-breadcrumb" aria-label="Breadcrumb"><a href="/forum">COMMUNITY</a><span>/</span><strong><?= $isOwnProfile ? 'YOUR PROFILE' : 'ATHLETE PROFILE' ?></strong></nav>
 
         <section class="profile-hero" aria-labelledby="profile-name">
             <div class="profile-cover">
                 <span class="profile-cover-grid" aria-hidden="true"></span>
-                <span class="profile-cover-label"><i></i> VERIFIED LIFTER NODE // <?= htmlspecialchars((string) $profile['location'], ENT_QUOTES, 'UTF-8') ?></span>
-                <span class="profile-cover-code" aria-hidden="true">IP / 04 — 93 KG</span>
+                <span class="profile-cover-label"><i></i> <?= $isOwnProfile ? 'IRONPULSE MEMBER ACCOUNT' : 'VERIFIED LIFTER NODE // ' . htmlspecialchars((string) $profile['location'], ENT_QUOTES, 'UTF-8') ?></span>
+                <span class="profile-cover-code" aria-hidden="true"><?= $isOwnProfile ? 'MEMBER / ' . (int) $profile['id'] : 'IP / 04 — 93 KG' ?></span>
             </div>
             <div class="profile-identity">
                 <div class="profile-avatar-wrap">
@@ -105,30 +107,54 @@ require __DIR__ . '/components/mobile-header.html.php';
                     <?php else: ?>
                         <span class="profile-avatar profile-avatar-initials"><?= htmlspecialchars((string) $profile['initials'], ENT_QUOTES, 'UTF-8') ?></span>
                     <?php endif; ?>
-                    <span class="profile-avatar-status" aria-label="Verified member"></span>
+                    <span class="profile-avatar-status" aria-label="<?= $isOwnProfile ? 'Member' : 'Verified member' ?>"></span>
                 </div>
                 <div class="profile-name-block">
                     <div class="profile-name-row">
                         <h1 id="profile-name"><?= htmlspecialchars((string) $profile['name'], ENT_QUOTES, 'UTF-8') ?></h1>
-                        <span class="profile-verified"><svg class="icon"><use href="#forum-check"></use></svg> VERIFIED</span>
+                        <?php if (!$isOwnProfile): ?>
+                            <span class="profile-verified"><svg class="icon"><use href="#forum-check"></use></svg> VERIFIED</span>
+                        <?php endif; ?>
                     </div>
-                    <p class="profile-handle">@<?= htmlspecialchars((string) $profile['username'], ENT_QUOTES, 'UTF-8') ?> <span>&bull;</span> <?= htmlspecialchars((string) $profile['credential'], ENT_QUOTES, 'UTF-8') ?></p>
-                    <div class="profile-location"><svg class="icon"><use href="#forum-pin"></use></svg><?= htmlspecialchars((string) $profile['location'], ENT_QUOTES, 'UTF-8') ?><span>&bull;</span><?= htmlspecialchars((string) $profile['joined'], ENT_QUOTES, 'UTF-8') ?></div>
+                    <p class="profile-handle">@<?= htmlspecialchars((string) $profile['username'], ENT_QUOTES, 'UTF-8') ?> <span>&bull;</span> <?= $isOwnProfile ? 'REGISTERED MEMBER' : htmlspecialchars((string) $profile['credential'], ENT_QUOTES, 'UTF-8') ?></p>
+                    <div class="profile-location">
+                        <?php if ($isOwnProfile): ?>
+                            <?php if ($profile['location'] !== ''): ?>
+                                <svg class="icon"><use href="#forum-pin"></use></svg><?= htmlspecialchars((string) $profile['location'], ENT_QUOTES, 'UTF-8') ?>
+                                <span>&bull;</span>
+                            <?php endif; ?>
+                            <?= htmlspecialchars((string) $profile['email'], ENT_QUOTES, 'UTF-8') ?>
+                        <?php else: ?>
+                            <svg class="icon"><use href="#forum-pin"></use></svg><?= htmlspecialchars((string) $profile['location'], ENT_QUOTES, 'UTF-8') ?>
+                        <?php endif; ?>
+                        <span>&bull;</span><?= htmlspecialchars((string) $profile['joined'], ENT_QUOTES, 'UTF-8') ?>
+                    </div>
                 </div>
+                <?php if (!$isOwnProfile): ?>
                 <div class="profile-actions">
                     <button class="profile-follow-button" type="button" data-profile-follow aria-pressed="false"><svg class="icon"><use href="#forum-plus"></use></svg> FOLLOW LIFTER</button>
                     <button class="profile-share-button" type="button" aria-label="Share profile" data-profile-share><svg class="icon"><use href="#forum-share"></use></svg></button>
                 </div>
+                <?php endif; ?>
             </div>
-            <p class="profile-bio"><?= htmlspecialchars((string) $profile['bio'], ENT_QUOTES, 'UTF-8') ?></p>
+            <?php if (!$isOwnProfile): ?>
+                <p class="profile-bio"><?= htmlspecialchars((string) $profile['bio'], ENT_QUOTES, 'UTF-8') ?></p>
+            <?php elseif ($profile['description'] !== ''): ?>
+                <p class="profile-bio"><?= htmlspecialchars((string) $profile['description'], ENT_QUOTES, 'UTF-8') ?></p>
+            <?php endif; ?>
             <div class="profile-badges">
-                <span><svg class="icon"><use href="#forum-shield"></use></svg><?= htmlspecialchars((string) $profile['badge'], ENT_QUOTES, 'UTF-8') ?></span>
-                <span><svg class="icon"><use href="#forum-chart"></use></svg> TELEMETRY-CONNECTED</span>
-                <span><svg class="icon"><use href="#forum-trophy"></use></svg> COMMUNITY TRUST <?= htmlspecialchars((string) $profile['karma'], ENT_QUOTES, 'UTF-8') ?></span>
+                <?php if ($isOwnProfile): ?>
+                    <span><svg class="icon"><use href="#forum-shield"></use></svg> REGISTERED MEMBER</span>
+                <?php else: ?>
+                    <span><svg class="icon"><use href="#forum-shield"></use></svg><?= htmlspecialchars((string) $profile['badge'], ENT_QUOTES, 'UTF-8') ?></span>
+                    <span><svg class="icon"><use href="#forum-chart"></use></svg> TELEMETRY-CONNECTED</span>
+                    <span><svg class="icon"><use href="#forum-trophy"></use></svg> COMMUNITY TRUST <?= htmlspecialchars((string) $profile['karma'], ENT_QUOTES, 'UTF-8') ?></span>
+                <?php endif; ?>
             </div>
             <p class="profile-action-notice" role="status" aria-live="polite" data-profile-notice hidden></p>
         </section>
 
+        <?php if (!$isOwnProfile): ?>
         <section class="profile-stats" aria-label="Community statistics">
             <article class="profile-stat-card"><span><svg class="icon"><use href="#forum-chat"></use></svg> FORUM POSTS</span><strong><?= htmlspecialchars((string) $profile['posts'], ENT_QUOTES, 'UTF-8') ?></strong><small>COMMUNITY CONTRIBUTIONS</small></article>
             <article class="profile-stat-card"><span><svg class="icon"><use href="#forum-trophy"></use></svg> SPOTTER KARMA</span><strong><?= htmlspecialchars((string) $profile['karma'], ENT_QUOTES, 'UTF-8') ?></strong><small>VERIFIED COMMUNITY REP</small></article>
@@ -216,6 +242,49 @@ require __DIR__ . '/components/mobile-header.html.php';
                 <p class="profile-static-note"><svg class="icon"><use href="#forum-info"></use></svg> Profile data is a static mockup. Training records, verification, and community actions are not connected.</p>
             </aside>
         </div>
+        <?php else: ?>
+            <section class="profile-stats profile-account-stats" aria-label="Account information">
+                <article class="profile-stat-card"><span><svg class="icon"><use href="#forum-user"></use></svg> FIRST NAME</span><strong><?= htmlspecialchars((string) $profile['firstName'], ENT_QUOTES, 'UTF-8') ?></strong><small>PROFILE NAME</small></article>
+                <article class="profile-stat-card"><span><svg class="icon"><use href="#forum-user"></use></svg> LAST NAME</span><strong><?= htmlspecialchars((string) $profile['lastName'], ENT_QUOTES, 'UTF-8') ?></strong><small>PROFILE NAME</small></article>
+                <article class="profile-stat-card"><span><svg class="icon"><use href="#forum-share"></use></svg> EMAIL ADDRESS</span><strong><?= htmlspecialchars((string) $profile['email'], ENT_QUOTES, 'UTF-8') ?></strong><small>ACCOUNT CONTACT</small></article>
+                <article class="profile-stat-card"><span><svg class="icon"><use href="#forum-calendar"></use></svg> MEMBER SINCE</span><strong><?= htmlspecialchars((string) $profile['createdAt'], ENT_QUOTES, 'UTF-8') ?></strong><small>ACCOUNT CREATED</small></article>
+                <article class="profile-stat-card"><span><svg class="icon"><use href="#forum-check"></use></svg> TERMS ACCEPTED</span><strong><?= htmlspecialchars((string) $profile['termsAcceptedAt'], ENT_QUOTES, 'UTF-8') ?></strong><small>REGISTRATION CONSENT</small></article>
+            </section>
+            <div class="profile-content-grid">
+                <section class="profile-main-column">
+                    <section class="profile-card profile-account-card" aria-labelledby="account-details-title">
+                        <div class="profile-section-heading">
+                            <div><span class="profile-eyebrow">ATHLETE PROFILE</span><h2 id="account-details-title">Profile details</h2></div>
+                            <svg class="icon"><use href="#forum-user"></use></svg>
+                        </div>
+                        <dl>
+                            <div><dt>Full name</dt><dd><?= htmlspecialchars((string) $profile['name'], ENT_QUOTES, 'UTF-8') ?></dd></div>
+                            <div><dt>Handle</dt><dd>@<?= htmlspecialchars((string) $profile['username'], ENT_QUOTES, 'UTF-8') ?></dd></div>
+                            <?php if ($profile['location'] !== ''): ?>
+                                <div><dt>City</dt><dd><?= htmlspecialchars((string) $profile['location'], ENT_QUOTES, 'UTF-8') ?></dd></div>
+                            <?php endif; ?>
+                            <div><dt>Email</dt><dd><?= htmlspecialchars((string) $profile['email'], ENT_QUOTES, 'UTF-8') ?></dd></div>
+                            <?php if ($profile['description'] !== ''): ?>
+                                <div class="profile-account-description"><dt>About</dt><dd><?= nl2br(htmlspecialchars((string) $profile['description'], ENT_QUOTES, 'UTF-8')) ?></dd></div>
+                            <?php endif; ?>
+                        </dl>
+                    </section>
+                </section>
+                <aside class="profile-sidebar">
+                    <section class="profile-card profile-account-card" aria-labelledby="membership-title">
+                        <div class="profile-section-heading">
+                            <div><span class="profile-eyebrow">ACCOUNT</span><h2 id="membership-title">Membership</h2></div>
+                            <svg class="icon"><use href="#forum-shield"></use></svg>
+                        </div>
+                        <dl>
+                            <div><dt>Status</dt><dd>Registered member</dd></div>
+                            <div><dt>Member since</dt><dd><?= htmlspecialchars((string) $profile['createdAt'], ENT_QUOTES, 'UTF-8') ?></dd></div>
+                            <div><dt>Terms accepted</dt><dd><?= htmlspecialchars((string) $profile['termsAcceptedAt'], ENT_QUOTES, 'UTF-8') ?></dd></div>
+                        </dl>
+                    </section>
+                </aside>
+            </div>
+        <?php endif; ?>
     </div>
 </main>
 

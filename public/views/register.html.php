@@ -71,14 +71,26 @@ declare(strict_types=1);
                 </header>
 
                 <form class="registration-form" action="/register" method="post" data-registration-form>
+                    <input type="hidden" name="csrfToken" value="<?= htmlspecialchars((string) ($csrfToken ?? ''), ENT_QUOTES, 'UTF-8') ?>">
+
+                    <?php if (($errors ?? []) !== []): ?>
+                        <div class="registration-errors" role="alert">
+                            <ul>
+                                <?php foreach ($errors as $error): ?>
+                                    <li><?= htmlspecialchars((string) $error, ENT_QUOTES, 'UTF-8') ?></li>
+                                <?php endforeach; ?>
+                            </ul>
+                        </div>
+                    <?php endif; ?>
+
                     <div class="registration-fields-row">
                         <div class="registration-field">
                             <label for="first-name">FIRST NAME <span aria-hidden="true">*</span></label>
-                            <input id="first-name" name="first_name" type="text" autocomplete="given-name" placeholder="Marcus" required>
+                            <input id="first-name" name="first_name" type="text" autocomplete="given-name" placeholder="Marcus" maxlength="100" value="<?= htmlspecialchars((string) ($formValues['first_name'] ?? ''), ENT_QUOTES, 'UTF-8') ?>" required>
                         </div>
                         <div class="registration-field">
                             <label for="last-name">LAST NAME <span aria-hidden="true">*</span></label>
-                            <input id="last-name" name="last_name" type="text" autocomplete="family-name" placeholder="Vance" required>
+                            <input id="last-name" name="last_name" type="text" autocomplete="family-name" placeholder="Vance" maxlength="100" value="<?= htmlspecialchars((string) ($formValues['last_name'] ?? ''), ENT_QUOTES, 'UTF-8') ?>" required>
                         </div>
                     </div>
 
@@ -86,15 +98,26 @@ declare(strict_types=1);
                         <label for="lifter-handle">NICKNAME / LIFTER HANDLE <span aria-hidden="true">*</span></label>
                         <div class="registration-input-wrap registration-handle">
                             <span aria-hidden="true">@</span>
-                            <input id="lifter-handle" name="handle" type="text" autocomplete="username" placeholder="bench_beast93" required>
+                            <input id="lifter-handle" name="handle" type="text" autocomplete="username" placeholder="bench_beast93" minlength="3" maxlength="30" pattern="[A-Za-z0-9_]{3,30}" value="<?= htmlspecialchars((string) ($formValues['handle'] ?? ''), ENT_QUOTES, 'UTF-8') ?>" required>
                         </div>
                         <p class="registration-helper">Unique public identifier across leaderboards &amp; forum</p>
                     </div>
 
                     <div class="registration-field">
+                        <label for="profile-description">PROFILE DESCRIPTION <span>OPTIONAL</span></label>
+                        <textarea id="profile-description" name="description" rows="3" maxlength="500" placeholder="Tell the community a little about your training and goals"><?= htmlspecialchars((string) ($formValues['description'] ?? ''), ENT_QUOTES, 'UTF-8') ?></textarea>
+                        <p class="registration-helper">Up to 500 characters. This will appear on your profile.</p>
+                    </div>
+
+                    <div class="registration-field">
+                        <label for="city">CITY <span>OPTIONAL</span></label>
+                        <input id="city" name="city" type="text" autocomplete="address-level2" placeholder="Warsaw" maxlength="100" value="<?= htmlspecialchars((string) ($formValues['city'] ?? ''), ENT_QUOTES, 'UTF-8') ?>">
+                    </div>
+
+                    <div class="registration-field">
                         <label for="email-address">EMAIL ADDRESS <span aria-hidden="true">*</span></label>
                         <div class="registration-input-wrap">
-                            <input id="email-address" name="email" type="email" autocomplete="email" placeholder="athlete@ironpulse.io" required>
+                            <input id="email-address" name="email" type="email" autocomplete="email" placeholder="athlete@ironpulse.io" maxlength="255" value="<?= htmlspecialchars((string) ($formValues['email'] ?? ''), ENT_QUOTES, 'UTF-8') ?>" required>
                             <img class="registration-email-icon" src="/assets/icons/register-email.svg" alt="" aria-hidden="true">
                         </div>
                     </div>
@@ -103,7 +126,7 @@ declare(strict_types=1);
                         <div class="registration-field">
                             <label for="registration-password">PASSWORD <span aria-hidden="true">*</span></label>
                             <div class="registration-input-wrap">
-                                <input id="registration-password" name="password" type="password" autocomplete="new-password" placeholder="••••••••••••" minlength="8" required data-password>
+                                <input id="registration-password" name="password" type="password" autocomplete="new-password" placeholder="••••••••••••" minlength="8" maxlength="72" required data-password>
                                 <button class="registration-password-toggle" type="button" aria-label="Show password" aria-pressed="false" data-password-toggle>
                                     <img src="/assets/icons/register-eye.svg" alt="" aria-hidden="true">
                                 </button>
@@ -137,7 +160,7 @@ declare(strict_types=1);
                     </section>
 
                     <label class="registration-consent">
-                        <input type="checkbox" name="terms" required>
+                        <input type="checkbox" name="terms" value="1"<?= !empty($termsAccepted) ? ' checked' : '' ?> required>
                         <span>I agree to the <span class="registration-terms-link">Lifter Code of Conduct</span> &amp; <span class="registration-terms-link">IPF/Sanctioned Gym Verification Terms</span>. I certify all logged attempt kilograms reflect certified calibrator standards.</span>
                     </label>
 
@@ -146,7 +169,7 @@ declare(strict_types=1);
                             <span>CREATE ATHLETE PROFILE</span>
                             <img src="/assets/icons/register-arrow.svg" alt="" aria-hidden="true">
                         </button>
-                        <p class="registration-notice" role="status" aria-live="polite" data-registration-notice<?= isset($registrationMessage) ? '' : ' hidden' ?>><?= htmlspecialchars((string) ($registrationMessage ?? ''), ENT_QUOTES, 'UTF-8') ?></p>
+                        <p class="registration-notice" role="status" aria-live="polite"<?= isset($registrationMessage) ? '' : ' hidden' ?>><?= htmlspecialchars((string) ($registrationMessage ?? ''), ENT_QUOTES, 'UTF-8') ?></p>
                         <p class="registration-signin">Already registered? <a href="/login">Sign In to Armory <span aria-hidden="true">→</span></a></p>
                     </div>
                 </form>

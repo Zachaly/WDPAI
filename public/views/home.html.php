@@ -2,10 +2,35 @@
 
 declare(strict_types=1);
 
+$iconPrefix = 'i';
+$desktopHeaderComponent = [
+    'class' => 'site-header',
+    'navigationClass' => 'main-nav',
+    'activePage' => 'home',
+    'singleLineNavigation' => false,
+    'searchHref' => '/#inventory',
+    'searchLabel' => 'Browse gym inventory',
+];
+$mobileHeaderComponent = [
+    'headerClass' => 'home-mobile-header page-mobile-header',
+    'brandClass' => 'home-mobile-brand page-mobile-brand',
+    'liveClass' => 'home-live page-live-badge',
+];
+$mobileNavComponent = [
+    'class' => 'home-mobile-nav page-mobile-nav',
+    'activePage' => 'home',
+    'items' => [
+        ['href' => '/leaderboard', 'page' => 'leaderboard', 'icon' => 'trophy', 'label' => 'BOARD'],
+        ['href' => '/forum', 'page' => 'forum', 'icon' => 'comment', 'label' => 'FORUM'],
+        ['href' => '/gear', 'page' => 'gear', 'icon' => 'dumbbell', 'label' => 'GEAR'],
+        ['href' => '/submit-gym', 'page' => 'submit-gym', 'icon' => 'plus', 'label' => 'SUBMIT'],
+    ],
+];
 $homeCards = require __DIR__ . '/home-cards.php';
 ?>
 <svg class="icon-sprite" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg">
     <symbol id="i-dumbbell" viewBox="0 0 24 24"><path d="M3 9v6M6.5 7v10M17.5 7v10M21 9v6M6.5 12h11"/></symbol>
+    <symbol id="i-bars" viewBox="0 0 24 24"><path d="M3 9v6M6.5 7v10M17.5 7v10M21 9v6M6.5 12h11"/></symbol>
     <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.6-3.6"/></symbol>
     <symbol id="i-scan" viewBox="0 0 24 24"><path d="M4 8V5a1 1 0 0 1 1-1h3M16 4h3a1 1 0 0 1 1 1v3M20 16v3a1 1 0 0 1-1 1h-3M8 20H5a1 1 0 0 1-1-1v-3M8 12h8"/></symbol>
     <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21s7-6.2 7-11a7 7 0 1 0-14 0c0 4.8 7 11 7 11z"/><circle cx="12" cy="10" r="2.5"/></symbol>
@@ -30,31 +55,7 @@ $homeCards = require __DIR__ . '/home-cards.php';
 </svg>
 
 <div class="layout-desktop">
-    <header class="site-header">
-        <div class="container header-inner">
-            <a class="brand" href="/" aria-label="IronPulse home">
-                <span class="brand-mark"><svg class="icon"><use href="#i-dumbbell"></use></svg></span>
-                <span class="brand-text"><strong>IRONPULSE</strong><small>TELEMETRY &amp; COMMUNITY</small></span>
-            </a>
-            <div class="header-status" aria-hidden="true"><svg class="icon"><use href="#i-barcode"></use></svg></div>
-            <nav class="main-nav" aria-label="Primary">
-                <a class="is-active" href="#reviews">Gym<br>Reviews</a>
-                <a href="/gear">Gear<br>Inventory</a>
-                <a href="/forum">Community<br>Forum</a>
-                <a href="/leaderboard">Leaderboard</a>
-                <a href="/submit-gym">Submit<br>Gym</a>
-            </nav>
-            <div class="header-actions">
-                <button class="theme-toggle" type="button" data-theme-toggle aria-label="Switch to light theme" title="Switch to light theme" aria-pressed="false">
-                    <svg class="icon theme-icon-light" aria-hidden="true" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2m0 16v2M4.93 4.93l1.42 1.42m11.3 11.3 1.42 1.42M2 12h2m16 0h2M4.93 19.07l1.42-1.42m11.3-11.3 1.42-1.42"></path></svg>
-                    <svg class="icon theme-icon-dark" aria-hidden="true" viewBox="0 0 24 24"><path d="M20.5 15.5A8.5 8.5 0 0 1 8.5 3.5 8.5 8.5 0 1 0 20.5 15.5Z"></path></svg>
-                    <span class="theme-toggle-label" data-theme-toggle-label>Light</span>
-                </button>
-                <a class="icon-button" href="#leaderboard" aria-label="Saved bookmarks"><svg class="icon"><use href="#i-bookmark"></use></svg></a>
-                <a class="avatar-button" href="/profile" aria-label="Your profile"><svg class="icon"><use href="#i-user"></use></svg></a>
-            </div>
-        </div>
-    </header>
+    <?php require __DIR__ . '/components/desktop-header.html.php'; ?>
 
     <main>
         <div class="telemetry-bar">
@@ -375,19 +376,7 @@ $homeCards = require __DIR__ . '/home-cards.php';
 </div>
 
 <div class="layout-mobile">
-    <header class="m-header">
-        <div class="brand">
-            <span class="brand-mark"><svg class="icon"><use href="#i-dumbbell"></use></svg></span>
-            <span class="brand-text"><strong>IRONPULSE</strong></span>
-        </div>
-        <span class="live-badge"><span class="dot"></span>LIVE</span>
-        <button class="theme-toggle" type="button" data-theme-toggle aria-label="Switch to light theme" title="Switch to light theme" aria-pressed="false">
-            <svg class="icon theme-icon-light" aria-hidden="true" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2m0 16v2M4.93 4.93l1.42 1.42m11.3 11.3 1.42 1.42M2 12h2m16 0h2M4.93 19.07l1.42-1.42m11.3-11.3 1.42-1.42"></path></svg>
-            <svg class="icon theme-icon-dark" aria-hidden="true" viewBox="0 0 24 24"><path d="M20.5 15.5A8.5 8.5 0 0 1 8.5 3.5 8.5 8.5 0 1 0 20.5 15.5Z"></path></svg>
-            <span class="theme-toggle-label" data-theme-toggle-label>Light</span>
-        </button>
-        <a class="avatar-button" href="/profile" aria-label="Your profile"><svg class="icon"><use href="#i-user"></use></svg></a>
-    </header>
+    <?php require __DIR__ . '/components/mobile-header.html.php'; ?>
 
     <main class="m-main">
         <section class="m-hero">
@@ -501,10 +490,5 @@ $homeCards = require __DIR__ . '/home-cards.php';
         </section>
     </main>
 
-    <nav class="m-nav" aria-label="Mobile">
-        <a href="/leaderboard"><svg class="icon"><use href="#i-trophy"></use></svg><span>BOARD</span></a>
-        <a href="/forum"><svg class="icon"><use href="#i-comment"></use></svg><span>FORUM</span></a>
-        <a href="/gear"><svg class="icon"><use href="#i-dumbbell"></use></svg><span>GEAR</span></a>
-        <a href="/submit-gym"><svg class="icon"><use href="#i-plus"></use></svg><span>SUBMIT</span></a>
-    </nav>
+    <?php require __DIR__ . '/components/mobile-nav.html.php'; ?>
 </div>
