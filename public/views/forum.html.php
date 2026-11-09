@@ -60,6 +60,7 @@ $footerComponent = [
         ]],
     ],
 ];
+$forumPostLists = require __DIR__ . '/forum-posts.php';
 ?>
 <svg class="icon-sprite" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg">
     <symbol id="forum-dumbbell" viewBox="0 0 24 24"><path d="M3 9v6M6.5 7v10M17.5 7v10M21 9v6M6.5 12h11"/></symbol>
@@ -106,14 +107,14 @@ require __DIR__ . '/components/mobile-header.html.php';
                 </div>
                 <div class="forum-title-actions">
                     <div class="forum-search"><svg class="icon"><use href="#forum-search"></use></svg><span>Search Forum</span><kbd>⌘K</kbd></div>
-                    <a class="forum-button" href="#quick-launcher"><svg class="icon"><use href="#forum-plus"></use></svg><span>Start Discussion</span></a>
+                    <a class="forum-button" href="/forum/new"><svg class="icon"><use href="#forum-plus"></use></svg><span>Start Discussion</span></a>
                 </div>
             </div>
         </section>
 
         <div class="forum-mobile-tools">
             <div class="forum-mobile-search"><svg class="icon"><use href="#forum-search"></use></svg><span>Search gear specs, meet cuts, form checks...</span></div>
-            <a href="#mobile-discussion-feed"><svg class="icon"><use href="#forum-plus"></use></svg>Thread</a>
+            <a href="/forum/new"><svg class="icon"><use href="#forum-plus"></use></svg>Thread</a>
         </div>
 
         <nav class="forum-categories" aria-label="Discussion categories">
@@ -146,109 +147,9 @@ require __DIR__ . '/components/mobile-header.html.php';
                 </div>
 
                 <div class="forum-thread-list">
-                    <article class="forum-thread forum-thread-featured" id="discussion-form-check">
-                        <div class="forum-vote" aria-label="428 votes"><svg class="icon"><use href="#forum-up"></use></svg><strong>428</strong><svg class="icon vote-down"><use href="#forum-up"></use></svg></div>
-                        <div class="forum-thread-main">
-                            <div class="forum-thread-heading">
-                                <span class="forum-avatar avatar-lime">AL</span>
-                                <div class="forum-author"><div><strong>@Alex_Lith</strong><span class="forum-tag tag-green">USAPL 93KG COMPETITOR</span></div><small>Squat Check &bull; 14m ago</small></div>
-                                <span class="forum-post-category tag-green">FORM ANALYSIS</span>
-                                <a class="forum-bookmark" href="#discussion-form-check" aria-label="Save discussion"><svg class="icon"><use href="#forum-bookmark"></use></svg></a>
-                            </div>
-                            <h2>Squat RPE 9.5 lockout hitch: knee valgus or quad fatigue off the pins?</h2>
-                            <div class="forum-video" style="background-image:url('/assets/img/form-check.jpg')">
-                                <span class="forum-video-label"><svg class="icon"><use href="#forum-chart"></use></svg>BAR VELOCITY 0.28 m/s</span>
-                                <span class="forum-video-play"><svg class="icon"><use href="#forum-play"></use></svg></span>
-                                <span class="forum-video-time">0:42</span>
-                                <span class="forum-video-caption">Kinematic track: 3rd attempt simulation <b>4K 60FPS</b></span>
-                            </div>
-                            <p class="forum-excerpt">Noticed a slight 3.8cm lateral drift towards the left heel at parallel reversal during 3rd working set. Angle shows bar leveling issue at initial dip. Looking for a second set of eyes on the sticking point.</p>
-                            <div class="forum-thread-footer">
-                                <span><svg class="icon"><use href="#forum-chat"></use></svg><b>112</b> Replies</span>
-                                <span><svg class="icon"><use href="#forum-eye"></use></svg>4.1k Views</span>
-                                <span class="forum-velocity"><svg class="icon"><use href="#forum-chart"></use></svg>Bar Velocity 0.28 m/s</span>
-                                <span class="forum-thread-tags"><i>#Squat</i><i>#FormCheck</i><i>#LowBar</i><i>#IPF</i></span>
-                                <span class="forum-mobile-actions"><b><svg class="icon"><use href="#forum-up"></use></svg>428</b><b><svg class="icon"><use href="#forum-chat"></use></svg>112</b><strong>NEEDS 2 COACH VOTES</strong></span>
-                            </div>
-                        </div>
-                    </article>
-
-                    <article class="forum-thread" id="discussion-gear-review">
-                        <div class="forum-vote" aria-label="619 votes"><svg class="icon"><use href="#forum-up"></use></svg><strong>619</strong><svg class="icon vote-down"><use href="#forum-up"></use></svg></div>
-                        <div class="forum-thread-main">
-                            <div class="forum-thread-heading">
-                                <span class="forum-avatar avatar-blue">KL</span>
-                                <div class="forum-author"><div><strong>@MarcusKnurling</strong><span class="forum-tag tag-blue"><svg class="icon"><use href="#forum-shield"></use></svg>AUDITOR</span></div><small>Knurl Lab &bull; 2h ago</small></div>
-                                <span class="forum-post-category tag-blue">GEAR DIAGNOSTICS &amp; LAB</span>
-                                <span class="forum-award">8 AWARDS</span>
-                                <a class="forum-bookmark" href="#discussion-gear-review" aria-label="Save discussion"><svg class="icon"><use href="#forum-bookmark"></use></svg></a>
-                            </div>
-                            <h2>[Deep Dive] Eleiko IPF Comp vs Rogue Ohio Power Bar: 2-Year Knurl Wear &amp; Peak Hill Decay</h2>
-                            <div class="forum-gear-comparison">
-                                <div class="knurl-photo" style="background-image:url('/assets/img/black-iron.jpg')"><span>MICROMETER: 1.2mm PYRAMID</span></div>
-                                <div class="grip-score"><span>GRIP RET.</span><strong>92.4%</strong><small><svg class="icon"><use href="#forum-bars"></use></svg> RAW STEEL</small></div>
-                            </div>
-                            <p class="forum-excerpt">We put optical micrometer measurements to both bars after 700+ heavy squat and deadlift sessions. The Eleiko volcano knurl retained 88.4% of original tooth depth, while the Rogue aggressive diamond knurl smoothed at center ring contact points.</p>
-                            <div class="forum-lab-report"><svg class="icon"><use href="#forum-scale"></use></svg><span><small>MICRON RESOLUTION COMPARISON</small><br>Eleiko 1.2mm Tooth Height / Rogue 1.1mm Tooth Height</span><b>FULL CAD DATA ATTACHED</b></div>
-                            <div class="forum-thread-footer">
-                                <span><svg class="icon"><use href="#forum-chat"></use></svg><b>84</b> Replies</span><span><svg class="icon"><use href="#forum-eye"></use></svg>5.2k Views</span>
-                                <span class="forum-thread-tags"><i>#GearReview</i><i>#Barbell</i><i>#KnurlDiagnostic</i><i>#Eleiko</i></span>
-                            </div>
-                        </div>
-                    </article>
-
-                    <article class="forum-thread" id="discussion-gym-psa">
-                        <div class="forum-vote" aria-label="315 votes"><svg class="icon"><use href="#forum-up"></use></svg><strong>315</strong><svg class="icon vote-down"><use href="#forum-up"></use></svg></div>
-                        <div class="forum-thread-main">
-                            <div class="forum-thread-heading">
-                                <span class="forum-avatar avatar-orange">JD</span>
-                                <div class="forum-author"><div><strong>@J_Donnelly</strong><span class="forum-post-category tag-orange">SANCTUARY PSA &amp; INTEL</span></div><small>METRO IRON REGULAR &bull; 8h ago</small></div>
-                                <span class="forum-location">AUSTIN, TX</span>
-                                <a class="forum-bookmark" href="#discussion-gym-psa" aria-label="Save discussion"><svg class="icon"><use href="#forum-bookmark"></use></svg></a>
-                            </div>
-                            <h2>[Gym PSA] How Metropolitan Iron handles peak 5 PM rack availability &mdash; New 20-min warmup floor rule &amp; queue etiquette</h2>
-                            <p class="forum-excerpt">Management just instituted the deadlift bullpen queue chalk board. If you plan on camping rack #4 for heavy doubles past 5:30 PM, sign in early. Platform etiquette details and chalk usage protocols inside.</p>
-                            <div class="forum-thread-tags"><i>#Austin</i><i>#MetropolitanIron</i><i>#GymEtiquette</i><i>#RackTelemetry</i></div>
-                            <div class="forum-thread-footer"><span><svg class="icon"><use href="#forum-chat"></use></svg><b>96</b> Replies</span><span><svg class="icon"><use href="#forum-eye"></use></svg>3.8k Views</span></div>
-                        </div>
-                    </article>
-
-                    <article class="forum-thread" id="discussion-meet-debrief">
-                        <div class="forum-vote" aria-label="284 votes"><svg class="icon"><use href="#forum-up"></use></svg><strong>284</strong><svg class="icon vote-down"><use href="#forum-up"></use></svg></div>
-                        <div class="forum-thread-main">
-                            <div class="forum-thread-heading">
-                                <span class="forum-avatar avatar-orange">EK</span>
-                                <div class="forum-author"><div><strong>@Elena_K</strong><span class="forum-tag tag-orange">MASTER SPOTTER &bull; 840 REP</span></div><small>Meet Prep &bull; 14h ago</small></div>
-                                <span class="forum-post-category tag-orange">MEET DEBRIEF</span>
-                                <span class="forum-sanctioned">WRPF SANCTIONED</span>
-                                <a class="forum-bookmark" href="#discussion-meet-debrief" aria-label="Save discussion"><svg class="icon"><use href="#forum-bookmark"></use></svg></a>
-                            </div>
-                            <h2>[Meet Debrief] Cutting to 82.5kg for WRPF Nationals: Water cut protocol, 3rd attempt selections</h2>
-                            <div class="meet-stats"><div><span>CUT TARGET</span><strong>-4.2 kg</strong></div><div><span>REFEED TIME</span><strong class="text-blue">14 hrs</strong></div><div><span>TOTAL</span><strong class="text-lime">542.5 kg</strong></div></div>
-                            <p class="forum-excerpt">Comprehensive breakdown: Sodium loading starting 6 days out, water taper from 8L down to 500ml, rehydration electrolyte osmolarity ratios, and why jumping 12.5kg instead of 7.5kg on final bench cost the podium spot.</p>
-                            <div class="forum-thread-footer"><span><svg class="icon"><use href="#forum-chat"></use></svg><b>63</b> Replies</span><span><svg class="icon"><use href="#forum-eye"></use></svg>2.9k Views</span><span class="forum-thread-tags"><i>#MeetPrep</i><i>#WRPF</i><i>#WeightCut</i><i>#AttemptStrategy</i></span></div>
-                        </div>
-                    </article>
-
-                    <article class="forum-thread forum-thread-optional">
-                        <div class="forum-vote" aria-label="197 votes"><svg class="icon"><use href="#forum-up"></use></svg><strong>197</strong><svg class="icon vote-down"><use href="#forum-up"></use></svg></div>
-                        <div class="forum-thread-main">
-                            <div class="forum-thread-heading"><span class="forum-avatar avatar-blue">RW</span><div class="forum-author"><div><strong>@RoadWarrior_PR</strong><span class="forum-post-category tag-blue">CITY GUIDE &amp; SOURCING</span></div><small>TRAVEL LIFTER &bull; 1d ago</small></div><a class="forum-bookmark" href="#discussion-feed" aria-label="Save discussion"><svg class="icon"><use href="#forum-bookmark"></use></svg></a></div>
-                            <h2>[City Guide] Hidden 24/7 keycard powerlifting bunkers in Dallas &amp; Fort Worth with calibrated steel &amp; monolifts</h2>
-                            <p class="forum-excerpt">Tired of hotel DB racks? Compiled four private key-fob strength warehouses with Ivanko / Eleiko calibrated plates, Texas power bars, and drop-in guest policies for traveling powerlifters.</p>
-                            <div class="forum-thread-footer"><span><svg class="icon"><use href="#forum-chat"></use></svg><b>48</b> Replies</span><span><svg class="icon"><use href="#forum-eye"></use></svg>2.1k Views</span><span class="forum-thread-tags"><i>#CityGuide</i><i>#KeycardGyms</i><i>#DallasPowerlifting</i></span></div>
-                        </div>
-                    </article>
-
-                    <article class="forum-thread forum-thread-optional">
-                        <div class="forum-vote" aria-label="152 votes"><svg class="icon"><use href="#forum-up"></use></svg><strong>152</strong><svg class="icon vote-down"><use href="#forum-up"></use></svg></div>
-                        <div class="forum-thread-main">
-                            <div class="forum-thread-heading"><span class="forum-avatar avatar-blue">HV</span><div class="forum-author"><div><strong>@HeavyDan_PR</strong><span class="forum-post-category tag-blue">PROGRAM ANALYST</span></div><small>PROGRAMMING &amp; RECOVERY &bull; 1d ago</small></div><a class="forum-bookmark" href="#discussion-feed" aria-label="Save discussion"><svg class="icon"><use href="#forum-bookmark"></use></svg></a></div>
-                            <h2>Sheiko Gold vs. Calgary Barbell 16-Week: Bench volume fatigue &amp; pecs recovery comparison</h2>
-                            <p class="forum-excerpt">Tallying joint soreness indexes and bar deceleration over two consecutive 16-week cycles. Sheiko undulating intra-session benching showed significantly lower shoulder impingement risk despite higher tonnage.</p>
-                            <div class="forum-thread-footer"><span><svg class="icon"><use href="#forum-chat"></use></svg><b>54</b> Replies</span><span><svg class="icon"><use href="#forum-eye"></use></svg>1.8k Views</span><span class="forum-thread-tags"><i>#Programming</i><i>#Sheiko</i><i>#BenchPress</i></span></div>
-                        </div>
-                    </article>
+                    <?php foreach ($forumPostLists['desktop'] as $forumPost): ?>
+                        <?php require __DIR__ . '/components/forum-post.html.php'; ?>
+                    <?php endforeach; ?>
                 </div>
 
                 <div class="forum-feed-end"><span><i></i>DISPLAYING 6 OF 342 DISCUSSIONS</span><a href="#discussion-feed">Load next 25 threads <span>⌄</span></a></div>
@@ -258,16 +159,16 @@ require __DIR__ . '/components/mobile-header.html.php';
                 <section class="forum-side-card quick-launcher" id="quick-launcher">
                     <div class="forum-side-heading"><h2>QUICK LAUNCHER</h2><span>TELEMETRY SYNCED</span></div>
                     <div class="launcher-compose">Ask for form analysis, report rack crowding, or debate gear specs...</div>
-                    <div class="launcher-actions"><span><svg class="icon"><use href="#forum-camera"></use></svg></span><span><svg class="icon"><use href="#forum-photo"></use></svg></span><span><svg class="icon"><use href="#forum-pin"></use></svg></span><span><svg class="icon"><use href="#forum-chart"></use></svg></span><a href="#quick-launcher">Post Thread</a></div>
+                    <div class="launcher-actions"><span><svg class="icon"><use href="#forum-camera"></use></svg></span><span><svg class="icon"><use href="#forum-photo"></use></svg></span><span><svg class="icon"><use href="#forum-pin"></use></svg></span><span><svg class="icon"><use href="#forum-chart"></use></svg></span><a href="/forum/new">Post Thread</a></div>
                 </section>
 
                 <section class="forum-side-card spotters-card">
                     <div class="forum-side-heading"><h2><svg class="icon"><use href="#forum-trophy"></use></svg>Top Spotters (Karma)</h2><span>THIS WEEK</span></div>
                     <ol class="spotter-list">
-                        <li><b>1</b><span><strong>@Elena_K</strong><small>FORM VERIFIER &bull; ATX</small></span><strong>840 REP</strong></li>
-                        <li><b>2</b><span><strong>@Marcus_K</strong><small>IPF NATIONAL REF</small></span><strong>610 REP</strong></li>
-                        <li><b>3</b><span><strong>@DaveLiftz</strong><small>KNURL LAB AUDITOR</small></span><strong>512 REP</strong></li>
-                        <li><b>4</b><span><strong>@TaraRacks</strong><small>COACH &bull; SEATTLE</small></span><strong>420 REP</strong></li>
+                        <li><b>1</b><span><strong><a href="/profile/4">@Elena_K</a></strong><small>FORM VERIFIER &bull; ATX</small></span><strong>840 REP</strong></li>
+                        <li><b>2</b><span><strong><a href="/profile/2">@Marcus_K</a></strong><small>IPF NATIONAL REF</small></span><strong>610 REP</strong></li>
+                        <li><b>3</b><span><strong><a href="/profile/8">@DaveLiftz</a></strong><small>KNURL LAB AUDITOR</small></span><strong>512 REP</strong></li>
+                        <li><b>4</b><span><strong><a href="/profile/4">@TaraRacks</a></strong><small>COACH &bull; SEATTLE</small></span><strong>420 REP</strong></li>
                     </ol>
                     <a class="forum-side-link" href="/leaderboard#spotter-karma">VIEW GLOBAL KARMA BOARD <svg class="icon"><use href="#forum-send"></use></svg></a>
                 </section>
@@ -296,35 +197,9 @@ require __DIR__ . '/components/mobile-header.html.php';
         </div>
 
         <section class="forum-mobile-posts" id="mobile-discussion-feed" aria-label="Trending discussion threads">
-            <article class="mobile-thread mobile-thread-form">
-                <div class="mobile-thread-top"><span class="forum-avatar avatar-lime">AL</span><div class="forum-author"><div><strong>@Alex_Lith</strong><span class="forum-tag tag-green">USAPL 93kg</span></div><small>Squat Check &bull; 14m ago</small></div><a class="forum-bookmark" href="#discussion-form-check" aria-label="Save discussion"><svg class="icon"><use href="#forum-bookmark"></use></svg></a></div>
-                <h2>Squat RPE 9.5 lockout hitch: knee valgus or quad fatigue off the pins?</h2>
-                <div class="mobile-video" style="background-image:url('/assets/img/form-check.jpg')"><span class="mobile-video-label"><svg class="icon"><use href="#forum-chart"></use></svg>BAR VELOCITY 0.28 m/s</span><span class="forum-video-play"><svg class="icon"><use href="#forum-play"></use></svg></span><span class="forum-video-time">0:42</span><strong>KINEMATIC TRACK: 3RD ATTEMPT SIMULATION <i>4K 60FPS</i></strong></div>
-                <div class="mobile-thread-footer"><span><svg class="icon"><use href="#forum-up"></use></svg>428</span><span><svg class="icon"><use href="#forum-chat"></use></svg>112</span><b>NEEDS 2 COACH VOTES</b></div>
-            </article>
-
-            <article class="mobile-thread">
-                <div class="mobile-thread-top"><span class="forum-avatar avatar-blue">KL</span><div class="forum-author"><div><strong>@MarcusKnurling</strong><span class="forum-tag tag-blue"><svg class="icon"><use href="#forum-shield"></use></svg>AUDITOR</span></div><small>Knurl Lab &bull; 2h ago</small></div><a class="forum-bookmark" href="#discussion-gear-review" aria-label="Save discussion"><svg class="icon"><use href="#forum-bookmark"></use></svg></a></div>
-                <h2>[Deep Dive] Eleiko IPF Comp vs Rogue Ohio Power Bar: 2-Year Knurl Wear &amp; Peak Hill Decay</h2>
-                <div class="mobile-knurl-comparison"><div class="knurl-photo" style="background-image:url('/assets/img/black-iron.jpg')"><span>MICROMETER: 1.2mm PYRAMID</span></div><div class="grip-score"><span>GRIP RET.</span><strong>92.4%</strong><small><svg class="icon"><use href="#forum-bars"></use></svg> Raw Steel</small></div></div>
-                <p>After 730 training cycles across 4 lifters, laser profile telemetry reveals Rogue Aggressive volcanic knurl degrades 18% slower than raw Swedish...</p>
-                <div class="mobile-thread-footer"><span><svg class="icon"><use href="#forum-up"></use></svg>619</span><span><svg class="icon"><use href="#forum-chat"></use></svg>84</span><b class="mobile-report-link"><svg class="icon"><use href="#forum-scale"></use></svg>LAB REPORT</b></div>
-            </article>
-
-            <article class="mobile-thread">
-                <div class="mobile-thread-top"><span class="forum-avatar avatar-orange">EK</span><div class="forum-author"><div><strong>@Elena_K</strong><span class="forum-tag tag-orange">MASTER SPOTTER</span></div><small>Meet Prep &bull; 5h ago</small></div><a class="forum-bookmark" href="#discussion-meet-debrief" aria-label="Save discussion"><svg class="icon"><use href="#forum-bookmark"></use></svg></a></div>
-                <h2>[Meet Debrief] Cutting to 82.5kg for WRPF Nationals: Water cut protocol &amp; 3rd attempt selections</h2>
-                <div class="mobile-meet-stats"><div><span>CUT TARGET</span><strong>-4.2 kg</strong></div><div><span>REFEED TIME</span><strong class="text-blue">14 hrs</strong></div><div><span>TOTAL</span><strong class="text-lime">542.5 kg</strong></div></div>
-                <p>Sodium ramp from Sunday to Wednesday, 8L distilled water protocol, followed by rapid 2hr hyper-osmotic electrolytes replenishment once...</p>
-                <div class="mobile-thread-footer"><span><svg class="icon"><use href="#forum-up"></use></svg>384</span><span><svg class="icon"><use href="#forum-chat"></use></svg>59</span><b class="meet-trophy"><svg class="icon"><use href="#forum-trophy"></use></svg>NATIONALS 2024</b></div>
-            </article>
-
-            <article class="mobile-thread">
-                <div class="mobile-thread-top"><span class="forum-avatar avatar-blue">MI</span><div class="forum-author"><div><strong>@MetroIronStaff</strong><span class="forum-tag tag-green">HQ VERIFIED</span></div><small>Gym Intel &bull; 8h ago</small></div><a class="forum-bookmark" href="#discussion-gym-psa" aria-label="Save discussion"><svg class="icon"><use href="#forum-bookmark"></use></svg></a></div>
-                <h2>[Gym PSA] How Metropolitan Iron handles peak 5 PM rack availability: Board rotation rules update</h2>
-                <div class="mobile-policy"><span></span>12 Combo Racks: 20-min max squat rotation<b>POLICY</b></div>
-                <div class="mobile-thread-footer"><span><svg class="icon"><use href="#forum-up"></use></svg>192</span><span><svg class="icon"><use href="#forum-chat"></use></svg>41</span><b class="mobile-location"><svg class="icon"><use href="#forum-pin"></use></svg>EAST DOCK, AUSTIN</b></div>
-            </article>
+            <?php foreach ($forumPostLists['mobile'] as $forumPost): ?>
+                <?php require __DIR__ . '/components/forum-mobile-post.html.php'; ?>
+            <?php endforeach; ?>
         </section>
     </div>
 </main>
@@ -332,7 +207,7 @@ require __DIR__ . '/components/mobile-header.html.php';
 <?php
 require __DIR__ . '/components/footer.html.php';
 ?>
-<a class="forum-mobile-compose" href="#mobile-discussion-feed" aria-label="Start a discussion"><svg class="icon"><use href="#forum-plus"></use></svg><span>Post</span></a>
+<a class="forum-mobile-compose" href="/forum/new" aria-label="Start a discussion"><svg class="icon"><use href="#forum-plus"></use></svg><span>Post</span></a>
 <?php
 require __DIR__ . '/components/mobile-nav.html.php';
 ?>

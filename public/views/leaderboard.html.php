@@ -60,6 +60,7 @@ $footerComponent = [
         ]],
     ],
 ];
+$leaderboardData = require __DIR__ . '/leaderboard-data.php';
 ?>
 <svg class="icon-sprite" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg">
     <symbol id="lb-dumbbell" viewBox="0 0 24 24"><path d="M3 9v6M6.5 7v10M17.5 7v10M21 9v6M6.5 12h11"/></symbol>
@@ -132,35 +133,9 @@ require __DIR__ . '/components/mobile-header.html.php';
         <section class="podium-section" aria-labelledby="podium-heading">
             <div class="podium-heading"><h2 id="podium-heading"><i></i>Podium telemetry &mdash; top wilks / dots rankings</h2><span>NORMALIZED COEFFICIENTS</span></div>
             <div class="podium-grid">
-                <article class="podium-card podium-silver">
-                    <div class="podium-card-label"><strong>2</strong><span>SILVER PODIUM</span><b>WRPF 82.5KG</b></div>
-                    <div class="podium-athlete">
-                        <img src="/assets/img/marcus-vance.jpg" alt="">
-                        <div><h3>Elena Korov <svg class="icon"><use href="#lb-shield"></use></svg></h3><span>@Elena_K &bull; Columbus, OH</span><b>Master Spotter + Elite</b></div>
-                    </div>
-                    <div class="podium-lifts"><div><span>SQUAT</span><strong>233.5 <small>kg</small></strong></div><div><span>BENCH</span><strong>145 <small>kg</small></strong></div><div><span>DEADLIFT</span><strong>265.5 <small>kg</small></strong></div></div>
-                    <div class="podium-total"><span>AGGREGATE TOTAL<strong>644 <small>KG</small></strong></span><span>DOTS COEFFICIENT<strong>574.1</strong></span></div>
-                </article>
-
-                <article class="podium-card podium-gold">
-                    <div class="podium-card-label"><strong>1</strong><span>WORLD LEADER</span><b>TIER 1 VERIFIED</b></div>
-                    <div class="podium-athlete">
-                        <img src="/assets/img/marcus-vance.jpg" alt="">
-                        <div><h3>Marcus Vance <svg class="icon"><use href="#lb-shield"></use></svg></h3><span>@Vanguard_Beast &bull; Austin, TX</span><b>Metropolitan Iron Club Home</b></div>
-                    </div>
-                    <div class="podium-lifts"><div><span>SQUAT</span><strong>360.5 <small>kg</small><i>0.38 m/s</i></strong></div><div><span>BENCH</span><strong>229 <small>kg</small><i>0.9 m/s</i></strong></div><div><span>DEADLIFT</span><strong>401.5 <small>kg</small><i>0.24 m/s</i></strong></div></div>
-                    <div class="podium-total"><span>AGGREGATE TOTAL<strong>991 <small>KG</small></strong><small>105kg Open Raw USAPL</small></span><span>DOTS SCORE<strong>582.4</strong><small>NATIONAL RECORD</small></span></div>
-                </article>
-
-                <article class="podium-card podium-bronze">
-                    <div class="podium-card-label"><strong>3</strong><span>BRONZE PODIUM</span><b>RAW OPEN 120KG+</b></div>
-                    <div class="podium-athlete">
-                        <img src="/assets/img/iron-haven.jpg" alt="">
-                        <div><h3>Dan Sullivan <svg class="icon"><use href="#lb-shield"></use></svg></h3><span>@BigDan_83 &bull; Dallas, TX</span><b>Raw Heavyweight Champion</b></div>
-                    </div>
-                    <div class="podium-lifts"><div><span>SQUAT</span><strong>370 <small>kg</small></strong></div><div><span>BENCH</span><strong>245 <small>kg</small></strong></div><div><span>DEADLIFT</span><strong>401.5 <small>kg</small></strong></div></div>
-                    <div class="podium-total"><span>AGGREGATE TOTAL<strong>1,016.5 <small>KG</small></strong></span><span>DOTS COEFFICIENT<strong>568.9</strong></span></div>
-                </article>
+                <?php foreach ($leaderboardData['podium'] as $podium): ?>
+                    <?php require __DIR__ . '/components/leaderboard-podium-card.html.php'; ?>
+                <?php endforeach; ?>
             </div>
         </section>
 
@@ -170,14 +145,9 @@ require __DIR__ . '/components/mobile-header.html.php';
                 <table class="standings-table">
                     <thead><tr><th>#</th><th>Lifter &amp; credentials</th><th>DIV / CLASS</th><th>SQUAT (KG)</th><th>BENCH (KG)</th><th>DEADLIFT (KG)</th><th>TOTAL (KG)</th><th>DOTS</th><th>MEET SANCTION</th><th>PROOF</th></tr></thead>
                     <tbody>
-                        <tr class="standings-first"><td><strong>1</strong><i>↑</i></td><td><span class="lifters-initial">MV</span><span class="lifter-label"><strong>Marcus Vance <svg class="icon"><use href="#lb-shield"></use></svg></strong><small>@Vanguard_Beast &bull; Metropolitan Iron</small></span></td><td>105kg Raw</td><td>360.5 <small>kg</small></td><td>229 <small>kg</small></td><td>401.5 <small>kg</small></td><td><strong>991</strong></td><td><strong>582.4</strong></td><td>USAPL Nationals &rsquo;24<small>Salt Lake City, UT</small></td><td><svg class="icon"><use href="#lb-video"></use></svg></td></tr>
-                        <tr><td><strong>2</strong><i>−</i></td><td><span class="lifters-initial">EK</span><span class="lifter-label"><strong>Elena Korov <svg class="icon"><use href="#lb-shield"></use></svg></strong><small>@Elena_K &bull; Apex Strength</small></span></td><td>82.5kg Raw</td><td>233.5 <small>kg</small></td><td>145 <small>kg</small></td><td>265.5 <small>kg</small></td><td><strong>644</strong></td><td><strong>574.1</strong></td><td>WRPF American Pro 2<small>Manassas, VA</small></td><td><svg class="icon"><use href="#lb-video"></use></svg></td></tr>
-                        <tr><td><strong>3</strong><i>•</i></td><td><span class="lifters-initial">DS</span><span class="lifter-label"><strong>Dan Sullivan <svg class="icon"><use href="#lb-shield"></use></svg></strong><small>@BigDan_83 &bull; Iron Bastion</small></span></td><td>120kg+ Open</td><td>370 <small>kg</small></td><td>245 <small>kg</small></td><td>401.5 <small>kg</small></td><td><strong>1,016.5</strong></td><td><strong>568.9</strong></td><td>Ghost Invitational Meet<small>Detroit, MI</small></td><td><svg class="icon"><use href="#lb-video"></use></svg></td></tr>
-                        <tr><td><strong>4</strong><i>↑</i></td><td><span class="lifters-initial">TL</span><span class="lifter-label"><strong>Tariq Lindqvist <svg class="icon"><use href="#lb-shield"></use></svg></strong><small>@Tariq_Squats &bull; Vanguard</small></span></td><td>93kg Raw</td><td>315 <small>kg</small></td><td>200 <small>kg</small></td><td>347.5 <small>kg</small></td><td><strong>862.5</strong></td><td><strong>562.1</strong></td><td>IPF Worlds Classic<small>Valletta, Malta</small></td><td><svg class="icon"><use href="#lb-video"></use></svg></td></tr>
-                        <tr><td><strong>5</strong><i>↑</i></td><td><span class="lifters-initial">CA</span><span class="lifter-label"><strong>Chloe Alvarez <svg class="icon"><use href="#lb-shield"></use></svg></strong><small>@Chloe_Pulls &bull; Iron Haven</small></span></td><td>69kg Open</td><td>197.5 <small>kg</small></td><td>120 <small>kg</small></td><td>236 <small>kg</small></td><td><strong>553.5</strong></td><td><strong>558.7</strong></td><td>USAPL Raw Challenge<small>Columbus, OH</small></td><td><svg class="icon"><use href="#lb-video"></use></svg></td></tr>
-                        <tr><td><strong>6</strong><i>−</i></td><td><span class="lifters-initial">JH</span><span class="lifter-label"><strong>Jaxon Holt <svg class="icon"><use href="#lb-shield"></use></svg></strong><small>@JaxonPress &bull; Metro Iron</small></span></td><td>105kg Raw</td><td>340 <small>kg</small></td><td>220 <small>kg</small></td><td>372 <small>kg</small></td><td><strong>932</strong></td><td><strong>551.3</strong></td><td>Texas State Open &rsquo;24<small>San Antonio, TX</small></td><td><svg class="icon"><use href="#lb-video"></use></svg></td></tr>
-                        <tr><td><strong>7</strong><i>•</i></td><td><span class="lifters-initial">RW</span><span class="lifter-label"><strong>Rachel Weiss <svg class="icon"><use href="#lb-shield"></use></svg></strong><small>@Weiss_Barbell &bull; Black Iron</small></span></td><td>76kg Raw</td><td>213 <small>kg</small></td><td>134 <small>kg</small></td><td>247 <small>kg</small></td><td><strong>594</strong></td><td><strong>548.2</strong></td><td>Pacific Crest Classic<small>Seattle, WA</small></td><td><svg class="icon"><use href="#lb-video"></use></svg></td></tr>
-                        <tr><td><strong>8</strong><i>↑</i></td><td><span class="lifters-initial">LN</span><span class="lifter-label"><strong>Lucas Novak <svg class="icon"><use href="#lb-shield"></use></svg></strong><small>@Novak_Iron &bull; Vanguard</small></span></td><td>120kg Raw</td><td>345 <small>kg</small></td><td>231 <small>kg</small></td><td>376.5 <small>kg</small></td><td><strong>952.5</strong></td><td><strong>545.6</strong></td><td>WRPF Iron Wars 2024<small>Orlando, FL</small></td><td><svg class="icon"><use href="#lb-video"></use></svg></td></tr>
+                        <?php foreach ($leaderboardData['standings'] as $athlete): ?>
+                            <?php require __DIR__ . '/components/leaderboard-standings-row.html.php'; ?>
+                        <?php endforeach; ?>
                     </tbody>
                 </table>
             </div>
@@ -186,21 +156,18 @@ require __DIR__ . '/components/mobile-header.html.php';
 
         <section class="leaderboard-mobile-athletes" aria-label="Top athlete standings">
             <div class="leaderboard-section-heading"><div><h2>Master athlete standings</h2><p>Peer-verified meet totals</p></div><span><i></i> VERIFIED</span></div>
-            <article class="mobile-athlete-card mobile-athlete-first"><span class="mobile-athlete-rank">#1</span><img src="/assets/img/marcus-vance.jpg" alt=""><div><strong>Marcus Vance <svg class="icon"><use href="#lb-shield"></use></svg></strong><small>@Vanguard_Beast &bull; 105kg Raw</small></div><b>991 <small>KG</small></b><span class="mobile-athlete-dots">582.4 DOTS</span><div class="mobile-athlete-lifts"><span><small>SQUAT</small>360.5kg</span><span><small>BENCH</small>229kg</span><span><small>DEADLIFT</small>401.5kg</span></div></article>
-            <article class="mobile-athlete-card"><span class="mobile-athlete-rank">#2</span><span class="mobile-initial">EK</span><div><strong>Elena Korov <svg class="icon"><use href="#lb-shield"></use></svg></strong><small>@Elena_K &bull; 82.5kg Raw</small></div><b>644 <small>KG</small></b><span class="mobile-athlete-dots">574.1 DOTS</span><div class="mobile-athlete-lifts"><span><small>SQUAT</small>233.5kg</span><span><small>BENCH</small>145kg</span><span><small>DEADLIFT</small>265.5kg</span></div></article>
-            <article class="mobile-athlete-card"><span class="mobile-athlete-rank">#3</span><span class="mobile-initial">DS</span><div><strong>Dan Sullivan <svg class="icon"><use href="#lb-shield"></use></svg></strong><small>@BigDan_83 &bull; 120kg+ Open</small></div><b>1,016.5 <small>KG</small></b><span class="mobile-athlete-dots">568.9 DOTS</span><div class="mobile-athlete-lifts"><span><small>SQUAT</small>370kg</span><span><small>BENCH</small>245kg</span><span><small>DEADLIFT</small>401.5kg</span></div></article>
-            <article class="mobile-athlete-card"><span class="mobile-athlete-rank">#4</span><span class="mobile-initial">TL</span><div><strong>Tariq Lindqvist <svg class="icon"><use href="#lb-shield"></use></svg></strong><small>@Tariq_Squats &bull; 93kg Raw</small></div><b>862.5 <small>KG</small></b><span class="mobile-athlete-dots">562.1 DOTS</span><div class="mobile-athlete-lifts"><span><small>SQUAT</small>315kg</span><span><small>BENCH</small>200kg</span><span><small>DEADLIFT</small>347.5kg</span></div></article>
+            <?php foreach ($leaderboardData['mobileAthletes'] as $athlete): ?>
+                <?php require __DIR__ . '/components/leaderboard-mobile-athlete-card.html.php'; ?>
+            <?php endforeach; ?>
         </section>
 
         <div class="leaderboard-community-grid">
             <section class="community-karma" id="spotter-karma">
                 <div class="community-panel-heading"><div><h2><i></i>Community spotter karma</h2><p>Top gear verifiers and referees reviewing knurl wear, plate tare scales, and lift compliance.</p></div><span>PEER AUDITORS</span></div>
                 <ol class="karma-list">
-                    <li><b>1</b><span class="karma-name"><strong>@Elena_K <svg class="icon"><use href="#lb-trophy"></use></svg></strong><small>Master Spotter &bull; 42 form checks</small></span><strong>840 <small>PTS</small></strong></li>
-                    <li><b>2</b><span class="karma-name"><strong>@Marcus_K <svg class="icon"><use href="#lb-dumbbell"></use></svg></strong><small>IPF National Ref &bull; 98 calibrations</small></span><strong>610 <small>PTS</small></strong></li>
-                    <li><b>3</b><span class="karma-name"><strong>@DaveLiftz <svg class="icon"><use href="#lb-medal"></use></svg></strong><small>Knurl Lab Auditor &bull; 6 lab logs</small></span><strong>512 <small>PTS</small></strong></li>
-                    <li><b>4</b><span class="karma-name"><strong>@TaraRacks <svg class="icon"><use href="#lb-video"></use></svg></strong><small>Strength Coach &bull; 52 reviews</small></span><strong>420 <small>PTS</small></strong></li>
-                    <li><b>5</b><span class="karma-name"><strong>@BigDan_83 <svg class="icon"><use href="#lb-clock"></use></svg></strong><small>Equipment Spotter &bull; 4 audits</small></span><strong>380 <small>PTS</small></strong></li>
+                    <?php foreach ($leaderboardData['karma'] as $spotter): ?>
+                        <?php require __DIR__ . '/components/leaderboard-karma-row.html.php'; ?>
+                    <?php endforeach; ?>
                 </ol>
                 <div class="karma-note"><svg class="icon"><use href="#lb-info"></use></svg><p><strong>How Spotter Karma Works</strong><br>Earn +10 pts for verified video form reviews, +25 pts for calibrated plate scale submissions, and +50 pts for new sanctuary hardware inventories vetted by community peers.</p></div>
             </section>
@@ -208,11 +175,9 @@ require __DIR__ . '/components/mobile-header.html.php';
             <section class="sanctuary-rankings" id="top-sanctuaries">
                 <div class="community-panel-heading"><div><h2><i></i>Top rated strength sanctuaries</h2><p>Ranked by authenticated barbell specs, calibrated combo rack density, and member grip scores.</p></div><a href="/gear">EXPLORE ALL <svg class="icon"><use href="#lb-arrow"></use></svg></a></div>
                 <ol class="sanctuary-list">
-                    <li><b>#1</b><span><strong>Metropolitan Iron Club <svg class="icon"><use href="#lb-shield"></use></svg></strong><small>Austin, TX &bull; 18 Combo Racks &bull; 6 Comp Benches</small></span><span class="sanctuary-score"><strong>99.8</strong><small>340 REVIEWS</small></span></li>
-                    <li><b>#2</b><span><strong>Vanguard Barbell Co. <svg class="icon"><use href="#lb-shield"></use></svg></strong><small>East Austin, TX &bull; 4 Monolifts &bull; Calibrated Ivanko</small></span><span class="sanctuary-score"><strong>99.4</strong><small>288 REVIEWS</small></span></li>
-                    <li><b>#3</b><span><strong>Apex Strength &amp; Conditioning <svg class="icon"><use href="#lb-shield"></use></svg></strong><small>Columbus, OH &bull; 10 Power Cages &bull; TSS Benches</small></span><span class="sanctuary-score"><strong>99.1</strong><small>412 REVIEWS</small></span></li>
-                    <li><b>#4</b><span><strong>Iron Haven Compound</strong><small>Columbus, OH &bull; Texas Power Bars &bull; Eleiko IWF</small></span><span class="sanctuary-score"><strong>98.7</strong><small>310 REVIEWS</small></span></li>
-                    <li><b>#5</b><span><strong>Black Iron Bastion</strong><small>Seattle, WA &bull; 10 Full Cages &bull; Calibrated Rogue KG</small></span><span class="sanctuary-score"><strong>98.5</strong><small>240 REVIEWS</small></span></li>
+                    <?php foreach ($leaderboardData['sanctuaries'] as $sanctuary): ?>
+                        <?php require __DIR__ . '/components/leaderboard-sanctuary-row.html.php'; ?>
+                    <?php endforeach; ?>
                 </ol>
                 <a class="sanctuary-all-link" href="/gear">View full sanctuary rankings &amp; specs <svg class="icon"><use href="#lb-arrow"></use></svg></a>
             </section>

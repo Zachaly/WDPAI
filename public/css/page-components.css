@@ -75,7 +75,7 @@
 }
 
 .page-footer-grid > div:not(:first-child) > a:hover {
-    color: #fff;
+    color: var(--text-strong);
 }
 
 .page-footer-bottom {
@@ -83,6 +83,10 @@
     justify-content: space-between;
     border-top: 1px solid rgba(255, 255, 255, 0.06);
     color: #aab3c5;
+}
+
+:root[data-theme="light"] .page-footer-bottom {
+    color: var(--on-surface-variant);
 }
 
 @media (max-width: 900px) {
@@ -211,7 +215,7 @@
     .sg-mobile-brand {
         gap: 5px;
         margin-right: 0;
-        color: #f7f8fb;
+        color: var(--text-strong);
         font-size: 16px;
         font-weight: 700;
     }

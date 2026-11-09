@@ -132,7 +132,7 @@
 
 .gear-button-primary {
     background: var(--primary-container);
-    color: #172000;
+    color: var(--on-accent);
 }
 
 .gear-button-secondary {
@@ -209,7 +209,7 @@
 .gear-search-panel {
     padding: 14px 16px 16px;
     border: 1px solid rgba(255, 255, 255, 0.035);
-    border-radius: 12px;
+    border-radius: var(--radius);
     background: var(--surface-container);
 }
 
@@ -1121,7 +1121,7 @@
         margin: 0 0 8px;
         padding: 0 12px;
         border: 1px solid rgba(255, 255, 255, 0.025);
-        border-radius: 12px;
+        border-radius: var(--radius);
         background: var(--surface-low);
     }
 
@@ -1223,7 +1223,7 @@
         min-width: 0;
         padding: 8px;
         border: 1px solid rgba(255, 255, 255, 0.035);
-        border-radius: 12px;
+        border-radius: var(--radius);
         background: var(--surface-container);
     }
 
