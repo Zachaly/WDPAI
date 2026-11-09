@@ -60,7 +60,7 @@
     --on-surface-variant: #596657;
     --text-strong: #172219;
     --on-accent: #ffffff;
-    --primary-container: #4f6b00;
+    --primary-container: #587700;
     --on-primary-container: #ffffff;
     --muted-tag-color: var(--primary-container);
     --secondary: #00658a;
@@ -72,6 +72,11 @@
     --outline-soft: rgba(58, 72, 53, 0.11);
     --outline-glass: rgba(58, 72, 53, 0.1);
     --outline-strong: rgba(58, 72, 53, 0.25);
+}
+
+:root[data-theme="light"] .site-header {
+    background: var(--surface-glass);
+    border-bottom-color: var(--outline-glass);
 }
 
 :root[data-theme="light"] .media-badge,
@@ -652,7 +657,7 @@ img {
     place-items: center;
     border-radius: 999px;
     background: #fff;
-    color: var(--on-accent);
+    color: var(--text-strong);
 }
 
 .avatar-button .icon {
@@ -778,6 +783,11 @@ img {
     border-radius: var(--radius);
     background: var(--surface-hero-stat);
     backdrop-filter: blur(12px);
+}
+
+:root[data-theme="light"] .hero-stats {
+    border-color: var(--outline-soft);
+    background: var(--surface-container);
 }
 
 .hero-stat {
@@ -1834,6 +1844,18 @@ img {
     line-height: 28px;
     letter-spacing: 0.05em;
     text-transform: uppercase;
+}
+
+:root[data-theme="light"] .submit-banner h3 {
+    color: #f8fafc;
+}
+
+:root[data-theme="light"] .submit-banner p {
+    color: #c4c9ac;
+}
+
+:root[data-theme="light"] .submit-banner .text-lime {
+    color: #c3f400 !important;
 }
 
 .pr-widget {
